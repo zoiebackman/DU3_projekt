@@ -1,4 +1,2 @@
-async function handler() {
-    
-}
+async function handler() {}
 Deno.serve(handler);
