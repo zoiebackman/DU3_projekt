@@ -1,5 +1,5 @@
 async function handler(request) {
-const url = new URL(request.url)
+  const url = new URL(request.url);
 
   const headers = new Headers();
   headers.set("Access-Control-Allow-Origin", "*");
@@ -12,7 +12,8 @@ const url = new URL(request.url)
   }
 
   if (request.method == "GET") {
-    if()
+    if (url.pathname == "/login") {
+    }
   }
 
   if (request.method == "POST") {
