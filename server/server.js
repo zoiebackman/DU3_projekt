@@ -1,4 +1,6 @@
-async function handler() {
+async function handler(request) {
+const url = new URL(request.url)
+
   const headers = new Headers();
   headers.set("Access-Control-Allow-Origin", "*");
   headers.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
@@ -10,6 +12,7 @@ async function handler() {
   }
 
   if (request.method == "GET") {
+    if()
   }
 
   if (request.method == "POST") {
