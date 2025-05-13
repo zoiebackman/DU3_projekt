@@ -1,66 +1,106 @@
 # DU3_projekt
+> 💡 **Viktigt:** Alla `POST`-förfrågningar kräver att du skickar JSON i request-body. 
 
-API
+## 🧠 API Dokumentation – QuizApp
+Välkommen till backend-API:et för **QuizApp** – en plats där användare loggar in, svarar på quiz och klättrar på poängtavlan! Här nedan hittar du alla tillgängliga endpoints och hur du kommunicerar med dem.
+
 Endpoints:
-/login
-GET - förfrågningar till denna endpoint besvaras med status 200 och returnerar en array med alla användare.
+### 🔐 `/login`
 
-POST-förfrågning till denna endpointen måste ha en JSON-formaterad body:
+#### ➕ `GET`
+Hämta alla användare.
 
-Logga in:
-Beskrivning: Försöker logga in användare.
+**Svar:** `200 OK` – Returnerar en array med samtliga användare.
 
+---
+
+#### 🔑 `POST` 
+Logga in en användare.
+
+**Body:**
+Json:
 {
-username: string,
-password: string
+  "username": "ditt_namn",
+  "password": "ditt_lösenord"
 }
 
-Potentiella svar:
-200 - Användare finns i array, användarnamn och lösenord matchar.
-400 - Användarnamn och lösenord matchar ej.
-409 - Användarnamnet finns ej i array.
+**Svar:**
+- `200 OK` – Inloggning lyckades! Användaren finns och lösenordet stämmer.
+- `400 Bad Request` – Användarnamn/lösenord matchar inte.
+- `409 Conflict` – Användarnamnet finns inte.
 
-Skapa användare:
-Beskrivning: Skapar en ny användare.
 
+
+#### ✨ `POST` –
+Skapa ny användare.
+**Body:**
+Json:
 {
-username: string,
-password: string
+  "username": "ditt_namn",
+  "password": "ditt_lösenord"
 }
-Potentiella svar:
-200 - användarnamn finns ej i array, kommer läggas till i array
-400 - användarnamn eller lösenord saknas
-409 - användarnamn finns redan
 
-/homePage
-GET-förfrågningar till denna endpoint svarar med status 200 och hämtar alla användares poäng i fallande ordning.
+**Svar:**
+- `200 OK` – Användaren skapades!
+- `400 Bad Request` – Något saknas i inmatningen.
+- `409 Conflict` – Användarnamnet finns redan.
 
-/homePage/Search?username=X
-Beskrivning: Söker efter en användare med angivet användarnamn.
 
-GET-förfrågning till denna endpoint svarar med status 200 och returnerar den användare som sökningen avser.
-POST-förfrågning till denna endpoint svarar med status 200 och användaren sparas i en array.
-Potentiella svar:
-200 - Användaren sparas i array
-409 - Användare finns ej
-400 - Tomt sökfält
+### 🏠 `/homePage`
+#### 🧾 `GET`
+Hämta alla användares poäng – sorterade i fallande ordning.
 
-/homePage/Search?quiz=X
+- **Svar:** `200 OK`
+
+---
+
+### 🔍 `/homePage/Search?username=X`
+
+#### 🔎 `GET`
+Sök efter en användare med ett specifikt användarnamn.
+
+- **Svar:**
+  - `200 OK` – Användaren hittades.
+  - `409 Conflict` – Användaren finns inte.
+  - `400 Bad Request` – Tomt sökfält.
+
+#### 💾 `POST`
+
+- **Svar:**
+  - `200 OK` – Användaren sparades.
+  - `409 Conflict` – Användaren finns ej.
+  - `400 Bad Request` – Tomt sökfält.
+
+---
+
+### ❓ `/homePage/Search?quiz=X`
 Beskrivning:
 
-GET-förfrågning till denna endpoint svarar med status 200 och en returnerar de quiz som matchar sökningen.
-Potentiella svar:
-200 - De quiz som matchar sökningen returneras
-400 - Inget quiz matchar sökningen
-409 - Tomt sökfält
+#### 🧠 `GET`
 
-/quizPage
-Beskrivning:
-Hämtar frågor och svar hos externt API.
-GET-förfrågning till denna endpoint svarar med status 200.
-POST-förfrågning som sparar ner varje svar till en ny array.
+- **Svar:**
+  - `200 OK` – Matchande quiz returneras.
+  - `400 Bad Request` – Inget quiz matchar sökningen.
+  - `409 Conflict` – Tomt sökfält.
 
-/quizPage/result
-Beskrivning:
-Hämta scoreBoard
-GET-förfrågningar till endpoint svarar med status 200.
+---
+
+### 📄 `/quizPage`
+
+#### 🔄 `GET`
+Hämta frågor och svar från ett externt API.
+
+- **Svar:** `200 OK`
+
+#### 📝 `POST`
+Spara användarens svar i en ny array.
+
+---
+
+### 🏆 `/quizPage/result`
+#### 📊 `GET`
+Hämta scoreboarden med användarnas resultat.
+
+- **Svar:** `200 OK`
+
+---

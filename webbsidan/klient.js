@@ -16,5 +16,4 @@ async function f2() {
   <img src=${resource.message}></img>
   `;
 }
-
 f2();
