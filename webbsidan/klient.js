@@ -7,3 +7,14 @@ async function f1() {
 }
 
 f1();
+
+async function f2() {
+  const response = await fetch("https://dog.ceo/api/breeds/image/random");
+  const resource = await response.json();
+
+  document.body.innerHTML = `
+  <img src=${resource}></img>
+  `;
+}
+
+f2();
