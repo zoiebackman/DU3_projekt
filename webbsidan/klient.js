@@ -13,7 +13,7 @@ async function f2() {
   const resource = await response.json();
 
   document.body.innerHTML = `
-  <img src=${resource}></img>
+  <img src=${resource.message}></img>
   `;
 }
 
