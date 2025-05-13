@@ -1,0 +1,93 @@
+#parent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#header {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#loggo {
+  display: flex;
+  width: 200px;
+}
+
+#searchQuiz {
+  width: 700px;
+  border-radius: 20px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+#userName {
+  height: 30px;
+  width: 200px;
+  background-color: #f5dfdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#main {
+  margin-top: 50px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+#quizLibary {
+  width: 700px;
+  background-color: #f5dfdf;
+  border-radius: 10px;
+}
+
+#quizLibaryRubrik {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+#searchForUser {
+  width: 200px;
+  height: 450px;
+  background-color: #ffcccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#searchUser {
+  height: 20px;
+  width: 160px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+#tabs {
+  width: 200px;
+  height: 270px;
+  background-color: #ffcccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab {
+  background-color: #ffffff;
+  height: 30px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
