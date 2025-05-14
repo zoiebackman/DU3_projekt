@@ -24,6 +24,7 @@ async function handler() {
 
   if (request.method == "GET") {
     if (url.pathname == "/login") {
+    
 
     if (request.method == "OPTIONS") {
         return new Response(null, {
