@@ -115,6 +115,12 @@ Hämta frågor och svar från ett externt API.
 #### 📝 `POST`
 
 Spara användarens svar i en ny array.
+- **Svar:** `200 OK`
+
+####  📝 `PUT`
+Uppdaterar scoreboarden med nya poäng.
+- **Svar:** `200 OK`
+
 
 ---
 
