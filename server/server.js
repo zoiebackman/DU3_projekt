@@ -56,7 +56,7 @@ async function handler(request) {
       }
     }
 
-    if (url.pathname == "/createAccount") {
+    /*  if (url.pathname == "/createAccount") {
     }
 
     if (url.pathname == "/homePage") {
@@ -66,15 +66,15 @@ async function handler(request) {
     }
 
     if (url.pathname == "/quizPage") {
-    }
+    } */
   }
 
-  if (request.method == "POST") {
+  /*  if (request.method == "POST") {
     if (url.pathname == "/login") {
     }
 
     if (url.pathname == "/createAccount") {
     }
-  }
+  } */
 }
 Deno.serve(handler);
