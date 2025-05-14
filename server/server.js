@@ -57,9 +57,9 @@ async function handler(request) {
     }
   }
 
-  return new Response(JSON.stringify({ error: "Not Found" }), {
-    status: 404,
-    headers: headersCORS,
+  return new Response(
+    JSON.stringify({ error: "Not Found" }), 
+    {status: 404, headers: headersCORS,
   });
 }
 
