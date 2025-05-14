@@ -19,3 +19,8 @@ async function f2() {
 
 f2();
 
+async function f3() {
+  const response = await fetch("http:/localhost:8000/");
+  const resource = await response.json();
+  console.log(resource)
+}

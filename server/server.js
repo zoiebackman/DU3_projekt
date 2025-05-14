@@ -13,6 +13,7 @@ async function handler() {
             headers: headersCORS,
         });
     }
+    const contentType = request.headers.get("content-type")
 
     if (contentType !== "application/json" && request.method !== "GET") {
         return new Response(
@@ -43,13 +44,12 @@ async function handler() {
                         headers: headersCORS
                     })
                 }
-
-                return new Response("Account not Found! :(", {
-                    status: 409,
-                    headers: headersCORS
-                })
             }
 
+            return new Response("Account not Found! :(", {
+                status: 409,
+                headers: headersCORS
+            })
 
         }
 
