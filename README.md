@@ -34,7 +34,6 @@ Json:
 
 - `200 OK` – Inloggning lyckades! Användaren finns och lösenordet stämmer.
 - `400 Bad Request` – Användarnamn/lösenord matchar inte.
-- `409 Conflict` – Användarnamnet finns inte.
 
 ### 🔐 `/createAccount`
 
