@@ -1,5 +1,5 @@
 async function handler() {
-  const url = new URL(request.url);
+    const url = new URL(request.url);
 
   const headersCORS = new Headers();
   headersCORS.set("Access-Control-Allow-Origin", "*");
@@ -25,32 +25,42 @@ async function handler() {
   if (request.method == "GET") {
     if (url.pathname == "/login") {
 
+    if (request.method == "OPTIONS") {
+        return new Response(null, {
+            status: 204,
+            headers: headersCORS,
+        });
     }
 
-    if (url.pathname == "/createAccount") {
+    if (request.method == "GET") {
+        if (url.pathname == "/login") {
+
+        }
+
+        if (url.pathname == "/createAccount") {
+        }
+
+        if (url.pathname == "/homePage") {
+
+        }
+
+        if (url.pathname == "/homePage/Search?quiz=X") {
+
+        }
+
+        if (url.pathname == "/quizPage") {
+
+        }
     }
 
-    if(url.pathname == "/homePage"){
+    if (request.method == "POST") {
+        if (url.pathname == "/login") {
+        }
 
+        if (url.pathname == "/createAccount") {
+        }
+
+        i
     }
-
-    if(url.pathname == "/homePage/Search?quiz=X"){
-
-    }
-
-    if(url.pathname == "/quizPage"){
-        
-    }
-  }
-
-  if (request.method == "POST") {
-    if (url.pathname == "/login") {
-    }
-
-    if (url.pathname == "/createAccount") {
-    }
-
-    i
-  }
 }
 Deno.serve(handler);
