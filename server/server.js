@@ -1,4 +1,4 @@
-async function handler() {
+async function handler(request) {
     const url = new URL(request.url);
 
     const headersCORS = new Headers();
@@ -13,7 +13,6 @@ async function handler() {
             headers: headersCORS,
         });
     }
-    const contentType = request.headers.get("content-type")
 
     if (contentType !== "application/json" && request.method !== "GET") {
         return new Response(
@@ -22,61 +21,105 @@ async function handler() {
         );
     }
 
-
     if (request.method == "GET") {
         if (url.pathname == "/login") {
-            const userFile = "user.json"
-            const user = Deno.readTextFileSync(userFile)
-            const userArray = JSON.parse(user)
+            const userFile = "user.json";
+            const user = Deno.readTextFileSync(userFile);
+            const userArray = JSON.parse(user);
 
-            const userAccount = await request.json()
+            const userAccount = await request.json();
 
             for (let user of userArray) {
-                if (user.username == userAccount.username && user.password == userAccount.password) {
+                if (
+                    user.username == userAccount.username &&
+                    user.password == userAccount.password
+                ) {
                     return new Response("Login sucess! :)", {
                         status: 200,
-                        headers: headersCORS
-                    })
+                        headers: headersCORS,
+                    });
                 }
-                if (user.password != userAccount.password || user.username != userAccount.password) {
+                if (
+                    user.password != userAccount.password ||
+                    user.username != userAccount.password
+                ) {
                     return new Response("Username OR Password incorrect :(", {
                         status: 400,
-                        headers: headersCORS
-                    })
+                        headers: headersCORS,
+                    });
                 }
+
+                return new Response("Account not Found! :(", {
+                    status: 409,
+                    headers: headersCORS,
+                });
             }
-
-            return new Response("Account not Found! :(", {
-                status: 409,
-                headers: headersCORS
-            })
-
         }
+        const contentType = request.headers.get("content-type")
 
-        if (url.pathname == "/createAccount") {
+        /*  if (url.pathname == "/createAccount") {
         }
-
-        if (url.pathname == "/homePage") {
-
+    
+    
+        if (request.method == "GET") {
+            if (url.pathname == "/login") {
+                const userFile = "user.json"
+                const user = Deno.readTextFileSync(userFile)
+                const userArray = JSON.parse(user)
+    
+                const userAccount = await request.json()
+    
+                for (let user of userArray) {
+                    if (user.username == userAccount.username && user.password == userAccount.password) {
+                        return new Response("Login sucess! :)", {
+                            status: 200,
+                            headers: headersCORS
+                        })
+                    }
+                    if (user.password != userAccount.password || user.username != userAccount.password) {
+                        return new Response("Username OR Password incorrect :(", {
+                            status: 400,
+                            headers: headersCORS
+                        })
+                    }
+                }
+    
+                return new Response("Account not Found! :(", {
+                    status: 409,
+                    headers: headersCORS
+                })
+    
+            }
+    
+            if (url.pathname == "/createAccount") {
+            }
+    
+            if (url.pathname == "/homePage") {
+    
+            }
+    
+            if (url.pathname == "/homePage/Search?quiz=X") {
+    
+            }
+    
+            if (url.pathname == "/quizPage") {
+    
+            }
         }
-
+    
         if (url.pathname == "/homePage/Search?quiz=X") {
-
         }
-
+    
         if (url.pathname == "/quizPage") {
-
-        }
+        } */
     }
 
-    if (request.method == "POST") {
-        if (url.pathname == "/login") {
-        }
-
-        if (url.pathname == "/createAccount") {
-        }
-
-
-    }
+    /*  if (request.method == "POST") {
+      if (url.pathname == "/login") {
+      }
+  
+      if (url.pathname == "/createAccount") {
+      }
+    } */
 }
 Deno.serve(handler);
