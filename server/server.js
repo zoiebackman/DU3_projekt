@@ -1,4 +1,4 @@
-async function handler() {
+async function handler(request) {
   const url = new URL(request.url);
 
   const headersCORS = new Headers();
