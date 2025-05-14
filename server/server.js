@@ -16,12 +16,25 @@ async function handler() {
 
   if (request.method == "GET") {
     if (url.pathname == "/login") {
+        
+    }
+
+    if (url.pathname == "/createAccount") {
+    }
+
+    if(url.pathname == "/homePage"){
+
     }
   }
 
   if (request.method == "POST") {
     if (url.pathname == "/login") {
     }
+
+    if (url.pathname == "/createAccount") {
+    }
+
+    i
   }
 }
 Deno.serve(handler);
