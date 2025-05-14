@@ -41,10 +41,8 @@ async function handler(request) {
                 }
             }
             if (userFound) {
-                return new Response(JSON.stringify({ message: "Login successful!" }), {
-                    status: 200,
-                    headers: headersCORS,
-                });
+                return new Response(JSON.stringify({ message: "Login successful!" }), 
+                { status: 200, headers: headersCORS });
             } else {
                 return new Response(
                     JSON.stringify({ error: "Wrong username OR password" }),
@@ -52,6 +50,7 @@ async function handler(request) {
                 );
             }
         }
+
         if (url.pathname == "/createAccount") {
             const userFile = "user.json";
             const user = Deno.readTextFileSync(userFile);
@@ -75,10 +74,8 @@ async function handler(request) {
             userArray.push(newUserAccount);
 
             Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
-            return new Response(JSON.stringify("account added!"), {
-                status: 200,
-                headers: headersCORS,
-            });
+            return new Response(JSON.stringify("account added!"), 
+            { status: 200, headers: headersCORS });
         }
     }
     return new Response(
