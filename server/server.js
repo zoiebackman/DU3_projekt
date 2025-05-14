@@ -14,6 +14,13 @@ async function handler() {
     });
   }
 
+  if (contentType !== "application/json" && request.method !== "GET"){
+    return new Response (
+      JSON.stringify({ error: "Request-Body must be JSON!" }),
+      { status: 400, headers: headersCORS}
+    );
+  } 
+
   if (request.method == "GET") {
     if (url.pathname == "/login") {
 
