@@ -9,8 +9,7 @@ async function handler(request) {
 
   if (request.method == "OPTIONS") {
     return new Response(null, {
-      status: 204,
-      headers: headersCORS,
+      status: 204, headers: headersCORS,
     });
   }
   const contentType = request.headers.get("content-type");
@@ -38,7 +37,7 @@ async function handler(request) {
         if (
           user.username == userAccount.username &&
           user.password == userAccount.password
-        ) {
+        ) 
           userFound = true;
           break;
         }
