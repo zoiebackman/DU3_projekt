@@ -42,25 +42,23 @@ async function handler(request) {
                 }
             }
             if (userFound) {
-                return new Response("Login sucess! :)", {
-                    status: 200,
-                    headers: headersCORS,
-                })
-            }
-            else {
-                return new Response("Login unsuccessful :(", {
-                    status: 400,
-                    headers: headersCORS,
-                });
-            }
-        }
+              return new Response (
+                JSON.stringify({ message: "Login succesful!" }),
+                { status: 200, headers: headersCORS }
+              );
+            } else {
+              return new Response (
+                JSON.stringify({ error: "Wrong username OR password" }),
+                { status: 400, headers: headersCORS}
+              );
+            } 
+        } 
     }
-
-
+    
     return new Response(JSON.stringify({ error: "Not Found" }), {
         status: 404,
         headers: headersCORS,
     });
-}
+  }
 
 Deno.serve(handler);
