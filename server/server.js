@@ -21,6 +21,18 @@ async function handler(request) {
             { status: 400, headers: headersCORS }
         );
     }
+    
+    if (request.method == "GET") {
+        if (url.pathname == "/getUsers") {
+            const userFile = "user.json";
+            const user = Deno.readTextFileSync(userFile);
+            const userArray = JSON.parse(user);
+            return new Response (
+                JSON.stringify (userArray), 
+                {status: 200, headers : headersCORS}
+            )
+        }
+    }
 
     if (request.method == "POST") {
         if (url.pathname == "/login") {
