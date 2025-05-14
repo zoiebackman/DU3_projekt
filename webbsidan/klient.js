@@ -9,13 +9,13 @@ async function f1() {
 f1();
 
 async function f2() {
-  const response = await fetch(
-    "https://source.unsplash.com/random/800x600/?science"
-  );
+  const response = await fetch("https://dog.ceo/api/breeds/image/random");
   const resource = await response.json();
 
   document.body.innerHTML = `
   <img src=${resource.message}></img>
   `;
 }
+
 f2();
+
