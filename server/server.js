@@ -13,5 +13,15 @@ async function handler() {
       headers: headersCORS,
     });
   }
+
+  if (request.method == "GET") {
+    if (url.pathname == "/login") {
+    }
+  }
+
+  if (request.method == "POST") {
+    if (url.pathname == "/login") {
+    }
+  }
 }
 Deno.serve(handler);
