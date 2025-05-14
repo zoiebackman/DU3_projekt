@@ -8,16 +8,18 @@ Välkommen till backend-API:et för **QuizApp** – en plats där användare log
 
 
 Endpoints:
-
-### 🔐 `/login`
+### 🔐 `/getUsers`
 
 #### ➕ `GET`
 
-Hämta alla användare.
+Returnerar array med alla användare.
 
 **Svar:** `200 OK` – Returnerar en array med samtliga användare.
 
 ---
+
+
+### 🔐 `/login`
 
 #### 🔑 `POST`
 

@@ -38,8 +38,6 @@ button.addEventListener ("click", function(){
         console.log( response.status);
     }
 
-   
-
     // Funktion som hanterar alla async-funktioner och 
     //ser till att dessa körs i korrekt ordning.
     async function driverHandler() {

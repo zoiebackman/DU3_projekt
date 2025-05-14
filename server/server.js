@@ -21,7 +21,7 @@ async function handler(request) {
             { status: 400, headers: headersCORS }
         );
     }
-    
+
     if (request.method == "GET") {
         if (url.pathname == "/getUsers") {
             const userFile = "user.json";
@@ -90,6 +90,7 @@ async function handler(request) {
             { status: 200, headers: headersCORS });
         }
     }
+    
     return new Response(
         JSON.stringify({ error: "Not Found" }),
         { status: 404, headers: headersCORS });
