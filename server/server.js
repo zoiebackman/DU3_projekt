@@ -16,7 +16,7 @@ async function handler() {
 
   if (request.method == "GET") {
     if (url.pathname == "/login") {
-        
+
     }
 
     if (url.pathname == "/createAccount") {
@@ -24,6 +24,14 @@ async function handler() {
 
     if(url.pathname == "/homePage"){
 
+    }
+
+    if(url.pathname == "/homePage/Search?quiz=X"){
+
+    }
+
+    if(url.pathname == "/quizPage"){
+        
     }
   }
 
