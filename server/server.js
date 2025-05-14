@@ -60,28 +60,25 @@ async function handler(request) {
             const newUserAccount = await request.json();
 
             for (let user of userArray) {
-                if (user.name == newUserAccount.name) {
-                    return new Response(
-                        JSON.stringify(
-                            { error: "Username already exist" },
-                            {
-                                status: 409,
-                                headers: headersCORS,
-                            }
-                        )
-                    );
-                }
-                if (user.username != newUserAccount.username) {
-                    newUserAccount.score = 0;
-                    userArray.push(newUserAccount);
+                if (user.username == newUserAccount.username) {
 
-                    Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
-                    return new Response(JSON.stringify("account added!"), {
-                        status: 200,
-                        headers: headersCORS,
-                    });
+                    console.log(user.username)
+                    console.log(newUserAccount.username)
+
+                    return new Response(
+                        JSON.stringify({ error: "User already exist" }),
+                        { status: 409, headers: headersCORS }
+                    )
                 }
             }
+            newUserAccount.score = 0;
+            userArray.push(newUserAccount);
+
+            Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
+            return new Response(JSON.stringify("account added!"), {
+                status: 200,
+                headers: headersCORS,
+            });
         }
     }
     return new Response(
