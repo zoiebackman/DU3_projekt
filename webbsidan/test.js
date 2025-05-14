@@ -1,17 +1,8 @@
 const button = document.querySelector("button");
 
 button.addEventListener ("click", function(){
-    //Driver som returnerar array av alla användare.
-    async function driver_1() {
-        const request = new Request("http://localhost:8000/getUsers");
-        const response = await fetch (request);
-        const resource = await response.json();
-        console.log("Test 1: En array av alla användare");
-        console.log(response.status);
-        console.log(resource);
-    }
     //Driver som testar att logga in med icke-existerande användare.
-    async function driver_2(){
+    async function driver_1(){
         const newUser = { username: "Yoman", password: "Liseberg123" };
 
         const request = new Request("http://localhost:8000/login", {
@@ -20,12 +11,12 @@ button.addEventListener ("click", function(){
             body: JSON.stringify(newUser)
         })
         const response = await fetch(request);
-        console.log("Test 2: icke-existerande användare:")
+        console.log("Test 1: icke-existerande användare:")
         console.log( response.status);
     }
 
     //Driver som testar att logga in existerande användare.
-    async function driver_3(){
+    async function driver_2(){
         const newUser = { username: "pelle_boi", password: "fotboll123" };
 
         const request = new Request("http://localhost:8000/login", {
@@ -34,8 +25,17 @@ button.addEventListener ("click", function(){
             body: JSON.stringify(newUser)
         })
         const response = await fetch(request);
-        console.log("Test 3: logga in med existerande användare:")
+        console.log("Test 2: logga in med existerande användare:")
         console.log( response.status);
+    }
+    //Driver som returnerar array av alla användare.
+    async function driver_3() {
+        const request = new Request("http://localhost:8000/getUsers");
+        const response = await fetch (request);
+        const resource = await response.json();
+        console.log("Test 3: En array av alla användare");
+        console.log(response.status);
+        console.log(resource);
     }
 
     // Funktion som hanterar alla async-funktioner och 
