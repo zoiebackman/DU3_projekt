@@ -6,6 +6,7 @@
 
 Välkommen till backend-API:et för **QuizApp** – en plats där användare loggar in, svarar på quiz och klättrar på poängtavlan! Här nedan hittar du alla tillgängliga endpoints och hur du kommunicerar med dem.
 
+
 Endpoints:
 
 ### 🔐 `/login`
