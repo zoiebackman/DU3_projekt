@@ -29,7 +29,6 @@ button.addEventListener ("click", function(){
         console.log( response.status);
     }
     //Driver som testar att skapa en ny användare.
-   
     async function driver_3() {
         const newUser = { username: "Lea", password: "Häst123" }
         const request = new Request ("http://localhost:8000/createAccount", {
