@@ -6,12 +6,8 @@ body {
 #parent {
   display: flex;
   height: 100%;
-}
-
-#leftSide {
-  height: 100%;
-  width: 55%;
-  background-color: rgb(204, 240, 240);
+  justify-content: center;
+  align-items: center;
 }
 
 #rightSide {
@@ -26,7 +22,7 @@ body {
 
 #logIn {
   width: 350px;
-  height: 300px;
+  height: 350px;
   background-color: beige;
   border-radius: 10px;
   display: flex;
@@ -77,7 +73,7 @@ button {
 #logInBackground,
 #createAccountBackground {
   width: 310px;
-  height: 200px;
+  height: 250px;
   background-color: white;
   display: flex;
   flex-direction: column;
