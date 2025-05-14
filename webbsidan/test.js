@@ -11,7 +11,7 @@ button.addEventListener ("click", function(){
         })
         const response = await fetch(request);
 
-        console.log("Test av icke-existerande användare:")
+        console.log("Test 1: icke-existerande användare:")
         console.log( response.status);
     }
 
@@ -24,7 +24,7 @@ button.addEventListener ("click", function(){
             body: JSON.stringify(newUser)
         })
         const response = await fetch(request);
-        console.log("Test logga in med existerande användare:")
+        console.log("Test 2: logga in med existerande användare:")
         console.log( response.status);
     }
 
