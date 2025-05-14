@@ -1,6 +1,7 @@
 const button = document.querySelector("button");
 
 button.addEventListener ("click", function(){
+    //Driver som returnerar array av alla användare.
     async function driver_1() {
         const request = new Request("http://localhost:8000/getUsers");
         const response = await fetch (request);
