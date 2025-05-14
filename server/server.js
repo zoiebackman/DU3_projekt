@@ -55,6 +55,28 @@ async function handler(request) {
         );
       }
     }
+
+    if (url.pathname == "/createAccount") {
+      const userFile = "user.json";
+      const user = Deno.readTextFileSync(userFile);
+      const userArray = JSON.parse(user);
+
+      const newUserAccount = request.json();
+
+      for (let user of userArray) {
+        if (user.name == newUserAccount.name) {
+          return new Response(
+            JSON.stringify(
+              { error: "Username already exist" },
+              {
+                status: 409,
+                headers: headersCORS,
+              }
+            )
+          );
+        }
+      }
+    }
   }
 
   return new Response(JSON.stringify({ error: "Not Found" }), {
