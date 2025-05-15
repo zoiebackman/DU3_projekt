@@ -3,6 +3,11 @@ body {
   height: 100vh;
 }
 
+p{
+  font-family: arial;
+  font-size: 14px;
+}
+
 #header {
   height: 70px;
   display: flex;
@@ -93,6 +98,10 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 }
+#pelle_p {
+  font-size: 22px;
+  font-weight: bold;
+}
 
 button {
   width: 260px;
@@ -104,6 +113,7 @@ button {
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
   color: white;
 }
+
 button:hover {
   background-color: #f59c5a;
   cursor: grab;
