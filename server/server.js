@@ -79,11 +79,11 @@ async function handler(request) {
       const users = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(users);
 
-      userArray.sort((a, b) => {
+      const highScoreArray = userArray.sort((a, b) => {
         b.score - a.score;
       });
 
-      return new Response(JSON.stringify(userArray), {
+      return new Response(JSON.stringify(highScoreArray), {
         status: 200,
         headers: headersCORS,
       });
