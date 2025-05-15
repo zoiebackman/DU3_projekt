@@ -57,10 +57,19 @@ async function handler(request) {
                 { status: 200, headers: headersCORS }
             )
         }
-        if (request.url == "quizPage") {
 
+        if (url.pathname == "/quizPage") {
+            const userFile = "frågor.json";
+            const quiz = Deno.readTextFileSync(userFile);
+            const quizArray = JSON.parse(quiz);
+            new Response(
+                JSON.stringify(quizArray),
+                { status: 200, headers: headersCORS }
+            )
         }
 
+
+        if (url.pathname == "/quizPage/result")
     }
 
     if (request.method == "POST") {
