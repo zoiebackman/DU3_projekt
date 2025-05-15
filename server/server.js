@@ -66,7 +66,7 @@ async function handler(request) {
       // byt till json-data som hämtas från api
       // bör stå const quiz = await request.json()
       const quizArray = JSON.parse(quiz);
-      new Response(JSON.stringify(quizArray), {
+      return new Response(JSON.stringify(quizArray), {
         status: 200,
         headers: headersCORS,
       });
