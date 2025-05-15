@@ -61,7 +61,7 @@ button.addEventListener("click", function () {
         const request = new Request("http://localhost:8000/homePage/search?quiz=s");
         const response = await fetch(request);
         const resource = await response.json();
-        console.log("Test 6: Söka efter quiz");
+        console.log("Test 5: Söka efter quiz");
         console.log(response.status);
         console.log(resource);
 

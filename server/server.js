@@ -29,6 +29,7 @@ async function handler(request) {
       const userFile = "user.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
+      
       return new Response(JSON.stringify(userArray), {
         status: 200,
         headers: headersCORS,
@@ -43,6 +44,7 @@ async function handler(request) {
       const quizArray = JSON.parse(quizdata);
 
       if (!searchQuiz) {
+
         return new Response(JSON.stringify({ error: "Empty searchfield!" }), {
           status: 400,
           headers: headersCORS,
