@@ -39,12 +39,6 @@ Json:
 
 ### 🔐 `/createAccount`
 
-#### ➕ `GET`
-
-Hämta alla användare.
-
-**Svar:** `200 OK` – Returnerar en array med samtliga användare.
-
 ---
 
 #### ✨ `POST` –
