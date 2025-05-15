@@ -29,7 +29,7 @@ async function handler(request) {
       const userFile = "user.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
-      
+
       return new Response(JSON.stringify(userArray), {
         status: 200,
         headers: headersCORS,
@@ -44,7 +44,6 @@ async function handler(request) {
       const quizArray = JSON.parse(quizdata);
 
       if (!searchQuiz) {
-
         return new Response(JSON.stringify({ error: "Empty searchfield!" }), {
           status: 400,
           headers: headersCORS,
@@ -77,13 +76,14 @@ async function handler(request) {
     if (url.pathname == "/quizPage/result") {
       console.log("inne");
       const userFile = "user.json";
-      const user = Deno.readTextFileSync(userFile);
-      const userArray = JSON.parse(user);
+      const users = Deno.readTextFileSync(userFile);
+      const userArray = JSON.parse(users);
 
-      const highScore = Math.max(...userArray.score);
-      console.log(highScore);
+      userArray.sort((a, b) => {
+        b.score - a.score;
+      });
 
-      return new Response(JSON.stringify(highScore), {
+      return new Response(JSON.stringify(userArray), {
         status: 200,
         headers: headersCORS,
       });
