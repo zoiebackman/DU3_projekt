@@ -66,6 +66,14 @@ button.addEventListener("click", function () {
         console.log(resource);
 
     }
+    async function driver_6() {
+        const request = new Request("http://localhost:8000/quizPage/result");
+        const response = await fetch(request);
+        const resource = await response.json();
+        console.log("Test 6: Array av highscore");
+        console.log(response.status);
+        console.log(resource);
+    }
 
     //Driver som returnerar array av alla användare.
     async function driver_Users() {
@@ -101,6 +109,7 @@ button.addEventListener("click", function () {
     }
 
 
+
     // Funktion som hanterar alla async-funktioner och 
     //ser till att dessa körs i korrekt ordning.
     async function driverHandler() {
@@ -109,6 +118,7 @@ button.addEventListener("click", function () {
         await driver_3();
         await driver_4();
         await driver_5();
+        await driver_6();
 
         await driver_Users();
         await getPicture();
