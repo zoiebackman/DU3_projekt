@@ -24,3 +24,4 @@ async function f3() {
   const resource = await response.json();
   console.log(resource)
 }
+
