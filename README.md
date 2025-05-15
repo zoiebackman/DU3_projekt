@@ -60,8 +60,7 @@ Json:
 **Svar:**
 
 - `200 OK` – Användaren skapades!
-- `400 Bad Request` – Något saknas i inmatningen.
-- `409 Conflict` – Användarnamnet finns redan.
+- `400 Bad Request` – Något saknas i inmatningens
 
 ### 🏠 `/homePage`
 
@@ -70,32 +69,11 @@ Json:
 Hämta alla användares poäng – sorterade i fallande ordning.
 
 - **Svar:** `200 OK`
-
----
-
-### 🔍 `/homePage/Search?username=X`
-
-#### 🔎 `GET`
-
-Sök efter en användare med ett specifikt användarnamn.
-
-- **Svar:**
-  - `200 OK` – Användaren hittades.
-  - `409 Conflict` – Användaren finns inte.
-  - `400 Bad Request` – Tomt sökfält.
-
-#### 💾 `POST`
-
-- **Svar:**
-  - `200 OK` – Användaren sparades.
-  - `409 Conflict` – Användaren finns ej.
-  - `400 Bad Request` – Tomt sökfält.
-
 ---
 
 ### ❓ `/homePage/Search?quiz=X`
 
-Beskrivning:
+Returnerar de quiz som innehåller de bokstäverna som anges i input. 
 
 #### 🧠 `GET`
 

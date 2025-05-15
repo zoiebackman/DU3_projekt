@@ -22,19 +22,22 @@ async function handler(request) {
         );
     }
 
+    //Hämta array med användare
     if (request.method == "GET") {
         if (url.pathname == "/getUsers") {
             const userFile = "user.json";
             const user = Deno.readTextFileSync(userFile);
             const userArray = JSON.parse(user);
-            return new Response (
-                JSON.stringify (userArray), 
-                {status: 200, headers : headersCORS}
+            return new Response(
+                JSON.stringify(userArray),
+                { status: 200, headers: headersCORS }
             )
         }
+
     }
 
     if (request.method == "POST") {
+        //logga in
         if (url.pathname == "/login") {
             const userFile = "user.json";
             const user = Deno.readTextFileSync(userFile);
@@ -53,8 +56,8 @@ async function handler(request) {
                 }
             }
             if (userFound) {
-                return new Response(JSON.stringify({ message: "Login successful!" }), 
-                { status: 200, headers: headersCORS });
+                return new Response(JSON.stringify({ message: "Login successful!" }),
+                    { status: 200, headers: headersCORS });
             } else {
                 return new Response(
                     JSON.stringify({ error: "Wrong username OR password" }),
@@ -63,6 +66,7 @@ async function handler(request) {
             }
         }
 
+        // skapa Konto
         if (url.pathname == "/createAccount") {
             const userFile = "user.json";
             const user = Deno.readTextFileSync(userFile);
@@ -73,24 +77,28 @@ async function handler(request) {
             for (let user of userArray) {
                 if (user.username == newUserAccount.username) {
 
-                    console.log(user.username)
-                    console.log(newUserAccount.username)
-
                     return new Response(
                         JSON.stringify({ error: "User already exist" }),
                         { status: 409, headers: headersCORS }
                     )
                 }
             }
+
+            if (newUserAccount.username == "" || newUserAccount.password == "") { //ifall ett av inmatningsfältet är en tom sträng
+                return new Response(JSON.stringify({ error: "Missing Username or Password" }),
+                    { status: 400, headers: headersCORS })
+            }
+
             newUserAccount.score = 0;
             userArray.push(newUserAccount);
 
             Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
-            return new Response(JSON.stringify("account added!"), 
-            { status: 200, headers: headersCORS });
+            return new Response(JSON.stringify("account added!"),
+                { status: 200, headers: headersCORS });
         }
     }
-    
+
+
     return new Response(
         JSON.stringify({ error: "Not Found" }),
         { status: 404, headers: headersCORS });
