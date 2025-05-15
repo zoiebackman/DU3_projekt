@@ -34,6 +34,7 @@ async function handler(request) {
         headers: headersCORS,
       });
     }
+
     if (url.pathname == "/homePage/search") {
       const rightQuizArray = [];
       const searchQuiz = url.searchParams.get("quiz");
@@ -70,6 +71,7 @@ async function handler(request) {
         headers: headersCORS,
       });
     }
+
     if (url.pathname == "/quizPage/result") {
       console.log("inne");
       const userFile = "user.json";
@@ -152,8 +154,6 @@ async function handler(request) {
         headers: headersCORS,
       });
     }
-
-    
   }
 
   return new Response(JSON.stringify({ error: "Not Found" }), {
