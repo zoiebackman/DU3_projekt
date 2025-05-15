@@ -33,6 +33,33 @@ async function handler(request) {
                 { status: 200, headers: headersCORS }
             )
         }
+        if (url.pathname == "/homePage/search") {
+            const rightQuizArray = [];
+            const searchQuiz = url.searchParams.get("quiz");
+            const file = "quiz.json";
+            const quizdata = Deno.readTextFileSync(file);
+            const quizArray = JSON.parse(quizdata);
+
+            if (!searchQuiz) {
+                return new Response(
+                    JSON.stringify({ error: "Empty searchfield!" }),
+                    { status: 400, headers: headersCORS }
+                )
+            }
+            for (let quiz of quizArray) {
+                if (quiz.category.includes(searchQuiz)) {
+                    rightQuizArray.push(quiz);
+                    console.log(rightQuizArray)
+                }
+            }
+            return new Response(
+                JSON.stringify(rightQuizArray),
+                { status: 200, headers: headersCORS }
+            )
+        }
+        if (request.url == "quizPage") {
+
+        }
 
     }
 
