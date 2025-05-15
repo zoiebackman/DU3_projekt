@@ -61,16 +61,20 @@ async function handler(request) {
         if (url.pathname == "/quizPage") {
             const userFile = "frågor.json";
             const quiz = Deno.readTextFileSync(userFile);
+            // byt till
             const quizArray = JSON.parse(quiz);
             new Response(
                 JSON.stringify(quizArray),
                 { status: 200, headers: headersCORS }
             )
         }
-
-
-        if (url.pathname == "/quizPage/result")
     }
+
+
+    if (url.pathname == "/quizPage/result") {
+
+    }
+
 
     if (request.method == "POST") {
         //logga in
