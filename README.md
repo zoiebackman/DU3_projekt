@@ -6,8 +6,8 @@
 
 Välkommen till backend-API:et för **QuizApp** – en plats där användare loggar in, svarar på quiz och klättrar på poängtavlan! Här nedan hittar du alla tillgängliga endpoints och hur du kommunicerar med dem.
 
-
 Endpoints:
+
 ### 🔐 `/getUsers`
 
 #### ➕ `GET`
@@ -17,7 +17,6 @@ Returnerar array med alla användare.
 **Svar:** `200 OK` – Returnerar en array med samtliga användare.
 
 ---
-
 
 ### 🔐 `/login`
 
@@ -63,11 +62,12 @@ Json:
 Hämta alla användares poäng – sorterade i fallande ordning.
 
 - **Svar:** `200 OK`
+
 ---
 
 ### ❓ `/homePage/Search?quiz=X`
 
-Returnerar de quiz som innehåller de bokstäverna som anges i input. 
+Returnerar de quiz som innehåller de bokstäverna som anges i input.
 
 #### 🧠 `GET`
 
@@ -101,3 +101,9 @@ Hämta scoreboarden med användarnas resultat.
 - **Svar:** `200 OK`
 
 ---
+
+### `/quizPage/music``
+
+### `GET`
+
+### `POST`
