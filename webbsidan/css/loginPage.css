@@ -20,7 +20,8 @@ body {
 #loggoPicture {
   width: 38px;
   height: 38px;
-  background-color: #5bb0ac;
+  background-color:#5bb0ac5c;;
+  opacity: 36%;
   margin-right: 5px;
 }
 
@@ -41,7 +42,7 @@ body {
 
 #circle {
   border-radius: 50%;
-  background-color: #5bb0ac;
+  background-color: #5bb0ac5c;
   height: 500px;
   width: 500px;
   text-align: center;
