@@ -146,8 +146,8 @@ async function driverHandler() {
   await driver_5();
   await driver_6();
 
-  await driver_Users();
-  await getPicture();
-  await getQuizQuestions();
+  // await driver_Users();
+  // await getPicture();
+  // await getQuizQuestions();
 }
 driverHandler();
