@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
   height: 100vh;
+  overflow: hidden;
 }
 
 p {
@@ -103,7 +104,7 @@ p {
   font-weight: bold;
 }
 
-button {
+.buttonsLoginPage {
   width: 260px;
   height: 40px;
   border-radius: 10px;
@@ -115,9 +116,9 @@ button {
   font-size: 20px;
 }
 
-button:hover {
+.buttonsLoginPage:hover {
   background-color: #f59c5a;
-  cursor: grab;
+  cursor: pointer;
 }
 
 #noAccountText {
@@ -133,4 +134,41 @@ a {
   height: 200px;
   background-color: #f3c99a;
   margin: 0 auto;
+}
+
+/* CSS för createAccount box som ska ploppa upp vid skapande av användare */
+
+#CreateAccountBox {
+  height: 320px;
+  width: 300px;
+  background-color: #f3bd66;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#createAccountBoxSecondBackground {
+  height: 210px;
+  width: 260px;
+  background-color: #f9e7c8;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.createBoxText {
+  margin: 0;
+  display: flex;
+  align-items: start;
+  width: 220px;
+}
+
+.createBoxText p {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
