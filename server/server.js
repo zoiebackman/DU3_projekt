@@ -80,7 +80,7 @@ async function handler(request) {
       const userArray = JSON.parse(users);
 
       const highScoreArray = userArray.sort((a, b) => {
-        b.score - a.score;
+        return b.score - a.score;
       });
 
       return new Response(JSON.stringify(highScoreArray), {
@@ -122,7 +122,7 @@ async function handler(request) {
       }
     }
 
-    // skapa Konto
+    // Skapa Konto
     if (url.pathname == "/createAccount") {
       const userFile = "user.json";
       const user = Deno.readTextFileSync(userFile);
@@ -140,7 +140,7 @@ async function handler(request) {
       }
 
       if (newUserAccount.username == "" || newUserAccount.password == "") {
-        //ifall ett av inmatningsfältet är en tom sträng
+        //Ifall ett av inmatningsfältet är en tom sträng
         return new Response(
           JSON.stringify({ error: "Missing Username or Password" }),
           { status: 400, headers: headersCORS }
