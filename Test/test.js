@@ -7,7 +7,7 @@ function createDiv(response, textContent) {
     if (response.status === 200) {
       return "green";
     }
-    if (response.status === 400 || response.status == 404) {
+    if (response.status === 400 || response.status == 404 || response.status == 409) {
       return "red";
     }
   }

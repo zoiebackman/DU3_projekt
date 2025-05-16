@@ -1,10 +1,12 @@
 body {
   background-color: white;
 }
+
 #testP {
   font-size: 30px;
   margin: 0;
 }
+
 p {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
@@ -63,7 +65,7 @@ img {
 
 .testDiv {
   width: 350px;
-  height: 100px;
+  height: 80px;
   border-radius: 10px;
   font-size: 10px;
 }
