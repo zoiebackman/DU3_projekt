@@ -33,10 +33,11 @@ main {
 img {
   height: 400px;
   width: 250px;
+  margin-top: 150px;
 }
 
 #borderTestBox {
-  height: 600px;
+  height: 530px;
   width: 440px;
   border-radius: 10px;
   background-color: #f3bd66;
@@ -63,7 +64,6 @@ img {
 
 .testDiv {
   width: 350px;
-  height: 100px;
   border-radius: 10px;
   font-size: 10px;
 }
