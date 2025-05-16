@@ -1,4 +1,3 @@
-const button = document.querySelector("button");
 const p = document.createElement("p");
 const testDiv = document.getElementById("testBox");
 
