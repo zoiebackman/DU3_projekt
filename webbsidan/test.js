@@ -86,7 +86,7 @@ button.addEventListener("click", function () {
   async function getPicture() {
     //hämta bild/bilder från API
     const response = await fetch(
-      "https://api.pexels.com/v1/search?query=Boats&per_page=8",
+      "https://api.pexels.com/v1/search?query=Boats &per_page=8",
       {
         headers: {
           Authorization:
