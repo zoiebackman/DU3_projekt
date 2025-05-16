@@ -48,6 +48,9 @@ img {
   height: 500px;
   width: 400px;
   overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .testDiv {
