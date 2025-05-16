@@ -1,0 +1,55 @@
+body {
+  background-color: white;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-style: bold;
+  font-size: 25px;
+  text-align: center;
+}
+
+main {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+
+#pelle {
+  height: 600px;
+  width: 400px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 400px;
+  width: 250px;
+}
+
+#borderTestBox {
+  height: 540px;
+  width: 440px;
+  border-radius: 10px;
+  background-color: #f3bd66;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 350px;
+}
+
+#testBox {
+  background-color: #f9e7c8;
+  border-radius: 10px;
+  height: 500px;
+  width: 400px;
+}
+
+.testDiv {
+  width: 350px;
+  height: 200px;
+}

@@ -1,4 +1,5 @@
 const button = document.querySelector("button");
+const p = document.createElement("p");
 
 button.addEventListener("click", function () {
   //Driver som testar att logga in med icke-existerande användare.
@@ -13,6 +14,9 @@ button.addEventListener("click", function () {
     const response = await fetch(request);
     console.log("Test 1: icke-existerande användare:");
     console.log(response.status);
+
+    
+
   }
 
   //Driver som testar att logga in existerande användare.
