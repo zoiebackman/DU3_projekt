@@ -39,7 +39,7 @@ img {
 
 #borderTestBox {
   height: 600px;
-  width: 440px;
+  width: 500px;
   border-radius: 10px;
   background-color: #f3bd66;
   display: flex;
@@ -55,17 +55,16 @@ img {
   border-radius: 10px;
   height: 500px;
   width: 400px;
+  text-align: center;
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding-left: 8px;
 }
 
 .testDiv {
   width: 350px;
-  height: 80px;
+  height: 60px;
   border-radius: 10px;
   font-size: 10px;
+  padding: 10px;
+  margin: 10px;
 }
