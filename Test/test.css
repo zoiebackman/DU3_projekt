@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: white;
 }
 #testP {
@@ -14,11 +14,12 @@ p {
 }
 
 main {
+  width: 1200px;
   padding: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  align-items: center;
+  gap: 100px;
 }
 
 #pelle {
@@ -30,10 +31,16 @@ main {
   align-items: center;
 }
 
-img {
+#pellePicture {
   height: 400px;
   width: 250px;
   margin-top: 150px;
+}
+
+#bubbleDiv {
+  width: 200px;
+  height: 300px;
+  background-color: green;
 }
 
 #borderTestBox {
@@ -66,4 +73,49 @@ img {
   width: 350px;
   border-radius: 10px;
   font-size: 10px;
+}
+ */
+
+body {
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  height: 800px;
+  width: 1200px;
+  margin-top: 100px;
+}
+
+#pelle {
+  height: 500px;
+  width: 200px;
+}
+
+#pellePicture {
+  height: 200px;
+  width: 140px;
+}
+
+#bubbleDiv {
+  height: 500px;
+  width: 200px;
+  background-color: antiquewhite;
+}
+
+#borderTestBox {
+  width: 800px;
+  height: 500px;
+  background-color: #f3bd66;
+}
+
+#testBox {
+  width: 750px;
+  height: 450px;
+  background-color: #f9e7c8;
 }
