@@ -1,17 +1,17 @@
 const p = document.createElement("p");
 const testDiv = document.getElementById("testBox");
 
-function setColor(response) {
-  console.log(response);
-  if (response.status === 200) {
-    return "green";
-  }
-  if (response.status === 400 || response.status == 404) {
-    return "red";
-  }
-}
-
 function createDiv(response, textContent) {
+  function setColor() {
+    console.log(response);
+    if (response.status === 200) {
+      return "green";
+    }
+    if (response.status === 400 || response.status == 404) {
+      return "red";
+    }
+  }
+
   const div = document.createElement("div");
   const p1 = document.createElement("p");
   const p2 = document.createElement("p");
