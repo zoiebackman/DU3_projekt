@@ -7,23 +7,23 @@ const quizButton = document.getElementById("geographyQuiz")
 const quizContainer = document.getElementById("mainContainer")
 
 quizButton.addEventListener("click", function () {
-    // getQuiz("geography")
+    getQuiz("geography")
     quizContainer.innerHTML = ""
-
     getImage("geography")
 
 })
 
-
 async function getQuiz(quizCategory) {
-    // const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`
+    const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`
     const response = await fetch(request)
     console.log(response)
     const quizData = await response.json()
     console.log(quizData)
 
-    const file = "../../server/quiz.json"
-    Deno.writeTextFileSync(file, quizData)
+    localStorage.setItem(`category${quizCategory}`, JSON.stringify(quizData)) // spara data i lokal fil via webbläsaren 
+    const quiz = JSON.parse(localStorage.getItem(`category${quizCategory}`)) //hämta lokala filen
+    console.log(quiz)
+    //spara ner fil lokalt?
 
 }
 
@@ -38,7 +38,12 @@ async function getImage(quizCategory) {
     const images = await response.json()
     console.log(images)
 
-    quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="500" style="object-fit:contain;"></img>`
+    quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`
+
+    const startQuizButton = document.createElement("div")
+    startQuizButton.textContent = `Start ${quizCategory} Quiz`
+    startQuizButton.id = "startQuizButton"
+    quizContainer.appendChild(startQuizButton)
 
 }
 
