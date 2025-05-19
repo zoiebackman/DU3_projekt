@@ -74,9 +74,9 @@ main {
 }
 
 .testDiv {
-  width: 380px;
+  width: 350px;
   height: 100px;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
