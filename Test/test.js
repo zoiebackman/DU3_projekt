@@ -104,7 +104,7 @@ async function driver_Users() {
   createDiv(response, testText);
 }
 //Funktion som hämtar API gällande bilderna
-/* async function getPicture() {
+ async function getPicture() {
   //hämta bild/bilder från API
   const response = await fetch(
     "https://api.pexels.com/v1/search?query=Boats&per_page=8",
@@ -126,7 +126,7 @@ async function driver_Users() {
   createDiv(response, testText);
 }
 //Funktion som hämtar API gällande frågor
-async function getQuizQuestions() {
+/*async function getQuizQuestions() {
   const response = await fetch(
     //Hämta frågor från API
     "https://the-trivia-api.com/api/questions?categories=science&limit=9&region=SE&difficulty=easy"
@@ -145,9 +145,8 @@ async function driverHandler() {
   await driver_4();
   await driver_5();
   await driver_6();
-
-  // await driver_Users();
-  // await getPicture();
+  await driver_Users();
+  await getPicture();
   // await getQuizQuestions();
 }
 driverHandler();
