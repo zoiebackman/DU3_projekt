@@ -62,7 +62,7 @@ input {
 
 }
 
-#settingsBox p {
+#settingsBox button {
   border: solid 1dvi white;
   background-color: white;
   width: 150px;
