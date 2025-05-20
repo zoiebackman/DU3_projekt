@@ -3,9 +3,10 @@
 //hämta quiz, spara ner i en jsonFil
 //
 
-const quizButton = document.getElementById("geographyQuiz")
+/*const quizButton = document.getElementById("geographyQuiz")
 const quizContainer = document.getElementById("mainContainer")
 const quizButtons = document.querySelectorAll(".quizButton")
+const signOutButton = document.getElementById("signOut");
 let quizData;
 //fixa så att geography ändras beroende på vilken knapp
 let quizCategory;
@@ -69,6 +70,12 @@ async function getImage(quizCategory) {
         window.location.href = "quizPage.html"
     })
 }
+
+signOutButton.addEventListener("click", function() {
+    window.location.href = "loginPage.html"
+});
+
+
 
 
 
