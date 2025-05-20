@@ -1,29 +1,20 @@
-//homepageQuiz
-//tryck på knappen på Homepage -- addeventlistener
-//hämta quiz, spara ner i en jsonFil
-//
-
-/*const quizButton = document.getElementById("geographyQuiz")
-const quizContainer = document.getElementById("mainContainer")
-const quizButtons = document.querySelectorAll(".quizButton")
-
-let quizData;
-//fixa så att geography ändras beroende på vilken knapp
-let quizCategory;
- console.log(quizContainer)
-console.log("yomnán")
-quizContainer.addEventListener("click", function () {
-    quizCategory = quizButtons.textContent
-    console.log(quizCategory)
-}) */
 
 const quizContainer = document.getElementById("mainContainer")
 const signOutButton = document.getElementById("signOut");
-
+//Hantering av att logga ut
 signOutButton.addEventListener("click", function() {
-    window.location.href = "loginPage.html"
+    const popUpBox = document.getElementById("popUpSignOut");
+        const yesButton = document.getElementById("yesButton");
+        const noButton = document.getElementById("noButton");
+        popUpBox.style.display = "block";
+        yesButton.addEventListener("click", function () {
+            window.location.href = "logInPage.html"
+        });
+        noButton.addEventListener("click", function (){
+            window.location.href = "homePage.html"
+        })
 });
-
+//Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton")
 quizButtons.forEach(button => {
     button.addEventListener("click", function(){
@@ -33,16 +24,7 @@ quizButtons.forEach(button => {
         getImage(quizCategory);
     })
 })
-
-
-/*quizButton.addEventListener("click", function () {
-    getQuiz("geography")
-    quizContainer.innerHTML = ""
-    getImage("geography")
-})*/
-
-// export { quizData }
-
+//Fetch till externt API gällande att hämta quiz
 async function getQuiz(quizCategory) {
     const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`
     const response = await fetch(request)
@@ -56,10 +38,7 @@ async function getQuiz(quizCategory) {
     //spara ner fil lokalt?
 
 }
-// await getQuiz(export { quizData })
-
-// const data = getQuiz(quizCategory);
-
+//Fetch till externt API gällande att hämta bilder
 async function getImage(quizCategory) {
     const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`
     const options = {
