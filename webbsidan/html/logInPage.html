@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/loginPage.css" />
   </head>
   <body>
-    <div id="header">
+       <div id="header">
       <div id="loggo">
         <img id="loggoPicture" src="../../bilder/Pelle3.png" alt="" />
         <p id="pelle_p">PelleQuiz</p>
@@ -30,12 +30,13 @@
               <p>Password</p>
             </div>
             <div>
-              <input id="loginPasswordInput" class="loginInput" type="password" />
+              <input id="loginPasswordInput" class="loginInput" type="text" />
             </div>
           </div>
-          <button class="buttonsLoginPage">Log in</button>
+          <button id="loginButton" class="buttonsLoginPage">Log in</button>
           <p id="noAccountText">
-            No account? Click <a href="signUp.html">here</a> to sign in!
+            No account? Click <a id="clickHere" href="./signUp.html">here</a> to
+            sign in!
           </p>
         </div>
       </div>
