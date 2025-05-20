@@ -6,28 +6,40 @@
 /*const quizButton = document.getElementById("geographyQuiz")
 const quizContainer = document.getElementById("mainContainer")
 const quizButtons = document.querySelectorAll(".quizButton")
-const signOutButton = document.getElementById("signOut");
+
 let quizData;
 //fixa så att geography ändras beroende på vilken knapp
 let quizCategory;
-/* console.log(quizContainer)
+ console.log(quizContainer)
 console.log("yomnán")
 quizContainer.addEventListener("click", function () {
     quizCategory = quizButtons.textContent
     console.log(quizCategory)
 }) */
 
-for (let quiz of quizContainer.children) {
-    quiz.addEventListener("click", function () {
-        quizCategory = quiz.textContent
-    })
-}
+const quizContainer = document.getElementById("mainContainer")
+const signOutButton = document.getElementById("signOut");
 
-quizButton.addEventListener("click", function () {
+signOutButton.addEventListener("click", function() {
+    window.location.href = "loginPage.html"
+});
+
+const quizButtons = document.querySelectorAll(".quizButton")
+quizButtons.forEach(button => {
+    button.addEventListener("click", function(){
+        const quizCategory = button.textContent.trim();
+        quizContainer.innerHTML = "";
+        getQuiz(quizCategory);
+        getImage(quizCategory);
+    })
+})
+
+
+/*quizButton.addEventListener("click", function () {
     getQuiz("geography")
     quizContainer.innerHTML = ""
     getImage("geography")
-})
+})*/
 
 // export { quizData }
 
@@ -71,15 +83,6 @@ async function getImage(quizCategory) {
     })
 }
 
-signOutButton.addEventListener("click", function() {
-    window.location.href = "loginPage.html"
-});
-
-
-
-
-
 // getQuiz()
-
 // hämta alla användare i ordning på score
 
