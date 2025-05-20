@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/loginPage.css" />
-  </head>
-  <body>
-    <div id="header">
-      <div id="loggo">
-        <img id="loggoPicture" src="../../bilder/Pelle3.png" alt="" />
-        <p id="pelle_p">PelleQuiz</p>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/loginPage.css" />
+</head>
+
+<body>
+  <div id="header">
+    <div id="loggo">
+      <img id="loggoPicture" src="../../bilder/Pelle3.png" alt="" />
+      <p id="pelle_p">PelleQuiz</p>
     </div>
-    <div id="main">
-      <div id="fullPelle">
-        <img id="fullPellePicture" src="../../bilder/Pelle1.png" alt="" />
-      </div>
-      <div id="circle">
-        <div id="CreateAccountBox">
-          <div id="createAccountBoxSecondBackground">
-            <div class="createBoxText">
-              <p>Username</p>
-            </div>
-            <div>
-              <input
-                id="createLoginPasswordInput"
-                class="loginInput"
-                type="text"
-              />
-            </div>
-            <div class="createBoxText">
-              <p>Password</p>
-            </div>
-            <div>
-              <input
-                id="createLoginPasswordInput"
-                class="loginInput"
-                type="text"
-              />
-            </div>
-            <div class="createBoxText">
-              <p>Repeat password</p>
-            </div>
-            <div>
-              <input
-                id="createLoginPasswordInput2"
-                class="loginInput"
-                type="text"
-              />
-            </div>
+  </div>
+  <div id="main">
+    <div id="fullPelle">
+      <img id="fullPellePicture" src="../../bilder/Pelle1.png" alt="" />
+    </div>
+    <div id="circle">
+      <div id="CreateAccountBox">
+        <div id="createAccountBoxSecondBackground">
+          <div class="createBoxText">
+            <p>Username</p>
           </div>
-          <button id="createAccountButton" class="buttonsLoginPage">
-            Sign up
-          </button>
+          <div>
+            <input id="createLoginUsername" class="loginInput" type="text" />
+          </div>
+          <div class="createBoxText">
+            <p>Password</p>
+          </div>
+          <div>
+            <input id="createLoginPasswordInput" class="loginInput" type="password" />
+          </div>
+          <div class="createBoxText">
+            <p>Repeat password</p>
+          </div>
+          <div>
+            <input id="createLoginPasswordInput2" class="loginInput" type="password" />
+          </div>
         </div>
+        <button id="createAccountButton" class="buttonsLoginPage">
+          Sign up
+        </button>
       </div>
     </div>
-    <div id="footer"></div>
-    <script src="../javascript/klient.js"></script>
-  </body>
+  </div>
+  <div id="footer"></div>
+  <script src="../javascript/signUp.js"></script>
+</body>
+
 </html>
