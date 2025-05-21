@@ -22,10 +22,15 @@
 
         <div id="settingsBoxAndPelle">
             <div id="settingsBox">
-                <button>homePage</button>
-                <button>Settings</button>
-                <button>Scoreboard</button>
-                <button id="signOut">Sign Out</button>
+                <button class="buttonSettings">homePage</button>
+                <button class="buttonSettings">Settings</button>
+                <button class="buttonSettings">Scoreboard</button> 
+                <div id="popUpSignOut">
+                    <p>Are you sure you want to sign out?</p>
+                    <button id="yesButton">Yes</button>
+                    <button id="noButton">No</button>
+                </div>
+                <button  class="buttonSettings" id="signOut">Sign Out</button>
             </div>
             <img src="../../bilder/Pelle2.png" alt="" id="pelle2">
         </div>
@@ -88,7 +93,7 @@
             </div>
         </div>
     </div>
-    <script src="../javascript/homePage_quiz.js" type="module"></script>
+    <script src="../javascript/homePage_quiz.js"></script>
 </body>
 
 </html>
