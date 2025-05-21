@@ -49,3 +49,4 @@ async function getImage(quizCategory) {
 
 // getQuiz()
 // hämta alla användare i ordning på score
+
