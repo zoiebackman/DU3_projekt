@@ -1,25 +1,29 @@
 const question1 = document.getElementById("question");
 const answers = document.querySelectorAll(".answerFormat");
+const countDown = document.getElementById("countDown")
 
 async function getQuiz(quizCategory) {
   const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`;
   const response = await fetch(request);
   const quizData = await response.json();
-  console.log(quizData);
+  // console.log(quizData);
 
   /* localStorage.setItem(`category${quizCategory}`, JSON.stringify(quizData)); // spara data i lokal fil via webbläsaren
   const quiz = JSON.parse(localStorage.getItem(`category${quizCategory}`)); //hämta lokala filen
   console.log(quiz); */
 
-  let counter = 1;
-  for (let quiz of quizData) {
-    console.log(quiz);
-    question1.textContent = `Question ${counter} : ${quiz.question}`;
-    console.log(question1);
-    console.log(counter);
+  let counter = 0;
+
+  question1.textContent = `Question ${counter + 1} : ${quizData[counter].question}`;
+  countDown.addEventListener("click", function nextQuestion() {
     counter++;
-  }
-  console.log("Quiz frågor slut");
+
+    if (counter < quizData.length) {
+      question1.textContent = `Question ${counter + 1} : ${quizData[counter].question}`;
+    } else {
+      question1.textContent = "Quizet är slut!";
+    }
+  });
 
   //spara ner fil lokalt?
 }
@@ -27,3 +31,4 @@ async function getQuiz(quizCategory) {
 getQuiz("science");
 
 //importera variabel från homePage, vilken kategori på quiz som ska användas som argument i qetQuiz. fråga sebbe
+//läckt API? fråga GitGuardian
