@@ -11,45 +11,64 @@ async function getQuiz(quizCategory) {
   /* localStorage.setItem(`category${quizCategory}`, JSON.stringify(quizData)); // spara data i lokal fil via webbläsaren
   const quiz = JSON.parse(localStorage.getItem(`category${quizCategory}`)); //hämta lokala filen
   console.log(quiz); */
+  return quizData;
+}
 
-  let counter = 0;
   let answerCounter = 0;
 
-  question1.textContent = `Question ${counter + 1} : ${
-    quizData[counter].question
-  }`;
-  countDown.addEventListener("click", function nextQuestion() {
-    counter++;
+  function getQuestion (counter)  {
+  const quizData = getQuiz()
 
-    if (counter < quizData.length) {
-      question1.textContent = `Question ${counter + 1} : ${
-        quizData[counter].question
-      }`;
-      const newArray = [
-        { text: quizData[answerCounter].correctAnswer, isCorrect: true },
-        { text: quizData[answerCounter].incorrectAnswers[0], isCorrect: false },
+    let questionIndex = counter;
+    question1.textContent = `Question ${questionIndex + 1} : ${quizData[questionIndex].question}`;
+
+  if (questionIndex < quizData.length) {
+      console.log(quizData)
+      question1.textContent = `Question ${questionIndex + 1} : ${quizData[answerCounter].question}`;
+    getAnswers(questionIndex) 
+  }
+  else {
+      question1.textContent = "Quizet är slut!";
+      question1.textContent = "";
+    }
+}
+
+  getQuestion(0)
+
+  countDown.addEventListener("click", function nextQuestion() {
+    answers.classList.add("reloadColor")
+    counter++;
+    getQuestion(counter)
+  })
+  
+  
+    function getAnswers (questionIndex) {
+      let newArray = [
+        { text: quizData[questionIndex].correctAnswer, isCorrect: true },
+        { text: quizData[questionIndex].incorrectAnswers[0], isCorrect: false },
         { text: quizData[answerCounter].incorrectAnswers[1], isCorrect: false },
         { text: quizData[answerCounter].incorrectAnswers[2], isCorrect: false },
       ];
-      answerCounter++;
+     
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
-
-      answers.forEach((button) => {
+      const newButtons = document.querySelectorAll(".answerFormat");
+      newButtons.forEach((button, i) => {
         button.addEventListener("click", function () {
-          if (newArray.isCorrect){
+          if (newArray[i].isCorrect == true){
             button.style.backgroundColor = "green";
-          }
-        });
-      });
-    } else {
-      question1.textContent = "Quizet är slut!";
-    }
+          } 
+          if(newArray[i].isCorrect == false){
+            button.style.backgroundColor = "red";
+          }});
+       answerCounter++; 
   });
 
-  //spara ner fil lokalt?
 }
+
+
+  //spara ner fil lokalt?
 
 getQuiz("science");
 
