@@ -37,7 +37,11 @@ async function getQuiz(quizCategory) {
       });
 
       answers.forEach((button) => {
-        button.addEventListener("click", function () {});
+        button.addEventListener("click", function () {
+          if (newArray.isCorrect){
+            button.style.backgroundColor = "green";
+          }
+        });
       });
     } else {
       question1.textContent = "Quizet är slut!";
