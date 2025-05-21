@@ -1,70 +1,110 @@
 # DU3_projekt
-API
+
+> 💡 **Viktigt:** Alla `POST`-förfrågningar kräver att du skickar JSON i request-body.
+
+## 🧠 API Dokumentation – QuizApp
+
+Välkommen till backend-API:et för **QuizApp** – en plats där användare loggar in, svarar på quiz och klättrar på poängtavlan! Här nedan hittar du alla tillgängliga endpoints och hur du kommunicerar med dem.
+
 Endpoints:
-/login
-GET - förfrågningar till denna endpoint besvaras med status 200 och returnerar en array med alla användare.
 
-POST-förfrågning till denna endpointen måste ha en JSON-formaterad body:
+### 🔐 `/getUsers` KLAR
 
-Logga in:
-Beskrivning: Försöker logga in användare.
+#### ➕ `GET`
 
-{ 
-     username: string,
-     password: string
+Returnerar array med alla användare.
+
+**Svar:** `200 OK` – Returnerar en array med samtliga användare.
+
+---
+
+### 🔐 `/login` KLAR
+
+#### 🔑 `POST`
+
+Logga in en användare.
+
+**Body:**
+Json:
+{
+"username": "ditt_namn",
+"password": "ditt_lösenord"
 }
 
-Potentiella svar:
-200 - Användare finns i array, användarnamn och lösenord matchar. 
-400 - Användarnamn och lösenord matchar ej.
-409 - Användarnamnet finns ej i array.
+**Svar:**
 
-Skapa användare:
-Beskrivning: Skapar en ny användare.
+- `200 OK` – Inloggning lyckades! Användaren finns och lösenordet stämmer.
+- `400 Bad Request` – Användarnamn/lösenord matchar inte.
 
-{ 
-     username: string,
-     password: string
+### 🔐 `/createAccount`KLAR
+
+---
+
+#### ✨ `POST` –
+
+Skapa ny användare.
+**Body:**
+Json:
+{
+"username": "ditt_namn",
+"password": "ditt_lösenord"
 }
-Potentiella svar:
-200 - användarnamn finns ej i array, kommer läggas till i array
-400 - användarnamn eller lösenord saknas
-409 - användarnamn finns redan
 
-/homePage
-GET-förfrågningar till denna endpoint svarar med status 200 och hämtar alla användares poäng i fallande ordning.
+**Svar:**
 
-/homePage/Search?username=X
-Beskrivning: Söker efter en användare med angivet användarnamn.
+- `200 OK` – Användaren skapades!
+- `400 Bad Request` – Något saknas i inmatningens
 
-GET-förfrågning till denna endpoint svarar med status 200 och returnerar den användare som sökningen avser. 
-POST-förfrågning till denna endpoint svarar med status 200 och användaren sparas i en array. 
-Potentiella svar:
-200 - Användaren sparas i array
-409 - Användare finns ej 
-400 - Tomt sökfält 
+### 🏠 `/homePage` KLAR
 
+#### 🧾 `GET`
 
+Hämta alla användares poäng – sorterade i fallande ordning.
 
-/homePage/Search?quiz=X
-Beskrivning: 
+- **Svar:** `200 OK`
 
+---
 
-GET-förfrågning till denna endpoint svarar med status 200 och en returnerar de quiz som matchar sökningen.
-Potentiella svar:
-200 - De quiz som matchar sökningen returneras 
-400 - Inget quiz matchar sökningen
-409 - Tomt sökfält
+### ❓ `/homePage/Search?quiz=X` KLAR
 
+Returnerar de quiz som innehåller de bokstäverna som anges i input.
 
-/quizPage
-Beskrivning:
-Hämtar frågor och svar hos externt API.
-GET-förfrågning till denna endpoint svarar med status 200. 
-POST-förfrågning som sparar ner varje svar till en ny array.
+#### 🧠 `GET`
 
+- **Svar:**
+  - `200 OK` – Matchande quiz returneras.
+  - `400 Bad Request` – Inget quiz matchar sökningen.
+  - `409 Conflict` – Tomt sökfält.
 
-/quizPage/result
-Beskrivning: 
-Hämta scoreBoard 
-GET-förfrågningar till endpoint svarar med status 200. 
+---
+
+### 📄 `/quizPage`
+
+#### 🔄 `GET`
+
+Hämta bilder som omslag på divarna
+Detta gör med extern server
+
+- **Svar:** `200 OK`
+
+#### 📝 `POST`
+
+Spara användarens svar i en ny array.
+
+---
+
+### 🏆 `/quizPage/result`
+
+#### 📊 `GET`
+
+Hämta scoreboarden med användarnas resultat.
+
+- **Svar:** `200 OK`
+
+---
+
+### `/quizPage/music`` gör på extern server
+
+### `GET`
+
+### `POST`

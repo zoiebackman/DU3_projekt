@@ -1,0 +1,272 @@
+[
+    {
+      "category": "Film & TV",
+      "id": "622a1c347cc59eab6f94f8d9",
+      "correctAnswer": "Bruce Willis",
+      "incorrectAnswers": ["John Travolta", "Sean Penn", "Al Pacino"],
+      "question": "Which actor played the role of John McClane in Die Hard?",
+      "tags": ["acting", "film", "film_and_tv"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Science",
+      "id": "622a1c3a7cc59eab6f951081",
+      "correctAnswer": "Blue",
+      "incorrectAnswers": ["Yellow", "Purple", "Red"],
+      "question": "What Colour Is Sonic the Hedgehog?",
+      "tags": ["science"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Music",
+      "id": "622a1c357cc59eab6f94ff4b",
+      "correctAnswer": "Michael Jackson",
+      "incorrectAnswers": ["Nicki Minaj", "Neil Young", "Eric Clapton"],
+      "question": "Who released the iconic album 'Thriller'?",
+      "tags": ["1980's", "music"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Geography",
+      "id": "623b577dfd6c701a9211835f",
+      "correctAnswer": "Australia",
+      "incorrectAnswers": ["Ecuador", "Iraq", "Scotland"],
+      "question": "In which country would you find the Great Barrier Reef?",
+      "tags": ["tourist_attractions", "geography"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Geography",
+      "id": "625e9e85796f721e95543f5c",
+      "correctAnswer": "France",
+      "incorrectAnswers": ["Gabon", "Belgium", "Lithuania"],
+      "question": "Which of these countries has white on its flag?",
+      "tags": ["flags", "geography"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "History",
+      "id": "622a1c3c7cc59eab6f951a90",
+      "correctAnswer": "A Gladiator",
+      "incorrectAnswers": ["A Centurion", "A Dominus", "A Caesar"],
+      "question": "What was the name of someone who fought professionally in Roman arenas?",
+      "tags": ["history"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Geography",
+      "id": "6237404acb85f7ce9e949cef",
+      "correctAnswer": "Egypt",
+      "incorrectAnswers": ["Kuwait", "Taiwan", "Spain"],
+      "question": "Cairo is the capital city of which country?",
+      "tags": ["geography"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Music",
+      "id": "622a1c347cc59eab6f94fb93",
+      "correctAnswer": "\"September\" by Earth, Wind & Fire",
+      "incorrectAnswers": [
+        "\"Yo Home to Bel-Air\"",
+        "\"What I Got\" by Sublime",
+        "\"American Pie\" by Don McLean"
+      ],
+      "question": "Which song begins with the lyrics: \"Do you remember, the 21st night of September?\"?",
+      "tags": ["songs", "lyrics", "general_knowledge", "music"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Science",
+      "id": "6243347acfaae40c12961447",
+      "correctAnswer": "A Mare",
+      "incorrectAnswers": ["A Hen", "A Hembra", "A Jill"],
+      "question": "A female horse is known as what?",
+      "tags": ["science"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Film & TV",
+      "id": "625740ec9da29df7b05f7402",
+      "correctAnswer": "Jaws",
+      "incorrectAnswers": [
+        "The Silence of the Lambs",
+        "The Good, the Bad and the Ugly",
+        "Platoon"
+      ],
+      "question": "Name the movie that matches the following plot summary: 'A killer shark unleashes chaos on a beach community.'",
+      "tags": ["film", "film_and_tv"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Film & TV",
+      "id": "625740109da29df7b05f73c1",
+      "correctAnswer": "An NYPD officer tries to save his wife taken hostage by terrorists during a Christmas party.",
+      "incorrectAnswers": [
+        "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler.",
+        "The story of how the scandal of child molestation within the Boston Catholic church was uncovered.",
+        "A rat makes an unusual alliance with a young kitchen worker at a famous restaurant."
+      ],
+      "question": "What is the plot of the movie Die Hard?",
+      "tags": ["film", "film_and_tv"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Food & Drink",
+      "id": "622a1c367cc59eab6f950234",
+      "correctAnswer": "Ronald Mcdonald",
+      "incorrectAnswers": ["The King", "Donald Burger", "Meato"],
+      "question": "Who is McDonald's mascot?",
+      "tags": [
+        "business",
+        "advertising",
+        "fictitious_characters",
+        "food_and_drink"
+      ],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Food & Drink",
+      "id": "622a1c3b7cc59eab6f951627",
+      "correctAnswer": "Morocco ",
+      "incorrectAnswers": ["Italy", "France", "Brazil"],
+      "question": "A Tagine Is A Dish That Originated In Which Country?",
+      "tags": ["food", "food_and_drink"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Geography",
+      "id": "6233845062eaad73716a8bfe",
+      "correctAnswer": "Mount Fuji ",
+      "incorrectAnswers": ["Mount Fiji", "Mount Foji", "Mount Feji"],
+      "question": "What Is The Highest Mountain In Japan",
+      "tags": ["mountains", "japan", "geography"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Geography",
+      "id": "62602dab957e77cecfa4ec32",
+      "correctAnswer": "Mumbai",
+      "incorrectAnswers": ["Sydney", "Taipei", "Yokohama"],
+      "question": "Which of these cities is in India?",
+      "tags": ["cities", "asia", "india", "geography"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Music",
+      "id": "622a1c3d7cc59eab6f951c46",
+      "correctAnswer": "Just like the ones I used to know",
+      "incorrectAnswers": [
+        "Sharing kisses in the snow",
+        "We'll be going with the flow",
+        "Walking to your favourite show"
+      ],
+      "question": "Bing Crosby famously sang 'I'm dreaming of a white Christmas'', what is the next line?",
+      "tags": ["christmas", "lyrics", "general_knowledge"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Geography",
+      "id": "623b5848fd6c701a921183ac",
+      "correctAnswer": "Japan",
+      "incorrectAnswers": ["Indonesia", "China", "South Korea"],
+      "question": "In which country would you find Mount Fuji?",
+      "tags": ["geography"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Food & Drink",
+      "id": "622a1c3b7cc59eab6f9515e9",
+      "correctAnswer": "Kosher ",
+      "incorrectAnswers": ["Deli", "Vegan", "Halal"],
+      "question": "Food that is permitted to be eaten under Jewish dietary laws is known as what?",
+      "tags": ["food", "judaism", "religion", "words", "food_and_drink"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "History",
+      "id": "622a1c3c7cc59eab6f951919",
+      "correctAnswer": "Writing a diary about her hide from the Germans in WW2",
+      "incorrectAnswers": [
+        "Winning a nobel prize for her research into radioactivity",
+        "Being the first woman to be elected to a head of state position",
+        "Being the first woman in space"
+      ],
+      "question": "What was Anne Frank famous for?",
+      "tags": ["people", "history"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    },
+    {
+      "category": "Science",
+      "id": "622a1c3a7cc59eab6f951042",
+      "correctAnswer": "Big Bang",
+      "incorrectAnswers": [
+        "Eternal Inflation",
+        "Steady State",
+        "Oscillating Model"
+      ],
+      "question": "What is the most widely accepted theory for the creation of the universe?",
+      "tags": ["physics", "general_knowledge", "science"],
+      "type": "Multiple Choice",
+      "difficulty": "easy",
+      "regions": [],
+      "isNiche": false
+    }
+  ]
+  
