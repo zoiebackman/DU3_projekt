@@ -1,6 +1,7 @@
 const question1 = document.getElementById("question");
 const answers = document.querySelectorAll(".answerFormat");
 const countDown = document.getElementById("countDown");
+const imageContainer = document.getElementById("imageContainer");
 
 async function getQuiz(quizCategory) {
   const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`;
@@ -31,7 +32,7 @@ async function getQuiz(quizCategory) {
     button.addEventListener("click", function () {
       if (newArray[i].isCorrect === true) {
         button.style.backgroundColor = "green";
-        counter++;
+
         scoreCounter++;
         setTimeout(() => {
           counter++;
@@ -40,7 +41,7 @@ async function getQuiz(quizCategory) {
       }
       if (newArray[i].isCorrect === false) {
         button.style.backgroundColor = "red";
-        counter++;
+
         setTimeout(() => {
           counter++;
           nextQuestion();
@@ -94,6 +95,7 @@ async function getQuiz(quizCategory) {
       answers.forEach((button) => {
         button.textContent = "";
         button.style.backgroundColor = "#5bb0ac00";
+        imageContainer.textContent = `Du fick ${scoreCounter} rätt av 8 möjliga`;
       });
     }
   }
