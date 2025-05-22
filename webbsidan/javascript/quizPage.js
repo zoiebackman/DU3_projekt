@@ -6,68 +6,98 @@ async function getQuiz(quizCategory) {
   const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`;
   const response = await fetch(request);
   const quizData = await response.json();
-  // console.log(quizData);
 
-  /* localStorage.setItem(`category${quizCategory}`, JSON.stringify(quizData)); // spara data i lokal fil via webbläsaren
-  const quiz = JSON.parse(localStorage.getItem(`category${quizCategory}`)); //hämta lokala filen
-  console.log(quiz); */
-  return quizData;
-}
+  let counter = 0;
+  let scoreCounter = 0;
 
-  let answerCounter = 0;
+  question1.textContent = `Question ${counter + 1} : ${
+    quizData[counter].question
+  }`;
+  console.log(quizData);
+  const newArray = [
+    { text: quizData[counter].correctAnswer, isCorrect: true },
+    { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
+    { text: quizData[counter].incorrectAnswers[1], isCorrect: false },
+    { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
+  ];
 
-  function getQuestion (counter)  {
-  const quizData = getQuiz()
+  newArray.sort(() => Math.random() - 0.5);
 
-    let questionIndex = counter;
-    question1.textContent = `Question ${questionIndex + 1} : ${quizData[questionIndex].question}`;
+  answers.forEach((button, i) => {
+    button.textContent = newArray[i].text;
+  });
 
-  if (questionIndex < quizData.length) {
-      console.log(quizData)
-      question1.textContent = `Question ${questionIndex + 1} : ${quizData[answerCounter].question}`;
-    getAnswers(questionIndex) 
-  }
-  else {
-      question1.textContent = "Quizet är slut!";
-      question1.textContent = "";
-    }
-}
+  answers.forEach((button, i) => {
+    button.addEventListener("click", function () {
+      if (newArray[i].isCorrect === true) {
+        button.style.backgroundColor = "green";
+        counter++;
+        scoreCounter++;
+        setTimeout(() => {
+          counter++;
+          nextQuestion();
+        }, 1000);
+      }
+      if (newArray[i].isCorrect === false) {
+        button.style.backgroundColor = "red";
+        counter++;
+        setTimeout(() => {
+          counter++;
+          nextQuestion();
+        }, 1000);
+      }
+    });
+  });
 
-  getQuestion(0)
+  function nextQuestion() {
+    if (counter < quizData.length) {
+      answers.forEach((button) => {
+        button.style.backgroundColor = "";
+      });
 
-  countDown.addEventListener("click", function nextQuestion() {
-    answers.classList.add("reloadColor")
-    counter++;
-    getQuestion(counter)
-  })
-  
-  
-    function getAnswers (questionIndex) {
-      let newArray = [
-        { text: quizData[questionIndex].correctAnswer, isCorrect: true },
-        { text: quizData[questionIndex].incorrectAnswers[0], isCorrect: false },
-        { text: quizData[answerCounter].incorrectAnswers[1], isCorrect: false },
-        { text: quizData[answerCounter].incorrectAnswers[2], isCorrect: false },
+      question1.textContent = `Question ${counter + 1} : ${
+        quizData[counter].question
+      }`;
+
+      const newArray = [
+        { text: quizData[counter].correctAnswer, isCorrect: true },
+        { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
+        { text: quizData[counter].incorrectAnswers[1], isCorrect: false },
+        { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
-     
+
+      newArray.sort(() => Math.random() - 0.5);
+
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
-      const newButtons = document.querySelectorAll(".answerFormat");
-      newButtons.forEach((button, i) => {
+
+      answers.forEach((button, i) => {
         button.addEventListener("click", function () {
-          if (newArray[i].isCorrect == true){
+          if (newArray[i].isCorrect === true) {
             button.style.backgroundColor = "green";
-          } 
-          if(newArray[i].isCorrect == false){
+            scoreCounter++;
+            setTimeout(() => {
+              counter++;
+            }, 1000);
+          }
+          if (newArray[i].isCorrect === false) {
             button.style.backgroundColor = "red";
-          }});
-       answerCounter++; 
-  });
-
+            setTimeout(() => {
+              counter++;
+            }, 1000);
+          }
+        });
+      });
+    } else {
+      question1.textContent = "Quizet är slut!";
+      answers.forEach((button, i) => {
+        button.textContent = "";
+        button.style.backgroundColor = "#5bb0ac00";
+      });
+    }
+  }
 }
-
-  //spara ner fil lokalt?
 
 getQuiz("science");
 
