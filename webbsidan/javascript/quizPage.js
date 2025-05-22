@@ -1,5 +1,5 @@
 const question1 = document.getElementById("question");
-const answers = document.querySelectorAll(".answerFormat");
+const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
 const imageContainer = document.getElementById("imageContainer");
 
@@ -10,7 +10,7 @@ async function getQuiz(quizCategory) {
 
   let counter = 0;
   let scoreCounter = 0;
-
+  /* 
   question1.textContent = `Question ${counter + 1} : ${
     quizData[counter].question
   }`;
@@ -48,9 +48,17 @@ async function getQuiz(quizCategory) {
         }, 500);
       }
     });
-  });
+  }); */
+  nextQuestion();
 
   function nextQuestion() {
+    answersBox.innerHTML = `
+    <div class="answerFormat" id="answer1"></div>
+    <div class="answerFormat" id="answer2"></div>
+    <div class="answerFormat" id="answer3"></div>
+    <div class="answerFormat" id="answer4"></div>
+    `;
+    const answers = document.querySelectorAll(".answerFormat");
     if (counter < quizData.length) {
       answers.forEach((button) => {
         button.style.backgroundColor = "";
@@ -75,27 +83,30 @@ async function getQuiz(quizCategory) {
 
       answers.forEach((button, i) => {
         button.addEventListener("click", function () {
+          counter++;
           if (newArray[i].isCorrect === true) {
             button.style.backgroundColor = "green";
             scoreCounter++;
             setTimeout(() => {
-              counter++;
+              //counter++;
+              nextQuestion();
             }, 500);
           }
           if (newArray[i].isCorrect === false) {
             button.style.backgroundColor = "red";
             setTimeout(() => {
-              counter++;
+              //counter++;
+              nextQuestion();
             }, 500);
           }
         });
       });
     } else {
       question1.textContent = "Quizet är slut!";
+      imageContainer.textContent = `Du fick ${scoreCounter} rätt av 8 möjliga`;
       answers.forEach((button) => {
         button.textContent = "";
         button.style.backgroundColor = "#5bb0ac00";
-        imageContainer.textContent = `Du fick ${scoreCounter} rätt av 8 möjliga`;
       });
     }
   }
