@@ -67,7 +67,6 @@ async function getQuiz(quizCategory) {
 
 }
 
-
   //spara ner fil lokalt?
 
 getQuiz("science");
