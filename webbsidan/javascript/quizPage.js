@@ -7,6 +7,7 @@ async function getQuiz(quizCategory) {
   const response = await fetch(request);
   const quizData = await response.json();
 
+
   let counter = 0;
   let scoreCounter = 0;
 
@@ -97,7 +98,11 @@ async function getQuiz(quizCategory) {
       });
     }
   }
+
 }
+
+
+  //spara ner fil lokalt?
 
 getQuiz("science");
 

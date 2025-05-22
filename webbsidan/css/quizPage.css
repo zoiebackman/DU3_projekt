@@ -20,6 +20,9 @@ header {
   align-items: center;
   gap: 160px;
 }
+.reloadColor {
+    background-color: beige;
+}
 #countDown {
   box-shadow: 7px 8px 48px 0px rgba(0, 0, 0, 0.63);
   display: flex;
