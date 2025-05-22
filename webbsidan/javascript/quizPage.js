@@ -36,7 +36,7 @@ async function getQuiz(quizCategory) {
         setTimeout(() => {
           counter++;
           nextQuestion();
-        }, 1000);
+        }, 500);
       }
       if (newArray[i].isCorrect === false) {
         button.style.backgroundColor = "red";
@@ -44,7 +44,7 @@ async function getQuiz(quizCategory) {
         setTimeout(() => {
           counter++;
           nextQuestion();
-        }, 1000);
+        }, 500);
       }
     });
   });
@@ -79,19 +79,19 @@ async function getQuiz(quizCategory) {
             scoreCounter++;
             setTimeout(() => {
               counter++;
-            }, 1000);
+            }, 500);
           }
           if (newArray[i].isCorrect === false) {
             button.style.backgroundColor = "red";
             setTimeout(() => {
               counter++;
-            }, 1000);
+            }, 500);
           }
         });
       });
     } else {
       question1.textContent = "Quizet är slut!";
-      answers.forEach((button, i) => {
+      answers.forEach((button) => {
         button.textContent = "";
         button.style.backgroundColor = "#5bb0ac00";
       });
