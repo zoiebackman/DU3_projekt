@@ -55,14 +55,8 @@ async function getQuiz(quizCategory) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
-      answers.forEach((button) => {
-        button.style.backgroundColor = "";
-      });
-
-      question1.textContent = `Question ${counter + 1} : ${
-        quizData[counter].question
-      }`;
-
+      question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
+        }`;
       const newArray = [
         { text: quizData[counter].correctAnswer, isCorrect: true },
         { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
@@ -70,31 +64,13 @@ async function getQuiz(quizCategory) {
         { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
 
-      newArray.sort(() => Math.random() - 0.5);
-
+      answerCounter++;
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
 
-      answers.forEach((button, i) => {
-        button.addEventListener("click", function () {
-          counter++;
-          if (newArray[i].isCorrect === true) {
-            button.style.backgroundColor = "green";
-            scoreCounter++;
-            setTimeout(() => {
-              //counter++;
-              nextQuestion();
-            }, 500);
-          }
-          if (newArray[i].isCorrect === false) {
-            button.style.backgroundColor = "red";
-            setTimeout(() => {
-              //counter++;
-              nextQuestion();
-            }, 500);
-          }
-        });
+      answers.forEach((button) => {
+        button.addEventListener("click", function () { });
       });
     } else {
       const button = document.createElement("button");
