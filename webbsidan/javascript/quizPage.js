@@ -68,8 +68,25 @@ async function getQuiz(quizCategory) {
         button.textContent = newArray[i].text;
       });
 
-      answers.forEach((button) => {
-        button.addEventListener("click", function () { });
+      answers.forEach((button, i) => {
+        button.addEventListener("click", function () {
+          counter++;
+          if (newArray[i].isCorrect === true) {
+            button.style.backgroundColor = "green";
+            scoreCounter++;
+            setTimeout(() => {
+              //counter++;
+              nextQuestion();
+            }, 500);
+          }
+          if (newArray[i].isCorrect === false) {
+            button.style.backgroundColor = "red";
+            setTimeout(() => {
+              //counter++;
+              nextQuestion();
+            }, 500);
+          }
+        });
       });
     } else {
       const button = document.createElement("button");
