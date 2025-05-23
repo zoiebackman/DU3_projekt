@@ -5,7 +5,7 @@ const clickHereCreateButton = document.getElementById("clickHere");
 loginButton.addEventListener("click", function () {
   const userNameInput = document.getElementById("loginUserNameInput");
   const passwordInput = document.getElementById("loginPasswordInput");
-  let activeUser;
+
   fetch("http://0.0.0.0:8000/login", {
     method: "POST",
     body: JSON.stringify({
@@ -23,8 +23,8 @@ loginButton.addEventListener("click", function () {
       }
     })
     .then((resource) => {
-      activeUser = resource;
-      localStorage.setItem("activeUser", activeUser);
+      let activeUser = resource;
+      localStorage.setItem("activeUser", JSON.stringify(activeUser));
       window.location.href = "homePage.html";
     });
 });
