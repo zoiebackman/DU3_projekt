@@ -7,6 +7,9 @@ if (!category) {
   window.location.href = "homePage.html";
 }
 
+const activeUser = localStorage.getItem("activeUser");
+console.log(activeUser);
+
 const question1 = document.getElementById("question");
 const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
@@ -74,6 +77,8 @@ async function getQuiz(quizCategory) {
         { text: quizData[counter].incorrectAnswers[1], isCorrect: false },
         { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
+
+      newArray.sort(() => Math.random() - 0.5);
 
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
