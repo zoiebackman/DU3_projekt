@@ -15,13 +15,14 @@ async function getQuiz(quizCategory) {
     const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
     const options = {
       headers: {
-        Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
+        Authorization:
+          "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
       },
     };
     const response = await fetch(request, options);
     const images = await response.json();
     console.log(images);
-  
+
     quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
   }
   getImage();
@@ -55,8 +56,9 @@ async function getQuiz(quizCategory) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
-      question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
-        }`;
+      question1.textContent = `Question ${counter + 1} : ${
+        quizData[counter].question
+      }`;
       const newArray = [
         { text: quizData[counter].correctAnswer, isCorrect: true },
         { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
@@ -64,16 +66,17 @@ async function getQuiz(quizCategory) {
         { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
 
-      answerCounter++;
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
 
       answers.forEach((button) => {
-        button.addEventListener("click", function () { 
+        button.addEventListener("click", function () {
           
         });
       });
+
+
     } else {
       const button = document.createElement("button");
       button.classList.add("endbutton");
