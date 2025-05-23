@@ -21,7 +21,7 @@ async function getQuiz(quizCategory) {
     const response = await fetch(request, options);
     const images = await response.json();
     console.log(images);
-  
+
     quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
   }
   getImage();
@@ -64,7 +64,6 @@ async function getQuiz(quizCategory) {
         { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
 
-      answerCounter++;
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
@@ -96,7 +95,7 @@ async function getQuiz(quizCategory) {
         button.style.backgroundColor = "#5bb0ac00";
       });
     }
-  })
+  }
 }
 
 getQuiz("science");
