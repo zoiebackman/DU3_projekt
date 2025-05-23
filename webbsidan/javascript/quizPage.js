@@ -11,10 +11,48 @@ async function getQuiz(quizCategory) {
   let counter = 0;
   let scoreCounter = 0;
 
-  question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
-    }`;
-  countDown.addEventListener("click", function nextQuestion() {
-    counter++;
+  async function getImage(quizCategory) {
+    const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
+    const options = {
+      headers: {
+        Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
+      },
+    };
+    const response = await fetch(request, options);
+    const images = await response.json();
+    console.log(images);
+  
+    quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
+  }
+  getImage();
+
+  nextQuestion();
+
+  function nextQuestion() {
+    let seconds = 21;
+    countDown.textContent = 21;
+    function countDownSeconds() {
+      if (countDown.textContent == seconds) {
+        seconds--;
+        countDown.textContent = String(seconds);
+        setTimeout(() => {
+          countDownSeconds();
+        }, 1000);
+      }
+      if (countDown.textContent <= 0) {
+        counter++;
+        nextQuestion();
+      }
+    }
+    countDownSeconds();
+
+    answersBox.innerHTML = `
+    <div class="answerFormat" id="answer1"></div>
+    <div class="answerFormat" id="answer2"></div>
+    <div class="answerFormat" id="answer3"></div>
+    <div class="answerFormat" id="answer4"></div>
+    `;
+    const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
       question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
