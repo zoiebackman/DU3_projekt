@@ -15,29 +15,28 @@ async function getQuiz(quizCategory) {
   let counter = 0;
   let answerCounter = 0;
 
-  question1.textContent = `Question ${counter + 1} : ${
-    quizData[counter].question
-  }`;
+  question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
+    }`;
   countDown.addEventListener("click", function nextQuestion() {
     counter++;
 
     if (counter < quizData.length) {
-      question1.textContent = `Question ${counter + 1} : ${
-        quizData[counter].question
-      }`;
+      question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
+        }`;
       const newArray = [
         { text: quizData[answerCounter].correctAnswer, isCorrect: true },
         { text: quizData[answerCounter].incorrectAnswers[0], isCorrect: false },
         { text: quizData[answerCounter].incorrectAnswers[1], isCorrect: false },
         { text: quizData[answerCounter].incorrectAnswers[2], isCorrect: false },
       ];
+
       answerCounter++;
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
 
       answers.forEach((button) => {
-        button.addEventListener("click", function () {});
+        button.addEventListener("click", function () { });
       });
     } else {
       question1.textContent = "Quizet är slut!";
