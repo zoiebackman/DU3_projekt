@@ -120,7 +120,7 @@ async function getQuiz(quizCategory) {
       imageContainer.appendChild(button);
 
       button.addEventListener("click", function () {
-        window.location.href = "HomePage.html";
+        window.location.href = "homePage.html";
       });
 
       answers.forEach((button) => {
