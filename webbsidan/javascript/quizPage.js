@@ -11,7 +11,7 @@ async function getQuiz(quizCategory) {
   let counter = 0;
   let scoreCounter = 0;
 
-  async function getImage(quizCategory) {
+  /*   async function getImage(quizCategory) {
     const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
     const options = {
       headers: {
@@ -24,7 +24,7 @@ async function getQuiz(quizCategory) {
   
     quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
   }
-  getImage();
+  getImage(); */
 
   nextQuestion();
 
@@ -55,8 +55,9 @@ async function getQuiz(quizCategory) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
-      question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
-        }`;
+      question1.textContent = `Question ${counter + 1} : ${
+        quizData[counter].question
+      }`;
       const newArray = [
         { text: quizData[counter].correctAnswer, isCorrect: true },
         { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
@@ -70,7 +71,7 @@ async function getQuiz(quizCategory) {
       });
 
       answers.forEach((button) => {
-        button.addEventListener("click", function () { });
+        button.addEventListener("click", function () {});
       });
     } else {
       const button = document.createElement("button");
