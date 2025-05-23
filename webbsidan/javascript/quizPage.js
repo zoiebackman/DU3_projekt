@@ -1,3 +1,5 @@
+const category = localStorage.getItem("quizCategory"); // ← Hämta kategori
+console.log(category);
 const question1 = document.getElementById("question");
 const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
@@ -89,7 +91,6 @@ async function getQuiz(quizCategory) {
             }, 500);
           }
         });
-
       });
     } else {
       const button = document.createElement("button");
@@ -118,7 +119,7 @@ async function getQuiz(quizCategory) {
   }
 }
 
-getQuiz("science");
+getQuiz(category);
 
 //importera variabel från homePage, vilken kategori på quiz som ska användas som argument i qetQuiz. fråga sebbe
 //läckt API? fråga GitGuardian

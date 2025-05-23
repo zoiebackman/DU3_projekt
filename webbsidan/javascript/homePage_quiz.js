@@ -14,11 +14,13 @@ signOutButton.addEventListener("click", function () {
     window.location.href = "homePage.html";
   });
 });
+
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
 quizButtons.forEach((button) => {
   button.addEventListener("click", function () {
     const quizCategory = button.textContent.trim();
+    localStorage.setItem("quizCategory", quizCategory);
     quizContainer.innerHTML = "";
     getImage(quizCategory);
   });
