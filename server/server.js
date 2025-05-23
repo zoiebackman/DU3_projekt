@@ -159,6 +159,24 @@ async function handler(request) {
       });
     }
   }
+  if (request.method == "PUT") {
+    const userFile = "user.json";
+    const user = Deno.readTextFileSync(userFile);
+    const userArray = JSON.parse(user);
+    const activeUser = await request.json();
+    for (let i = 0; i < userArray.length; i++) {
+      if (userArray[i].username == activeUser.username) {
+        userArray.splice([i], 1);
+        userArray.push(activeUser);
+      }
+      Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
+      return new Response (
+        JSON.stringify({message: "Score updated"},
+          {status: 200, headers:headersCORS}
+        )
+      )
+    }
+  }
 
   return new Response(JSON.stringify({ error: "Not Found" }), {
     status: 404,
