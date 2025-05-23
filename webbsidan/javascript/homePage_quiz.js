@@ -1,5 +1,6 @@
 const quizContainer = document.getElementById("mainContainer");
 const signOutButton = document.getElementById("signOut");
+const topScore = document.getElementById("topScore");
 //Hantering av att logga ut
 signOutButton.addEventListener("click", function () {
   const popUpBox = document.getElementById("popUpSignOut");
@@ -47,6 +48,23 @@ async function getImage(quizCategory) {
   });
 }
 
-// getQuiz()
-// hämta alla användare i ordning på score
+async function getTopUsers() {
+  const request = `http://localhost:8000/quizPage/result`;
+  const response = await fetch(request);
+  const users = await response.json();
 
+  for (let user of users) {
+    const div = document.createElement("div");
+    const p1 = document.createElement("p");
+    const p2 = document.createElement("p");
+    p1.textContent = user.username;
+    p2.textContent = user.score;
+
+    div.classList.add("topPlayers");
+    div.appendChild(p1);
+    div.appendChild(p2);
+    topScore.appendChild(div);
+  }
+}
+
+getTopUsers();

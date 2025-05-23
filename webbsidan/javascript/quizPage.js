@@ -1,19 +1,15 @@
 const question1 = document.getElementById("question");
-const answers = document.querySelectorAll(".answerFormat");
+const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
+const imageContainer = document.getElementById("imageContainer");
 
 async function getQuiz(quizCategory) {
   const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`;
   const response = await fetch(request);
   const quizData = await response.json();
-  // console.log(quizData);
-
-  /* localStorage.setItem(`category${quizCategory}`, JSON.stringify(quizData)); // spara data i lokal fil via webbläsaren
-  const quiz = JSON.parse(localStorage.getItem(`category${quizCategory}`)); //hämta lokala filen
-  console.log(quiz); */
 
   let counter = 0;
-  let answerCounter = 0;
+  let scoreCounter = 0;
 
   question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
     }`;
@@ -24,10 +20,10 @@ async function getQuiz(quizCategory) {
       question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
         }`;
       const newArray = [
-        { text: quizData[answerCounter].correctAnswer, isCorrect: true },
-        { text: quizData[answerCounter].incorrectAnswers[0], isCorrect: false },
-        { text: quizData[answerCounter].incorrectAnswers[1], isCorrect: false },
-        { text: quizData[answerCounter].incorrectAnswers[2], isCorrect: false },
+        { text: quizData[counter].correctAnswer, isCorrect: true },
+        { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
+        { text: quizData[counter].incorrectAnswers[1], isCorrect: false },
+        { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
 
       answerCounter++;
@@ -39,11 +35,30 @@ async function getQuiz(quizCategory) {
         button.addEventListener("click", function () { });
       });
     } else {
-      question1.textContent = "Quizet är slut!";
-    }
-  });
+      const button = document.createElement("button");
+      button.classList.add("endbutton");
+      button.textContent = "Back to start";
+      question1.textContent = "Quiz is done!";
+      const finalText = document.createElement("div");
+      finalText.textContent = `You scored ${scoreCounter} out of 8`;
+      finalText.classList.add("finalText");
+      imageContainer.style.display = "flex";
+      imageContainer.style.flexDirection = "column";
+      imageContainer.style.justifyContent = "center";
+      imageContainer.style.alignItems = "center";
+      imageContainer.appendChild(finalText);
+      imageContainer.appendChild(button);
 
-  //spara ner fil lokalt?
+      button.addEventListener("click", function () {
+        window.location.href = "HomePage.html";
+      });
+
+      answers.forEach((button) => {
+        button.textContent = "";
+        button.style.backgroundColor = "#5bb0ac00";
+      });
+    }
+  }
 }
 
 getQuiz("science");
