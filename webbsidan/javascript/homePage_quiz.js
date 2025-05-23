@@ -14,13 +14,12 @@ signOutButton.addEventListener("click", function () {
     window.location.href = "homePage.html";
   });
 });
-
+let quizCategory;
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
 quizButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    const quizCategory = button.textContent.trim();
-    localStorage.setItem("quizCategory", quizCategory);
+    quizCategory = button.textContent.trim();
     quizContainer.innerHTML = "";
     getImage(quizCategory);
   });
@@ -46,7 +45,9 @@ async function getImage(quizCategory) {
   quizContainer.appendChild(startQuizButton);
 
   startQuizButton.addEventListener("click", function () {
-    window.location.href = "quizPage.html";
+    window.location.href = `quizPage.html?category=${encodeURIComponent(
+      quizCategory
+    )}`;
   });
 }
 

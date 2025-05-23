@@ -1,5 +1,12 @@
-const category = localStorage.getItem("quizCategory"); // ← Hämta kategori
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get("category");
 console.log(category);
+
+if (!category) {
+  alert("Ingen kategori vald. Du måste välja en kategori på startsidan först.");
+  window.location.href = "homePage.html";
+}
+
 const question1 = document.getElementById("question");
 const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
