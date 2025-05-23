@@ -159,6 +159,7 @@ async function handler(request) {
       });
     }
   }
+  console.log("Hej")
   if (request.method == "PUT") {
     const userFile = "user.json";
     const user = Deno.readTextFileSync(userFile);
