@@ -15,13 +15,14 @@ async function getQuiz(quizCategory) {
     const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
     const options = {
       headers: {
-        Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
+        Authorization:
+          "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
       },
     };
     const response = await fetch(request, options);
     const images = await response.json();
     console.log(images);
-  
+
     quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
   }
   getImage(); */
@@ -65,13 +66,30 @@ async function getQuiz(quizCategory) {
         { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
 
-      answerCounter++;
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
 
-      answers.forEach((button) => {
-        button.addEventListener("click", function () {});
+      answers.forEach((button, i) => {
+        button.addEventListener("click", function () {
+          counter++;
+          if (newArray[i].isCorrect === true) {
+            button.style.backgroundColor = "green";
+            scoreCounter++;
+            setTimeout(() => {
+              //counter++;
+              nextQuestion();
+            }, 500);
+          }
+          if (newArray[i].isCorrect === false) {
+            button.style.backgroundColor = "red";
+            setTimeout(() => {
+              //counter++;
+              nextQuestion();
+            }, 500);
+          }
+        });
+
       });
     } else {
       const button = document.createElement("button");
