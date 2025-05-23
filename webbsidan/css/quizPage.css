@@ -21,7 +21,7 @@ header {
   gap: 160px;
 }
 .reloadColor {
-    background-color: beige;
+  background-color: beige;
 }
 #countDown {
   box-shadow: 7px 8px 48px 0px rgba(0, 0, 0, 0.63);
@@ -43,6 +43,19 @@ header {
   background-color: beige;
   margin-right: 280px;
   border-radius: 5px;
+}
+
+.finalText {
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  margin: 30px;
+}
+
+.endbutton {
+  width: 250px;
+  height: 50px;
 }
 
 footer {
@@ -76,7 +89,7 @@ footer {
 }
 
 #question {
-  font-size: 25px;
+  font-size: 20px;
   font-family: arial;
   color: black;
   text-align: center;

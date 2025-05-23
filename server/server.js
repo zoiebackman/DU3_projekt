@@ -83,7 +83,9 @@ async function handler(request) {
         return b.score - a.score;
       });
 
-      return new Response(JSON.stringify(highScoreArray), {
+      const topFiveHighScoreArray = highScoreArray.slice(0, 5);
+
+      return new Response(JSON.stringify(topFiveHighScoreArray), {
         status: 200,
         headers: headersCORS,
       });
