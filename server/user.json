@@ -7,7 +7,7 @@
   { "username": "Lea", "password": "Häst123", "score": 0 },
   { "username": "a", "password": "1", "score": 0 },
   { "username": "häst", "password": "123", "score": 0 },
-  { "username": "Moakarlssonns", "password": "sol123", "score": 0 },
+  { "username": "Moakarlssonns", "password": "sol123", "score": 200000 },
   { "username": "zoie", "password": "1", "score": 0 },
   { "username": "sås", "password": "123", "score": 10000 },
   { "username": "lasse", "password": "1", "score": 450 }
