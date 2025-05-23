@@ -3,15 +3,17 @@ const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
 const imageContainer = document.getElementById("imageContainer");
 
+
 async function getQuiz(quizCategory) {
   const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`;
   const response = await fetch(request);
   const quizData = await response.json();
+  let images;
 
   let counter = 0;
   let scoreCounter = 0;
 
-  async function getImage(quizCategory) {
+  async function getImages(quizCategory) {
     const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
     const options = {
       headers: {
@@ -20,12 +22,20 @@ async function getQuiz(quizCategory) {
       },
     };
     const response = await fetch(request, options);
-    const images = await response.json();
+    images = await response.json();
     console.log(images);
-
-    quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
   }
-  getImage();
+  console.log(images)
+
+  await getImages(quizCategory);   /// vänta in objektet med bilder, anropa sedan
+
+  function questionImages(indexOfImage) {
+    imageContainer.innerHTML = `<img src=${images.photos[indexOfImage].src.medium} width="500" height="300" style="object-fit:contain;">`;
+    imageContainer.style.display = "flex";
+    imageContainer.style.justifyContent = "center";
+    imageContainer.style.alignItems = "center";
+    console.log(images)
+  }
 
   nextQuestion();
 
@@ -43,6 +53,7 @@ async function getQuiz(quizCategory) {
       if (countDown.textContent <= 0) {
         counter++;
         nextQuestion();
+
       }
     }
     countDownSeconds();
@@ -56,6 +67,9 @@ async function getQuiz(quizCategory) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
+
+      questionImages(counter) //skickar med countern till funktionen för att ta ut bild av index
+
       question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
         }`;
       const newArray = [
@@ -91,6 +105,7 @@ async function getQuiz(quizCategory) {
 
       });
     } else {
+      imageContainer.innerHTML = "" //ta bort bilden till sista scoreSidan
       const button = document.createElement("button");
       button.classList.add("endbutton");
       button.textContent = "Back to start";
@@ -98,8 +113,8 @@ async function getQuiz(quizCategory) {
       const finalText = document.createElement("div");
       finalText.textContent = `You scored ${scoreCounter} out of 8`;
       finalText.classList.add("finalText");
-      imageContainer.style.display = "flex";
       imageContainer.style.flexDirection = "column";
+      imageContainer.style.display = "flex";
       imageContainer.style.justifyContent = "center";
       imageContainer.style.alignItems = "center";
       imageContainer.appendChild(finalText);
