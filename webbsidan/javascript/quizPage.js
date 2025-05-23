@@ -15,7 +15,8 @@ async function getQuiz(quizCategory) {
     const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
     const options = {
       headers: {
-        Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
+        Authorization:
+          "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
       },
     };
     const response = await fetch(request, options);
@@ -87,6 +88,7 @@ async function getQuiz(quizCategory) {
             }, 500);
           }
         });
+
       });
     } else {
       const button = document.createElement("button");
