@@ -13,14 +13,18 @@ loginButton.addEventListener("click", function () {
       password: passwordInput.value,
     }),
     headers: { "Content-Type": "application/json" },
-  }).then((response) => {
-    if (response.status == 400) {
-      alert("wrong password or username");
-      return;
-    } else {
+  })
+    .then((response) => {
+      if (response.status == 400) {
+        alert("wrong password or username");
+        return;
+      } else {
+        return response.json();
+      }
+    })
+    .then((resource) => {
+      activeUser = resource;
       localStorage.setItem("activeUser", activeUser);
       window.location.href = "homePage.html";
-      return;
-    }
-  });
+    });
 });
