@@ -101,18 +101,20 @@ async function handler(request) {
 
       const userAccount = await request.json();
       let userFound = false;
+      let rightUser;
 
       for (let user of userArray) {
         if (
           user.username == userAccount.username &&
           user.password == userAccount.password
         ) {
+          rightUser = user;
           userFound = true;
           break;
         }
       }
       if (userFound) {
-        return new Response(JSON.stringify({ message: "Login successful!" }), {
+        return new Response(JSON.stringify(rightUser), {
           status: 200,
           headers: headersCORS,
         });
