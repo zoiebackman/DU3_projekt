@@ -75,6 +75,8 @@ async function getQuiz(quizCategory) {
         { text: quizData[counter].incorrectAnswers[2], isCorrect: false },
       ];
 
+      newArray.sort(() => Math.random() - 0.5);
+
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
