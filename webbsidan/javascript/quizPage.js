@@ -58,7 +58,7 @@ async function getQuiz(quizCategory) {
         button.style.backgroundColor = "#5bb0ac00";
       });
     }
-  }
+  })
 }
 
 getQuiz("science");
