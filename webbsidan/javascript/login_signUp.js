@@ -24,7 +24,11 @@ loginButton.addEventListener("click", function () {
     })
     .then((resource) => {
       let activeUser = resource;
+      console.log("Login response:", resource);
       localStorage.setItem("activeUser", JSON.stringify(activeUser));
-      window.location.href = "homePage.html";
+      setTimeout(() => {
+        window.location.href = "homePage.html";
+      }, 10000);
+     
     });
 });
