@@ -7,6 +7,9 @@ if (!category) {
   window.location.href = "homePage.html";
 }
 
+const activeUser = localStorage.getItem("activeUser");
+console.log(activeUser);
+
 const question1 = document.getElementById("question");
 const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
