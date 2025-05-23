@@ -45,6 +45,18 @@ async function getImage(quizCategory) {
   quizContainer.appendChild(startQuizButton);
 
   startQuizButton.addEventListener("click", function () {
+    if (quizCategory == "Food & Drink") {
+      quizCategory = "food_and_drink";
+      window.location.href = `quizPage.html?category=${encodeURIComponent(
+        quizCategory
+      )}`;
+    }
+    if (quizCategory == "Film & Tv") {
+      quizCategory = "film_and_tv";
+      window.location.href = `quizPage.html?category=${encodeURIComponent(
+        quizCategory
+      )}`;
+    }
     window.location.href = `quizPage.html?category=${encodeURIComponent(
       quizCategory
     )}`;
