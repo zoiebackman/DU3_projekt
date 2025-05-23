@@ -71,12 +71,8 @@ async function getQuiz(quizCategory) {
       });
 
       answers.forEach((button) => {
-        button.addEventListener("click", function () {
-          
-        });
+        button.addEventListener("click", function () {});
       });
-
-
     } else {
       const button = document.createElement("button");
       button.classList.add("endbutton");
