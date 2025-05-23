@@ -11,6 +11,21 @@ async function getQuiz(quizCategory) {
   let counter = 0;
   let scoreCounter = 0;
 
+  async function getImage(quizCategory) {
+    const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
+    const options = {
+      headers: {
+        Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
+      },
+    };
+    const response = await fetch(request, options);
+    const images = await response.json();
+    console.log(images);
+  
+    quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
+  }
+  getImage();
+
   nextQuestion();
 
   function nextQuestion() {
