@@ -27,7 +27,7 @@ quizButtons.forEach((button) => {
 
 //Fetch till externt API gällande att hämta bilder
 async function getImage(quizCategory) {
-  const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
+  const request = `https://api.pexels.com/v1/search?query=${encodeURIComponent(quizCategory)}&per_page=9`;
   const options = {
     headers: {
       Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
@@ -47,15 +47,9 @@ async function getImage(quizCategory) {
   startQuizButton.addEventListener("click", function () {
     if (quizCategory == "Food & Drink") {
       quizCategory = "food_and_drink";
-      window.location.href = `quizPage.html?category=${encodeURIComponent(
-        quizCategory
-      )}`;
     }
     if (quizCategory == "Film & Tv") {
       quizCategory = "film_and_tv";
-      window.location.href = `quizPage.html?category=${encodeURIComponent(
-        quizCategory
-      )}`;
     }
     window.location.href = `quizPage.html?category=${encodeURIComponent(
       quizCategory

@@ -36,16 +36,18 @@ async function getQuiz(quizCategory) {
     images = await response.json();
     console.log(images);
   }
-  console.log(images);
 
-  await getImages(quizCategory); /// vänta in objektet med bilder, anropa sedan
+  await getImages(quizCategory);
+  console.log()
+  /// vänta in objektet med bilder, anropa sedan
 
   function questionImages(indexOfImage) {
+    console.log(images);
     imageContainer.innerHTML = `<img src=${images.photos[indexOfImage].src.medium} width="500" height="300" style="object-fit:contain;">`;
     imageContainer.style.display = "flex";
     imageContainer.style.justifyContent = "center";
     imageContainer.style.alignItems = "center";
-    console.log(images);
+
   }
 
   nextQuestion();
@@ -79,9 +81,8 @@ async function getQuiz(quizCategory) {
     if (counter < quizData.length) {
       questionImages(counter); //skickar med countern till funktionen för att ta ut bild av index
 
-      question1.textContent = `Question ${counter + 1} : ${
-        quizData[counter].question
-      }`;
+      question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
+        }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
