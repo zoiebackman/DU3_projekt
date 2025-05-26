@@ -95,6 +95,36 @@ async function driver_6() {
   createDiv(response, testText);
 }
 
+async function driver_8 () {
+  const request = new Request("http://localhost:8000/currentUser");
+  const response = await fetch(request)
+  const testText = "Test 8: Hämta inloggade användare";
+  createDiv(response, testText);
+}
+async function driver_9() {
+  const user = { username: "Lea", password: "Häst123", score: 30, logedIn: true  };
+  const request = new Request("http://localhost:8000/logOut",{
+    method: "PUT",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(user)
+  });
+  const response = await fetch(request)
+  const testText = "Test 9: Logga ut användare";
+  createDiv(response, testText);
+}
+async function driver_10() {
+  const user = { username: "Lea", password: "Häst123", score: 60, logedIn: true  };
+  const request = new Request("http://localhost:8000/updatedScore",{
+    method: "PUT",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(user)
+  });
+  const response = await fetch(request)
+  const testText = "Test 10: Uppdaterad poäng för användare";
+  createDiv(response, testText);
+}
+
+  
 //Driver som returnerar array av alla användare.
 async function driver_Users() {
   const request = new Request("http://localhost:8000/getUsers");
@@ -145,6 +175,9 @@ async function driverHandler() {
   await driver_4();
   await driver_5();
   await driver_6();
+  await driver_8()
+  await driver_9();
+  await driver_10();
   await driver_Users();
   
   //await getPicture();
