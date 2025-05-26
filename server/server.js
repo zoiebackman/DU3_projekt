@@ -1,4 +1,4 @@
-class CreateUser {
+class User {
   constructor(username, password) {
     this.username = username;
     this.password = password;
@@ -164,7 +164,7 @@ async function handler(request) {
         );
       }
 
-      let newUser = new CreateUser(
+      let newUser = new User(
         newUserAccount.username,
         newUserAccount.password
       );
