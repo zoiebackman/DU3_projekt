@@ -1,13 +1,6 @@
 const quizContainer = document.getElementById("mainContainer");
 const signOutButton = document.getElementById("signOut");
 const topScore = document.getElementById("topScore");
-const activeUser = JSON.parse(localStorage.getItem("activeUser"));
-console.log(activeUser);
-
-if (activeUser) {
-  const userNameDiv = document.getElementById("myUserName");
-  userNameDiv.textContent = `${activeUser.username}`;
-}
 
 //Hantering av att logga ut
 signOutButton.addEventListener("click", function () {
@@ -23,6 +16,7 @@ signOutButton.addEventListener("click", function () {
   });
 });
 let quizCategory;
+
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
 quizButtons.forEach((button) => {
