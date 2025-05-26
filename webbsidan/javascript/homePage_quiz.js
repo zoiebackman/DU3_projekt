@@ -16,9 +16,8 @@ async function getLoggedInUser() {
   const resource = await response.json();
 
   console.log(resource);
-  if (resource.username) {
-    userNameDiv.textContent = resource.username;
-  }
+
+  userNameDiv.textContent = resource.username;
 }
 
 getLoggedInUser();
