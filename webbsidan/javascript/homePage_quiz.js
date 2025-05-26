@@ -1,6 +1,7 @@
 const quizContainer = document.getElementById("mainContainer");
 const signOutButton = document.getElementById("signOut");
 const topScore = document.getElementById("topScore");
+const userNameDiv = document.getElementById("myUserName");
 //Hantering av att logga ut
 signOutButton.addEventListener("click", function () {
   const popUpBox = document.getElementById("popUpSignOut");
@@ -14,6 +15,18 @@ signOutButton.addEventListener("click", function () {
     window.location.href = "homePage.html";
   });
 });
+async function getLoggedInUser() {
+  const request = new Request("http://localhost:8000/currentUser");
+  const response = await fetch(request);
+  const resource = await response.json();
+  console.log(resource)
+  if (resource.username) {
+    userNameDiv.textContent = resource.username
+  }
+}
+getLoggedInUser();
+
+
 let quizCategory;
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
