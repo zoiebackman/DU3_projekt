@@ -240,7 +240,6 @@ async function handler(request) {
       headers: headersCORS,
     });
   }
-
   return new Response(JSON.stringify({ error: "Not Found" }), {
     status: 404,
     headers: headersCORS,
