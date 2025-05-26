@@ -1,3 +1,12 @@
+class CreateUser {
+  constructor(username, password) {
+    this.username = username;
+    this.password = password;
+    this.score = 0;
+    this.logedIn = false;
+  }
+}
+
 async function handler(request) {
   const url = new URL(request.url);
 
@@ -101,17 +110,21 @@ async function handler(request) {
 
       const userAccount = await request.json();
       let userFound = false;
+      let rightUser;
 
       for (let user of userArray) {
         if (
           user.username == userAccount.username &&
           user.password == userAccount.password
         ) {
+          rightUser = user;
           userFound = true;
+          user.logedIn = true;
           break;
         }
       }
       if (userFound) {
+        Deno.writeTextFileSync(userFile, JSON.stringify(userArray, null, 2));
         return new Response(JSON.stringify({ message: "Login successful!" }), {
           status: 200,
           headers: headersCORS,
@@ -123,7 +136,6 @@ async function handler(request) {
         );
       }
     }
-
     // Skapa Konto
     if (url.pathname == "/createAccount") {
       const userFile = "user.json";
@@ -149,8 +161,12 @@ async function handler(request) {
         );
       }
 
-      newUserAccount.score = 0;
-      userArray.push(newUserAccount);
+      let newUser = new CreateUser(
+        newUserAccount.username,
+        newUserAccount.password
+      );
+
+      userArray.push(newUser);
 
       Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
       return new Response(JSON.stringify("account added!"), {
@@ -159,7 +175,71 @@ async function handler(request) {
       });
     }
   }
+  console.log("Hej");
+  if (request.method == "PUT") {
+    if (url.pathnamen == "/updatedScore") {
+      const userFile = "user.json";
+      const user = Deno.readTextFileSync(userFile);
+      const userArray = JSON.parse(user);
+      const activeUser = await request.json();
+      for (let i = 0; i < userArray.length; i++) {
+        if (userArray[i].username == activeUser.username) {
+          userArray.splice([i], 1);
+          userArray.push(activeUser);
+        }
+      }
+      Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
+      return new Response(
+        JSON.stringify(
+          { message: "Score updated" },
+          { status: 200, headers: headersCORS }
+        )
+      );
+    }
 
+    if (url.pathname == "/logOut") {
+      const userFile = "user.json";
+      const user = Deno.readTextFileSync(userFile);
+      const userArray = JSON.parse(user);
+      const logoutUser = await request.json();
+
+      for (let user of userArray) {
+        if (user.username == logoutUser.username) {
+          user.logedIn = false;
+          Deno.writeTextFileSync(userFile, JSON.stringify(userArray, null, 2));
+          return new Response(
+            JSON.stringify({ message: "Logout successful" }),
+            {
+              status: 200,
+              headers: headersCORS,
+            }
+          );
+        }
+      }
+      return new Response(JSON.stringify({ error: "User not logged in" }), {
+        status: 400,
+        headers: headersCORS,
+      });
+    }
+  }
+
+  if (request.method == "GET" && url.pathname == "/currentUser") {
+    const userFile = "user.json";
+    const user = Deno.readTextFileSync(userFile);
+    const userArray = JSON.parse(user);
+    for (let user of userArray) {
+      if (user.logedIn === true) {
+        return new Response(JSON.stringify({ user}), {
+          status: 200,
+          headers: headersCORS,
+        });
+      }
+    }
+    return new Response(JSON.stringify({ error: "No user logged in" }), {
+      status: 404,
+      headers: headersCORS,
+    });
+  }
   return new Response(JSON.stringify({ error: "Not Found" }), {
     status: 404,
     headers: headersCORS,
