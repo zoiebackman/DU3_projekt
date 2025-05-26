@@ -164,10 +164,7 @@ async function handler(request) {
         );
       }
 
-      let newUser = new User(
-        newUserAccount.username,
-        newUserAccount.password
-      );
+      let newUser = new User(newUserAccount.username, newUserAccount.password);
 
       userArray.push(newUser);
 
