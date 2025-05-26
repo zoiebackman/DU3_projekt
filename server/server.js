@@ -184,6 +184,24 @@ async function handler(request) {
     }
   }
 
+  if (request.method == "GET" && url.pathname == "/currentUser") {
+    const userFile = "user.json";
+    const user = Deno.readTextFileSync(userFile);
+    const userArray = JSON.parse(user);
+    for (let user of userArray) {
+      if (user.logedIn === true) {
+        return new Response(JSON.stringify({ username: user.username }), {
+          status: 200,
+          headers: headersCORS,
+        });
+      }
+    }
+    return new Response(JSON.stringify({ error: "No user logged in" }), {
+      status: 404,
+      headers: headersCORS,
+    });
+  }
+
   return new Response(JSON.stringify({ error: "Not Found" }), {
     status: 404,
     headers: headersCORS,
