@@ -19,16 +19,8 @@ loginButton.addEventListener("click", function () {
         alert("wrong password or username");
         return;
       } else {
-        return response.json();
+        window.location.href = "homePage.html";
+        return;
       }
     })
-    .then((resource) => {
-      let activeUser = resource;
-      console.log("Login response:", resource);
-      localStorage.setItem("activeUser", JSON.stringify(activeUser));
-      setTimeout(() => {
-        window.location.href = "homePage.html";
-      }, 10000);
-     
-    });
 });

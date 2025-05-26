@@ -11,6 +11,15 @@ signOutButton.addEventListener("click", function () {
   const noButton = document.getElementById("noButton");
   popUpBox.style.display = "block";
   yesButton.addEventListener("click", function () {
+    async function activeUser() {
+      const response = await fetch("https://localhost:8000/logOut", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+      });
+      const resource = await response.json();
+      return resource;
+    }
+    activeUser();
     window.location.href = "logInPage.html";
   });
   noButton.addEventListener("click", function () {
