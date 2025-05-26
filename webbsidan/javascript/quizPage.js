@@ -24,18 +24,16 @@ async function getQuiz(quizCategory) {
   let counter = 0;
   let scoreCounter = 0;
 
-  async function getImages(quizCategory) {
-    const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
-    const options = {
-      headers: {
-        Authorization:
-          "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
-      },
-    };
-    const response = await fetch(request, options);
-    images = await response.json();
-    console.log(images);
-  }
+  const request3 = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
+  const options = {
+    headers: {
+      Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
+    },
+  };
+  const response3 = await fetch(request3, options);
+  images = await response3.json();
+  console.log(images);
+
   console.log(images);
 
   await getImages(quizCategory); /// vänta in objektet med bilder, anropa sedan
