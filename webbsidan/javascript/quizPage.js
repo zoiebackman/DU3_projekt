@@ -88,9 +88,9 @@ async function getQuiz(quizCategory, categoryImage) {
     if (counter < quizData.length) {
       questionImages(counter); //skickar med countern till funktionen för att ta ut bild av index
 
-      question1.textContent = Question ${counter + 1} : ${
+      question1.textContent = `Question ${counter + 1} : ${
         quizData[counter].question
-      };
+      };`
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },

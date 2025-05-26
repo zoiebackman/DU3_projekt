@@ -1,67 +1,37 @@
 [
   {
-    "username": "pelle_boi",
-    "password": "fotboll123",
-    "score": 10
+    "username": "Moka02001",
+    "password": "Bella123",
+    "score": 0,
+    "logedIn": false
   },
   {
-    "username": "pell",
-    "password": "fotboll",
-    "score": 70
+    "username": "Moka02021",
+    "password": "Bella123",
+    "score": 90,
+    "logedIn": false
   },
   {
-    "username": "pelle",
-    "password": "fotboll",
-    "score": 0
-  },
-  {
-    "username": "pel",
-    "password": "fotboll",
-    "score": 0
-  },
-  {
-    "username": "pellee",
-    "password": "fotboll123",
-    "score": 500
-  },
-  {
-    "username": "Lea",
-    "password": "Häst123",
-    "score": 0
-  },
-  {
-    "username": "a",
-    "password": "1",
-    "score": 0
-  },
-  {
-    "username": "häst",
-    "password": "123",
-    "score": 0
-  },
-  {
-    "username": "Moakarlssonns",
-    "password": "sol123",
-    "score": 200000
-  },
-  {
-    "username": "zoie",
-    "password": "1",
-    "score": 0
+    "username": "Moka02031",
+    "password": "Bella123",
+    "score": 100,
+    "logedIn": false
   },
   {
     "username": "sås",
     "password": "123",
-    "score": 10000
+    "score": 0,
+    "logedIn": false
   },
   {
-    "username": "lasse",
-    "password": "1",
-    "score": 450
+    "username": "pelle_boi",
+    "password": "korv",
+    "score": 0,
+    "logedIn": false
   },
   {
-    "username": "Moka02001",
-    "password": "Bella123",
+    "username": "kingen",
+    "password": "30",
     "score": 0,
     "logedIn": true
   }
