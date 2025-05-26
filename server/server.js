@@ -229,7 +229,7 @@ async function handler(request) {
     const userArray = JSON.parse(user);
     for (let user of userArray) {
       if (user.logedIn === true) {
-        return new Response(JSON.stringify({ user}), {
+        return new Response(JSON.stringify({ user }), {
           status: 200,
           headers: headersCORS,
         });

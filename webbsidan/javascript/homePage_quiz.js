@@ -17,7 +17,7 @@ async function getLoggedInUser() {
 
   console.log(resource);
 
-  userNameDiv.textContent = resource.username;
+  userNameDiv.textContent = resource.user.username;
 }
 
 getLoggedInUser();
