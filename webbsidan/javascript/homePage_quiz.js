@@ -14,33 +14,40 @@ async function getLoggedInUser() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
   const resource = await response.json();
-  const activeUser = resource;
+
   console.log(resource);
-  if (activeUser.username) {
-    userNameDiv.textContent = activeUser.username;
+  if (resource.username) {
+    userNameDiv.textContent = resource.username;
+  }
+}
+
+getLoggedInUser();
+
+signOutButton.addEventListener("click", function () {
+  async function activeUser() {
+    const request = new Request("http://localhost:8000/currentUser");
+    const response = await fetch(request);
+    const resource = await response.json();
   }
 
-  signOutButton.addEventListener("click", function () {
-    popUpBox.style.display = "block";
-    yesButton.addEventListener("click", function () {
-      async function activeUser() {
-        const response = await fetch("https://localhost:8000/logOut", {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: activeUser,
-        });
-        const resource = await response.json();
-        return resource;
-      }
-      activeUser();
-      window.location.href = "logInPage.html";
-    });
-    noButton.addEventListener("click", function () {
-      window.location.href = "homePage.html";
-    });
+  popUpBox.style.display = "block";
+  yesButton.addEventListener("click", function () {
+    async function activeUser() {
+      const response = await fetch("https://localhost:8000/logOut", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: activeUser,
+      });
+      const resource = await response.json();
+      return resource;
+    }
+    activeUser();
+    window.location.href = "logInPage.html";
   });
-}
-getLoggedInUser();
+  noButton.addEventListener("click", function () {
+    window.location.href = "homePage.html";
+  });
+});
 
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
