@@ -90,7 +90,7 @@ async function getQuiz(quizCategory, categoryImage) {
 
       question1.textContent = `Question ${counter + 1} : ${
         quizData[counter].question
-      };`
+      };`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
@@ -114,14 +114,17 @@ async function getQuiz(quizCategory, categoryImage) {
             setTimeout(() => {
               //counter++;
               nextQuestion();
-            }, 500);
+            }, 1000);
           }
           if (newArray[i].isCorrect === false) {
             button.style.backgroundColor = "red";
+            if (newArray[i].isCorrect === true) {
+              button.style.backgroundColor = "green";
+            }
             setTimeout(() => {
               //counter++;
               nextQuestion();
-            }, 500);
+            }, 1000);
           }
         });
       });

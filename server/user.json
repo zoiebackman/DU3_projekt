@@ -39,6 +39,6 @@
     "username": "Hej",
     "password": "123",
     "score": 0,
-    "logedIn": true
+    "logedIn": false
   }
 ]
