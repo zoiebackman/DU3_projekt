@@ -23,18 +23,20 @@ async function getQuiz(quizCategory) {
 
   let counter = 0;
   let scoreCounter = 0;
-
-  const request1 = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
-  const options = {
-    headers: {
-      Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
-    },
-  };
-  const response1 = await fetch(request1, options);
-  images = await response1.json();
+  async function getImages(quizCategory) {
+    const request1 = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
+    const options = {
+      headers: {
+        Authorization:
+          "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
+      },
+    };
+    const response1 = await fetch(request1, options);
+    images = await response1.json();
+    console.log(images);
+  }
   console.log(images);
-
-  console.log(images);
+  await getImages(quizCategory); /// vänta in objektet med bilder, anropa sedan
 
   function questionImages(indexOfImage) {
     imageContainer.innerHTML = `<img src=${images.photos[indexOfImage].src.medium} width="500" height="300" style="object-fit:contain;">`;
