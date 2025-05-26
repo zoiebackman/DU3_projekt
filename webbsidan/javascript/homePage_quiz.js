@@ -44,7 +44,7 @@ async function getImage(quizCategory) {
   quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
 
   const startQuizButton = document.createElement("div");
-  startQuizButton.textContent = Start ${quizCategory} Quiz;
+  startQuizButton.textContent = `Start ${quizCategory} Quiz`;
   startQuizButton.id = "startQuizButton";
   quizContainer.appendChild(startQuizButton);
 
