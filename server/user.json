@@ -45,6 +45,6 @@
     "username": "rat",
     "password": "rat",
     "score": 0,
-    "logedIn": false
+    "logedIn": true
   }
 ]
