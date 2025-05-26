@@ -29,7 +29,6 @@ createAccountButton.addEventListener("click", function () {
             return alert("Empty field!")
         }
 
-
         if (response.status === 200) {
             alert("User created!")
             window.location.href = "logInPage.html";

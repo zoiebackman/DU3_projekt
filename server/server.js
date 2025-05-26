@@ -101,12 +101,14 @@ async function handler(request) {
 
       const userAccount = await request.json();
       let userFound = false;
+      let rightUser;
 
       for (let user of userArray) {
         if (
           user.username == userAccount.username &&
           user.password == userAccount.password
         ) {
+          rightUser = user;
           userFound = true;
           user.logedIn = true;
           break;
@@ -160,6 +162,25 @@ async function handler(request) {
         status: 200,
         headers: headersCORS,
       });
+    }
+  }
+  console.log("Hej")
+  if (request.method == "PUT") {
+    const userFile = "user.json";
+    const user = Deno.readTextFileSync(userFile);
+    const userArray = JSON.parse(user);
+    const activeUser = await request.json();
+    for (let i = 0; i < userArray.length; i++) {
+      if (userArray[i].username == activeUser.username) {
+        userArray.splice([i], 1);
+        userArray.push(activeUser);
+      }
+      Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
+      return new Response (
+        JSON.stringify({message: "Score updated"},
+          {status: 200, headers:headersCORS}
+        )
+      )
     }
   }
 
