@@ -118,9 +118,11 @@ async function getQuiz(quizCategory, categoryImage) {
           }
           if (newArray[i].isCorrect === false) {
             button.style.backgroundColor = "red";
-            if (newArray[i].isCorrect === true) {
-              button.style.backgroundColor = "green";
-            }
+            answers.forEach((button, index) => {
+              if (newArray[index].isCorrect) {
+                button.style.backgroundColor = "green";
+              }
+            });
             setTimeout(() => {
               //counter++;
               nextQuestion();
