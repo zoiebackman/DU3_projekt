@@ -52,8 +52,7 @@ async function getImage(quizCategory) {
     if (quizCategory == "Food & Drink") {
       quizCategory = "food_and_drink";
       window.location.href = quizPage.html?category=${encodeURIComponent(
-        quizCategory
-      )};
+        quizCategory)};
     }
     if (quizCategory == "Film & Tv") {
       quizCategory = "film_and_tv";
@@ -61,9 +60,7 @@ async function getImage(quizCategory) {
         quizCategory
       )};
     }
-    window.location.href = quizPage.html?category=${encodeURIComponent(
-      quizCategory
-    )};
+    window.location.href = `quizPage.html?category=${encodeURIComponent(quizCategory)}`;
   });
 }
 
