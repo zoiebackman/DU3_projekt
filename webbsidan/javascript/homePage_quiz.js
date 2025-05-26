@@ -1,6 +1,7 @@
 const quizContainer = document.getElementById("mainContainer");
 const signOutButton = document.getElementById("signOut");
 const topScore = document.getElementById("topScore");
+let quizCategory;
 
 //Hantering av att logga ut
 signOutButton.addEventListener("click", function () {
@@ -15,7 +16,6 @@ signOutButton.addEventListener("click", function () {
     window.location.href = "homePage.html";
   });
 });
-let quizCategory;
 
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
@@ -29,7 +29,9 @@ quizButtons.forEach((button) => {
 
 //Fetch till externt API gällande att hämta bilder
 async function getImage(quizCategory) {
-  const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
+  const request = `https://api.pexels.com/v1/search?query=${encodeURIComponent(
+    quizCategory
+  )}&per_page=9`;
   const options = {
     headers: {
       Authorization: "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",

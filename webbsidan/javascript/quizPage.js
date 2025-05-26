@@ -1,6 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
 console.log(category);
+let categoryImage = category;
+if (category == "food_and_drink") {
+  categoryImage = "Food & Drink";
+}
+if (category == "film_and_tv") {
+  categoryImage = "Film & tv";
+}
 
 if (!category) {
   alert("Ingen kategori vald. Du måste välja en kategori på startsidan först.");
@@ -15,16 +22,20 @@ const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
 const imageContainer = document.getElementById("imageContainer");
 
-async function getQuiz(quizCategory) {
-  const request = `https://the-trivia-api.com/api/questions?categories=${quizCategory}&limit=8&region=SE&difficulty=easy`;
+async function getQuiz(quizCategory, categoryImage) {
+  const request = `https://the-trivia-api.com/api/questions?categories=${encodeURIComponent(
+    quizCategory
+  )}&limit=8&region=SE&difficulty=easy`;
   const response = await fetch(request);
   const quizData = await response.json();
   let images;
 
   let counter = 0;
   let scoreCounter = 0;
-  async function getImages(quizCategory) {
-    const request1 = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
+  async function getImages(categoryImage) {
+    const request1 = `https://api.pexels.com/v1/search?query=${encodeURIComponent(
+      categoryImage
+    )}&per_page=9`;
     const options = {
       headers: {
         Authorization:
@@ -36,7 +47,7 @@ async function getQuiz(quizCategory) {
     console.log(images);
   }
   console.log(images);
-  await getImages(quizCategory); /// vänta in objektet med bilder, anropa sedan
+  await getImages(categoryImage); /// vänta in objektet med bilder, anropa sedan
 
   function questionImages(indexOfImage) {
     imageContainer.innerHTML = `<img src=${images.photos[indexOfImage].src.medium} width="500" height="300" style="object-fit:contain;">`;
@@ -142,7 +153,7 @@ async function getQuiz(quizCategory) {
   }
 }
 
-getQuiz(category);
+getQuiz(category, categoryImage);
 
 //importera variabel från homePage, vilken kategori på quiz som ska användas som argument i qetQuiz. fråga sebbe
 //läckt API? fråga GitGuardian
