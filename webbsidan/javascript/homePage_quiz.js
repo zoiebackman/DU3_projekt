@@ -28,7 +28,9 @@ signOutButton.addEventListener("click", function () {
     const request = new Request("http://localhost:8000/currentUser");
     const response = await fetch(request);
     const resource = await response.json();
+    return resource;
   }
+  let activeUser1 = activeUser();
 
   popUpBox.style.display = "block";
   yesButton.addEventListener("click", function () {
@@ -36,7 +38,7 @@ signOutButton.addEventListener("click", function () {
       const response = await fetch("https://localhost:8000/logOut", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: activeUser,
+        body: activeUser1,
       });
       const resource = await response.json();
       return resource;
