@@ -108,10 +108,12 @@ async function handler(request) {
           user.password == userAccount.password
         ) {
           userFound = true;
+          user.logedIn = true;
           break;
         }
       }
       if (userFound) {
+        Deno.writeTextFileSync(userFile, JSON.stringify(userArray, null, 2));
         return new Response(JSON.stringify({ message: "Login successful!" }), {
           status: 200,
           headers: headersCORS,
@@ -150,6 +152,7 @@ async function handler(request) {
       }
 
       newUserAccount.score = 0;
+      newUserAccount.logedIn = false;
       userArray.push(newUserAccount);
 
       Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
