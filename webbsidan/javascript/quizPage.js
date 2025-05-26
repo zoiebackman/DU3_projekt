@@ -2,6 +2,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
 console.log(category);
 
+if (category == "food_and_drink") {
+  const imageCategory = "Food & Drink"
+}
+
 if (!category) {
   alert("Ingen kategori vald. Du måste välja en kategori på startsidan först.");
   window.location.href = "homePage.html";
@@ -25,6 +29,7 @@ async function getQuiz(quizCategory) {
   let scoreCounter = 0;
 
   async function getImages(quizCategory) {
+
     const request = `https://api.pexels.com/v1/search?query=${quizCategory}&per_page=9`;
     const options = {
       headers: {
@@ -36,10 +41,9 @@ async function getQuiz(quizCategory) {
     images = await response.json();
     console.log(images);
   }
+  console.log(images);
 
-  await getImages(quizCategory);
-  console.log()
-  /// vänta in objektet med bilder, anropa sedan
+  await getImages(quizCategory); /// vänta in objektet med bilder, anropa sedan
 
   function questionImages(indexOfImage) {
     console.log(images);
