@@ -21,13 +21,12 @@ async function getLoggedInUser() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
   const resource = await response.json();
-  console.log(resource)
+  console.log(resource);
   if (resource.username) {
-    userNameDiv.textContent = resource.username
+    userNameDiv.textContent = resource.username;
   }
 }
 getLoggedInUser();
-
 
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
@@ -63,16 +62,19 @@ async function getImage(quizCategory) {
   startQuizButton.addEventListener("click", function () {
     if (quizCategory == "Food & Drink") {
       quizCategory = "food_and_drink";
-      window.location.href = quizPage.html?category=${encodeURIComponent(
-        quizCategory)};
+      window.location.href = `quizPage.html?category=${encodeURIComponent(
+        quizCategory
+      )} `;
     }
     if (quizCategory == "Film & Tv") {
       quizCategory = "film_and_tv";
-      window.location.href = quizPage.html?category=${encodeURIComponent(
+      window.location.href = `quizPage.html?category=${encodeURIComponent(
         quizCategory
-      )};
+      )}`;
     }
-    window.location.href = `quizPage.html?category=${encodeURIComponent(quizCategory)}`;
+    window.location.href = `quizPage.html?category=${encodeURIComponent(
+      quizCategory
+    )}`;
   });
 }
 
