@@ -29,8 +29,6 @@ async function getLoggedInUser() {
 getLoggedInUser();
 
 
-let quizCategory;
-
 //Hantering av quiz-knapparna
 const quizButtons = document.querySelectorAll(".quizButton");
 quizButtons.forEach((button) => {
