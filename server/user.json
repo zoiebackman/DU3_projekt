@@ -33,11 +33,17 @@
     "username": "kingen",
     "password": "30",
     "score": 0,
-    "logedIn": true
+    "logedIn": false
   },
   {
     "username": "Hej",
     "password": "123",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "king",
+    "password": "1",
     "score": 0,
     "logedIn": false
   }
