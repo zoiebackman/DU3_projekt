@@ -155,4 +155,15 @@ async function getQuiz(quizCategory, categoryImage) {
   }
 }
 
+<<<<<<< Updated upstream
 getQuiz(category, categoryImage);
+=======
+getQuiz("science");
+
+
+
+//skapa en klass med constructor
+//quizfråga
+//quizsvar
+//quizbild
+>>>>>>> Stashed changes
