@@ -177,7 +177,7 @@ async function handler(request) {
   }
   console.log("Hej");
   if (request.method == "PUT") {
-    if (url.pathnamen == "/updatedScore") {
+    if (url.pathname == "/updatedScore") {
       const userFile = "user.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
