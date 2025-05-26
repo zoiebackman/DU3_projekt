@@ -2,38 +2,43 @@ const quizContainer = document.getElementById("mainContainer");
 const signOutButton = document.getElementById("signOut");
 const topScore = document.getElementById("topScore");
 const userNameDiv = document.getElementById("myUserName");
+
+const popUpBox = document.getElementById("popUpSignOut");
+const yesButton = document.getElementById("yesButton");
+const noButton = document.getElementById("noButton");
+
 let quizCategory;
 
 //Hantering av att logga ut
-signOutButton.addEventListener("click", function () {
-  const popUpBox = document.getElementById("popUpSignOut");
-  const yesButton = document.getElementById("yesButton");
-  const noButton = document.getElementById("noButton");
-  popUpBox.style.display = "block";
-  yesButton.addEventListener("click", function () {
-    async function activeUser() {
-      const response = await fetch("https://localhost:8000/logOut", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-      });
-      const resource = await response.json();
-      return resource;
-    }
-    activeUser();
-    window.location.href = "logInPage.html";
-  });
-  noButton.addEventListener("click", function () {
-    window.location.href = "homePage.html";
-  });
-});
 async function getLoggedInUser() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
   const resource = await response.json();
+  const activeUser = resource;
   console.log(resource);
   if (resource.username) {
-    userNameDiv.textContent = resource.username;
+    userNameDiv.textContent = activeUser.username;
   }
+
+  signOutButton.addEventListener("click", function () {
+    popUpBox.style.display = "block";
+    yesButton.addEventListener("click", function () {
+      async function activeUser() {
+        const response = await fetch("https://localhost:8000/logOut", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: activeUser,
+        });
+        const resource = await response.json();
+        return resource;
+      }
+      activeUser();
+      window.location.href = "logInPage.html";
+    });
+    noButton.addEventListener("click", function () {
+      window.location.href = "homePage.html";
+    });
+  });
 }
 getLoggedInUser();
 
