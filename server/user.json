@@ -33,7 +33,7 @@
     "username": "kingen",
     "password": "30",
     "score": 0,
-    "logedIn": true
+    "logedIn": false
   },
   {
     "username": "Hej",
@@ -52,5 +52,11 @@
     "password": "Häst123",
     "score": 60,
     "logedIn": false
+  },
+  {
+    "username": "hej",
+    "password": "1",
+    "score": 0,
+    "logedIn": true
   }
 ]

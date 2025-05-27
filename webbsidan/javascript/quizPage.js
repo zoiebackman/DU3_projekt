@@ -1,4 +1,6 @@
 import { showFinalScore } from "./modules/showFinalScore.js";
+import { ShowQuestionImage } from "./modules/imageManager.js";
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
@@ -53,13 +55,7 @@ async function getQuiz(quizCategory, categoryImage) {
   console.log(images);
   await getImages(categoryImage); /// vänta in objektet med bilder, anropa sedan
 
-  function questionImages(indexOfImage) {
-    imageContainer.innerHTML = `<img src=${images.photos[indexOfImage].src.medium} width="500" height="300" style="object-fit:contain;">`;
-    imageContainer.style.display = "flex";
-    imageContainer.style.justifyContent = "center";
-    imageContainer.style.alignItems = "center";
-    console.log(images);
-  }
+  const imageContainer = document.getElementById("imageContainer");
 
   nextQuestion();
 
@@ -90,7 +86,9 @@ async function getQuiz(quizCategory, categoryImage) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
-      questionImages(counter); //skickar med countern till funktionen för att ta ut bild av index
+      // Använd funktionen när du behöver visa bilden:
+      const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
+      pic.styleImage(counter)
 
       question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
         }`;
@@ -148,30 +146,3 @@ async function getQuiz(quizCategory, categoryImage) {
 }
 
 getQuiz(category, categoryImage);
-
-/////// redigerar
-
-// class Question {
-//   constructor(question, answers, image) {
-//     this.question = question
-//     this.answers = answers
-//     this.image = image
-//   }
-// }
-
-
-//skapa en klass med constructor
-//vi skickar med object "categori?"
-//quizfråga ()
-//quizsvar
-//quizbild
-
-// const questionObjects = quizData.map((indexOfImage, item) => {
-//   const imageUrl = images.photos[indexOfImage].src.medium
-//   new Question(
-//     item.question,
-//     item.correctAnswer,
-//     item.incorrectAnswers,
-//     imageUrl
-//   )
-// })
