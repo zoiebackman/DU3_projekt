@@ -1,3 +1,5 @@
+import { showFinalScore } from "./modules/showFinalScore.js";
+
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
 console.log(category);
@@ -28,10 +30,12 @@ async function getQuiz(quizCategory, categoryImage) {
   )}&limit=8&region=SE&difficulty=easy`;
   const response = await fetch(request);
   const quizData = await response.json();
-  let images;
+  console.log(quizData)
 
+  let images;
   let counter = 0;
   let scoreCounter = 0;
+
   async function getImages(categoryImage) {
     const request1 = `https://api.pexels.com/v1/search?query=${encodeURIComponent(
       categoryImage
@@ -88,11 +92,9 @@ async function getQuiz(quizCategory, categoryImage) {
     if (counter < quizData.length) {
       questionImages(counter); //skickar med countern till funktionen för att ta ut bild av index
 
-      question1.textContent = `Question ${counter + 1} : ${
-        quizData[counter].question
-      };`;
-      const newArray = [
-        //döpa om?
+      question1.textContent = `Question ${counter + 1} : ${quizData[counter].question
+        }`;
+      const newArray = [ //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
         { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
         { text: quizData[counter].incorrectAnswers[1], isCorrect: false },
@@ -131,20 +133,7 @@ async function getQuiz(quizCategory, categoryImage) {
         });
       });
     } else {
-      imageContainer.innerHTML = ""; //ta bort bilden till sista scoreSidan
-      const button = document.createElement("button");
-      button.classList.add("endbutton");
-      button.textContent = "Back to start";
-      question1.textContent = "Quiz is done!";
-      const finalText = document.createElement("div");
-      finalText.textContent = `You scored ${scoreCounter} out of 8`;
-      finalText.classList.add("finalText");
-      imageContainer.style.flexDirection = "column";
-      imageContainer.style.display = "flex";
-      imageContainer.style.justifyContent = "center";
-      imageContainer.style.alignItems = "center";
-      imageContainer.appendChild(finalText);
-      imageContainer.appendChild(button);
+      const button = showFinalScore(imageContainer, question1, scoreCounter) //importerad funktion
 
       button.addEventListener("click", function () {
         window.location.href = "homePage.html";
@@ -159,3 +148,30 @@ async function getQuiz(quizCategory, categoryImage) {
 }
 
 getQuiz(category, categoryImage);
+
+/////// redigerar
+
+// class Question {
+//   constructor(question, answers, image) {
+//     this.question = question
+//     this.answers = answers
+//     this.image = image
+//   }
+// }
+
+
+//skapa en klass med constructor
+//vi skickar med object "categori?"
+//quizfråga ()
+//quizsvar
+//quizbild
+
+// const questionObjects = quizData.map((indexOfImage, item) => {
+//   const imageUrl = images.photos[indexOfImage].src.medium
+//   new Question(
+//     item.question,
+//     item.correctAnswer,
+//     item.incorrectAnswers,
+//     imageUrl
+//   )
+// })
