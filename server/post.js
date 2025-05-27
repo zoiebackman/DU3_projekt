@@ -1,4 +1,4 @@
-import { User } from "./class.js";
+import { User } from "./modules/class.js";
 
 export async function login(request, header) {
   const userFile = "user.json";

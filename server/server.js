@@ -1,8 +1,6 @@
-
 import * as GET from "./get.js";
 import * as POST from "./post.js";
 import * as PUT from "./put.js";
-
 
 async function handler(request) {
   const url = new URL(request.url);
