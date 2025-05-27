@@ -119,6 +119,7 @@ let quizButtonText = document.querySelectorAll(".quizButtonText");
 
 searchForQuizInput.addEventListener("input", function () {
   quizLibary.innerHTML = ``;
+  quizLibary.style.height = "589px";
   for (let text of quizButtonText) {
     if (
       text.textContent
