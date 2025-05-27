@@ -68,7 +68,7 @@ async function getImage(quizCategory) {
   const images = await response.json();
   console.log(images);
 
-  quizContainer.innerHTML = `<img src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:contain;">`;
+  quizContainer.innerHTML = `<img class="picture" src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:cover;">`;
 
   const startQuizButton = document.createElement("div");
   startQuizButton.textContent = `Start ${quizCategory} Quiz`;

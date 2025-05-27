@@ -104,6 +104,11 @@ input {
   border-radius: 20px;
 }
 
+.picture {
+  margin-bottom: 20px;
+  border: solid;
+}
+
 h1 {
   font-size: 30px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
