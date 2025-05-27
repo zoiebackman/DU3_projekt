@@ -1,11 +1,23 @@
 [
   {
+<<<<<<< Updated upstream
     "username": "Moka02001",
     "password": "Bella123",
+=======
+    "username": "Lea",
+    "password": "Häst123",
+    "score": 60,
+    "logedIn": false
+  },
+  {
+    "username": "Yoman",
+    "password": "123",
+>>>>>>> Stashed changes
     "score": 0,
     "logedIn": false
   },
   {
+<<<<<<< Updated upstream
     "username": "Moka02021",
     "password": "Bella123",
     "score": 90,
@@ -46,5 +58,11 @@
     "password": "rat",
     "score": 0,
     "logedIn": false
+=======
+    "username": "sås",
+    "password": "123",
+    "score": 0,
+    "logedIn": true
+>>>>>>> Stashed changes
   }
 ]
