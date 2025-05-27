@@ -25,6 +25,7 @@ getLoggedInUser();
 signOutButton.addEventListener("click", function () {
   popUpBox.style.display = "block";
 });
+
 yesButton.addEventListener("click", async function () {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
@@ -40,6 +41,7 @@ yesButton.addEventListener("click", async function () {
 
   window.location.href = "logInPage.html";
 });
+
 noButton.addEventListener("click", function () {
   window.location.href = "homePage.html";
 });

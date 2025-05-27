@@ -1,3 +1,4 @@
+//Fixa så att poängen läggs på nuvarande poäng, just nu byts det ut istället frö att adderas
 export async function updatedScore(request, header) {
   const userFile = "user.json";
   const user = await Deno.readTextFile(userFile);
@@ -37,5 +38,5 @@ export async function logOut(request, header) {
   return new Response(JSON.stringify({ error: "User not logged in" }), {
     status: 400,
     headers: header,
-  })
+  });
 }
