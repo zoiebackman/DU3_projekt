@@ -69,12 +69,33 @@ async function getImage(quizCategory) {
   const images = await response.json();
   console.log(images);
 
-  quizContainer.innerHTML = `<img class="picture" src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:cover;">`;
+  quizContainer.innerHTML = ""
+
+  const otherQuizButton = document.createElement("div");
+  otherQuizButton.textContent = `Choose a Different Quiz `;
+  otherQuizButton.id = "otherQuizButton";
+  quizContainer.appendChild(otherQuizButton);
+  console.log("klcik1")
+
+
+  otherQuizButton.addEventListener("click", function () {
+    console.log("klcik2")
+    window.location.href = "homePage.html";
+  })
+
+  const img = document.createElement("img");
+  img.className = "picture";
+  img.src = images.photos[0].src.medium;
+  img.width = 500;
+  img.height = 300;
+  img.style.objectFit = "cover";
+  quizContainer.appendChild(img);
 
   const startQuizButton = document.createElement("div");
-  startQuizButton.textContent = `Start ${quizCategory} Quiz`;
+  startQuizButton.textContent = `Start ${quizCategory} Quiz!`;
   startQuizButton.id = "startQuizButton";
   quizContainer.appendChild(startQuizButton);
+
 
   startQuizButton.addEventListener("click", function () {
     if (quizCategory == "Food & Drink") {

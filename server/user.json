@@ -1,1 +1,98 @@
-[{"username":"Moka02001","password":"Bella123","score":0,"logedIn":false},{"username":"Moka02021","password":"Bella123","score":90,"logedIn":false},{"username":"Moka02031","password":"Bella123","score":100,"logedIn":false},{"username":"pelle_boi","password":"korv","score":0,"logedIn":false},{"username":"Hej","password":"123","score":0,"logedIn":false},{"username":"rat","password":"rat","score":0,"logedIn":false},{"username":"Lea","password":"Häst123","score":0,"logedIn":false},{"username":"sauce","password":"100","score":0,"logedIn":false},{"username":"sås","password":"123","score":1,"logedIn":false},{"username":"rebecca","password":"rebecca","score":5,"logedIn":false},{"username":"hej","password":"1","score":0,"logedIn":false},{"username":"stroganoff","password":"1","score":0,"logedIn":false},{"username":"kingen","password":"30","score":40,"logedIn":false},{"username":"sara","password":"hej","score":70,"logedIn":false},{"username":"yoman1","password":"1","score":80,"logedIn":true}]
+[
+  {
+    "username": "Moka02001",
+    "password": "Bella123",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "Moka02021",
+    "password": "Bella123",
+    "score": 90,
+    "logedIn": false
+  },
+  {
+    "username": "Moka02031",
+    "password": "Bella123",
+    "score": 100,
+    "logedIn": false
+  },
+  {
+    "username": "pelle_boi",
+    "password": "korv",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "Hej",
+    "password": "123",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "rat",
+    "password": "rat",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "Lea",
+    "password": "Häst123",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "sauce",
+    "password": "100",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "sås",
+    "password": "123",
+    "score": 1,
+    "logedIn": false
+  },
+  {
+    "username": "rebecca",
+    "password": "rebecca",
+    "score": 5,
+    "logedIn": false
+  },
+  {
+    "username": "hej",
+    "password": "1",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "stroganoff",
+    "password": "1",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "kingen",
+    "password": "30",
+    "score": 40,
+    "logedIn": false
+  },
+  {
+    "username": "sara",
+    "password": "hej",
+    "score": 70,
+    "logedIn": false
+  },
+  {
+    "username": "yoman1",
+    "password": "1",
+    "score": 80,
+    "logedIn": false
+  },
+  {
+    "username": "saris",
+    "password": "1",
+    "score": 0,
+    "logedIn": true
+  }
+]
