@@ -165,7 +165,7 @@ async function getQuiz(quizCategory, categoryImage) {
             button.disabled = true;
             setTimeout(() => {
               nextQuestion();
-            }, 500);
+            }, 1000);
           }
           if (newArray[i].isCorrect === false) {
             button.style.backgroundColor = "red";
@@ -177,7 +177,7 @@ async function getQuiz(quizCategory, categoryImage) {
 
             setTimeout(() => {
               nextQuestion();
-            }, 500);
+            }, 1000);
           }
         });
       });
