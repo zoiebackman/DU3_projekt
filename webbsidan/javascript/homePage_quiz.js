@@ -119,7 +119,8 @@ let quizButtonText = document.querySelectorAll(".quizButtonText");
 
 searchForQuizInput.addEventListener("input", function () {
   quizLibary.innerHTML = ``;
-  quizLibary.style.height = "589px";
+  quizLibary.style.height = "492px";
+  quizLibary.style.width = "589px";
   for (let text of quizButtonText) {
     if (
       text.textContent
@@ -131,6 +132,7 @@ searchForQuizInput.addEventListener("input", function () {
 
       div.classList.add("quizButton");
       p.textContent = text.textContent;
+      p.classList.add("quizButtonText");
       div.appendChild(p);
       quizLibary.appendChild(div);
     }
