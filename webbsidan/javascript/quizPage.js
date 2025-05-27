@@ -1,4 +1,40 @@
-import { showFinalScore } from "./modules/showFinalScore.js";
+class ShowQuestionImage {
+  constructor(imageContainer, images, indexOfImage) {
+    this.container = imageContainer;
+    this.images = images;
+    this.indexOfImage = indexOfImage;
+  }
+  styleImage(indexOfImage) {
+    const imgSrc = this.images.photos[indexOfImage].src.medium;
+
+    this.container.innerHTML = `
+      <img src="${imgSrc}" width="500" height="300" style="object-fit:contain;">
+    `;
+    this.container.style.display = "flex";
+    this.container.style.justifyContent = "center";
+    this.container.style.alignItems = "center";
+    this.container.style.borderRadius = "5px";
+    this.container.style.border = "solid 1px";
+  }
+}
+
+function showFinalScore(imageContainer, question1, scoreCounter) {
+  imageContainer.innerHTML = ""; //ta bort bilden till sista scoreSidan
+  const button = document.createElement("button");
+  button.classList.add("endbutton");
+  button.textContent = "Back to start";
+  question1.textContent = "Quiz is done!";
+  const finalText = document.createElement("div");
+  finalText.textContent = `You scored ${scoreCounter} out of 80`;
+  finalText.classList.add("finalText");
+  imageContainer.style.flexDirection = "column";
+  imageContainer.style.display = "flex";
+  imageContainer.style.justifyContent = "center";
+  imageContainer.style.alignItems = "center";
+  imageContainer.appendChild(finalText);
+  imageContainer.appendChild(button);
+  return button;
+}
 
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
@@ -16,18 +52,17 @@ if (!category) {
   window.location.href = "homePage.html";
 }
 
-const activeUser = JSON.parse(localStorage.getItem("activeUser"));
-console.log(activeUser);
-
 const question1 = document.getElementById("question");
 const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
 const imageContainer = document.getElementById("imageContainer");
 const leavePageButton = document.getElementById("leavePage");
+const scoreDiv = document.getElementById("scoreDiv");
+scoreDiv.textContent = `Score: 0`;
 
-leavePageButton.addEventListener("click", function(){
-  window.location.href = "homePage.html";
-})
+leavePageButton.addEventListener("click", function () {
+  window.location.href = "./homePage.html";
+});
 
 async function getQuiz(quizCategory, categoryImage) {
   const request = `https://the-trivia-api.com/api/questions?categories=${encodeURIComponent(
@@ -35,7 +70,7 @@ async function getQuiz(quizCategory, categoryImage) {
   )}&limit=8&region=SE&difficulty=easy`;
   const response = await fetch(request);
   const quizData = await response.json();
-  console.log(quizData)
+  console.log(quizData);
 
   let images;
   let counter = 0;
@@ -58,13 +93,7 @@ async function getQuiz(quizCategory, categoryImage) {
   console.log(images);
   await getImages(categoryImage); /// vänta in objektet med bilder, anropa sedan
 
-  function questionImages(indexOfImage) {
-    imageContainer.innerHTML = `<img src=${images.photos[indexOfImage].src.medium} width="500" height="300" style="object-fit:contain;">`;
-    imageContainer.style.display = "flex";
-    imageContainer.style.justifyContent = "center";
-    imageContainer.style.alignItems = "center";
-    console.log(images);
-  }
+  const imageContainer = document.getElementById("imageContainer");
 
   nextQuestion();
 
@@ -88,9 +117,9 @@ async function getQuiz(quizCategory, categoryImage) {
     if (counter == 8) {
       countDown.style.visibility = "hidden";
       console.log(countDown);
+      console.log(`COUNTRER: ${counter}`);
     }
     countDownSeconds();
-    
 
     answersBox.innerHTML = `
   <div class="answerFormat" id="answer1"></div>
@@ -101,9 +130,13 @@ async function getQuiz(quizCategory, categoryImage) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
-      questionImages(counter); //skickar med countern till funktionen för att ta ut bild av index
+      // Använd funktionen när du behöver visa bilden:
+      const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
+      pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question}`;
+      question1.textContent = `Question ${counter + 1} of 8: ${
+        quizData[counter].question
+      }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
@@ -125,9 +158,10 @@ async function getQuiz(quizCategory, categoryImage) {
           counter++;
           if (newArray[i].isCorrect === true) {
             button.style.backgroundColor = "green";
-            scoreCounter++;
+            scoreCounter += 10;
+            scoreDiv.textContent = `Score:${scoreCounter}`;
+            button.disabled = true;
             setTimeout(() => {
-              //counter++;
               nextQuestion();
             }, 1000);
           }
@@ -138,15 +172,30 @@ async function getQuiz(quizCategory, categoryImage) {
                 button.style.backgroundColor = "green";
               }
             });
+
             setTimeout(() => {
-              //counter++;
               nextQuestion();
             }, 1000);
           }
         });
       });
     } else {
-      const button = showFinalScore(imageContainer, question1, scoreCounter) //importerad funktion
+      async function pointToUser() {
+        const request1 = new Request("http://localhost:8000/currentUser");
+        const response1 = await fetch(request1);
+        const resource1 = await response1.json();
+        resource1.user.score = scoreCounter;
+        console.log(resource1);
+
+        const request2 = await fetch("http://localhost:8000/updatedScore", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(resource1.user),
+        });
+      }
+
+      pointToUser();
+      const button = showFinalScore(imageContainer, question1, scoreCounter); //importerad funktion
 
       button.addEventListener("click", function () {
         window.location.href = "homePage.html";
@@ -161,30 +210,3 @@ async function getQuiz(quizCategory, categoryImage) {
 }
 
 getQuiz(category, categoryImage);
-
-/////// redigerar
-
-// class Question {
-//   constructor(question, answers, image) {
-//     this.question = question
-//     this.answers = answers
-//     this.image = image
-//   }
-// }
-
-
-//skapa en klass med constructor
-//vi skickar med object "categori?"
-//quizfråga ()
-//quizsvar
-//quizbild
-
-// const questionObjects = quizData.map((indexOfImage, item) => {
-//   const imageUrl = images.photos[indexOfImage].src.medium
-//   new Question(
-//     item.question,
-//     item.correctAnswer,
-//     item.incorrectAnswers,
-//     imageUrl
-//   )
-// })

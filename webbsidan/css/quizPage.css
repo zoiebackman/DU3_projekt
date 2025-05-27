@@ -4,6 +4,7 @@ body {
   grid-template-columns: repeat(1, 1fr);
   overflow: hidden;
 }
+
 header {
   display: flex;
   align-items: center;
@@ -11,9 +12,11 @@ header {
   background-color: #5bb0ac5c;
   height: 150px;
 }
+
 #leavePage {
   position: absolute;
-  right: 25px; top: 25px;
+  right: 25px;
+  top: 25px;
 }
 
 
@@ -23,11 +26,13 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 160px;
+  gap: 100px;
 }
+
 .reloadColor {
   background-color: beige;
 }
+
 #countDown {
   box-shadow: 7px 8px 48px 0px rgba(0, 0, 0, 0.63);
   display: flex;
@@ -45,7 +50,6 @@ header {
 #imageContainer {
   height: 300px;
   width: 800px;
-  margin-right: 280px;
   border-radius: 5px;
 }
 
@@ -76,6 +80,7 @@ footer {
   justify-content: center;
   height: 310px;
 }
+
 #answers {
   border-radius: 5px;
   padding: 20px;
@@ -105,4 +110,32 @@ footer {
   font-family: arial;
   color: black;
   text-align: center;
+}
+
+#currentScore {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#scoreDiv {
+  background-color: rgb(255, 191, 0);
+  width: 105px;
+  position: fixed;
+  height: 60px;
+  height: 60px;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#scoreDiv p {
+  align-self: center;
+}
+
+#currentScore img {
+  height: 300px;
+  transform: scaleX(-1);
 }
