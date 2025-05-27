@@ -106,7 +106,7 @@ input {
 
 .picture {
   margin-bottom: 20px;
-  border: solid;
+  border: solid px #bf6132;
 }
 
 h1 {

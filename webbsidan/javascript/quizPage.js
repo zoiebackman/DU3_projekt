@@ -134,8 +134,9 @@ async function getQuiz(quizCategory, categoryImage) {
       const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
-        }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${
+        quizData[counter].question
+      }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
