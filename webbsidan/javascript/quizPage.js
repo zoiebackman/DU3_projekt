@@ -26,8 +26,10 @@ const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
 const imageContainer = document.getElementById("imageContainer");
 const leavePageButton = document.getElementById("leavePage");
+const scoreDiv = document.getElementById("scoreDiv")
+scoreDiv.textContent = `Score: 0`
 
-leavePageButton.addEventListener("click", function(){
+leavePageButton.addEventListener("click", function () {
   window.location.href = "homePage.html";
 })
 
@@ -84,9 +86,10 @@ async function getQuiz(quizCategory, categoryImage) {
     if (counter == 8) {
       countDown.style.visibility = "hidden";
       console.log(countDown);
+      console.log(`COUNTRER: ${counter}`)
     }
     countDownSeconds();
-    
+
 
     answersBox.innerHTML = `
   <div class="answerFormat" id="answer1"></div>
@@ -123,7 +126,8 @@ async function getQuiz(quizCategory, categoryImage) {
           counter++;
           if (newArray[i].isCorrect === true) {
             button.style.backgroundColor = "green";
-            scoreCounter++;
+            scoreCounter += 10;
+            scoreDiv.textContent = `Score:${scoreCounter}`
             setTimeout(() => {
               //counter++;
               nextQuestion();
