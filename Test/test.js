@@ -2,16 +2,15 @@ const p = document.createElement("p");
 const testDiv = document.getElementById("testBox");
 
 function createDiv(response, textContent) {
-  function setColor() {
+  function setColor(status) {
     console.log(response);
-    if (response.status === 200) {
+    if (status === 200) {
       return "green";
     }
     if (response.status === 400 || response.status == 404 || response.status == 409) {
       return "red";
     }
   }
-
   const div = document.createElement("div");
   const p1 = document.createElement("p");
   const p2 = document.createElement("p");
@@ -29,7 +28,6 @@ function createDiv(response, textContent) {
 //Driver som testar att logga in med icke-existerande användare.
 async function driver_1() {
   const newUser = { username: "Yoman", password: "Liseberg123" };
-
   const request = new Request("http://localhost:8000/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -56,7 +54,7 @@ async function driver_2() {
 }
 //Driver som testar att skapa en ny användare.
 async function driver_3() {
-  const newUser = { username: "Lea", password: "Häst123" };
+  const newUser = { username: "Lea", password: "Häst123", score: 30, logedIn: false };
   const request = new Request("http://localhost:8000/createAccount", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -64,7 +62,7 @@ async function driver_3() {
   });
   const response = await fetch(request);
 
-  const testText = "Test 3: icke-existerande användare:";
+  const testText = "Test 3: Skapa ny användare";
   createDiv(response, testText);
 }
 async function driver_4() {
@@ -77,7 +75,7 @@ async function driver_4() {
   });
 
   const response = await fetch(request);
-  const testText = "Test 4: Saknas input i inmatningsfält";
+  const testText = "Test 4: Saknas text i inmatningsfält";
   createDiv(response, testText);
 }
 async function driver_5() {

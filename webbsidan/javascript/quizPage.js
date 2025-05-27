@@ -54,7 +54,7 @@ async function getQuiz(quizCategory, categoryImage) {
     imageContainer.style.display = "flex";
     imageContainer.style.justifyContent = "center";
     imageContainer.style.alignItems = "center";
-    console.log(images);
+    console.log(images);n
   }
 
   nextQuestion();
@@ -74,8 +74,13 @@ async function getQuiz(quizCategory, categoryImage) {
         counter++;
         nextQuestion();
       }
+      console.log(counter)
     }
     countDownSeconds();
+    if (counter == 8) {
+      countDown.style.visibility = "hidden";
+      clearInterval(seconds);
+    }
 
     answersBox.innerHTML = `
   <div class="answerFormat" id="answer1"></div>
@@ -104,6 +109,8 @@ async function getQuiz(quizCategory, categoryImage) {
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
+
+      //clearInterval(countdownInterval);
 
       answers.forEach((button, i) => {
         button.addEventListener("click", function () {

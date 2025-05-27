@@ -104,7 +104,7 @@ async function handler(request) {
     }
   }
 
-  if (request.method == "POST") {
+ if (request.method == "POST") {
     //logga in
     if (url.pathname == "/login") {
       const userFile = "user.json";
@@ -124,7 +124,7 @@ async function handler(request) {
           userFound = true;
           user.logedIn = true;
           break;
-        }
+        } 
       }
       if (userFound) {
         Deno.writeTextFileSync(userFile, JSON.stringify(userArray, null, 2));
