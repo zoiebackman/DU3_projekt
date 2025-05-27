@@ -21,6 +21,11 @@ const question1 = document.getElementById("question");
 const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
 const imageContainer = document.getElementById("imageContainer");
+const leavePageButton = document.getElementById("leavePage");
+
+leavePageButton.addEventListener("click", function(){
+  window.location.href = "homePage.html";
+})
 
 async function getQuiz(quizCategory, categoryImage) {
   const request = `https://the-trivia-api.com/api/questions?categories=${encodeURIComponent(
@@ -54,7 +59,7 @@ async function getQuiz(quizCategory, categoryImage) {
     imageContainer.style.display = "flex";
     imageContainer.style.justifyContent = "center";
     imageContainer.style.alignItems = "center";
-    console.log(images);n
+    console.log(images);
   }
 
   nextQuestion();
@@ -74,13 +79,14 @@ async function getQuiz(quizCategory, categoryImage) {
         counter++;
         nextQuestion();
       }
-      console.log(counter)
     }
-    countDownSeconds();
+
     if (counter == 8) {
       countDown.style.visibility = "hidden";
-      clearInterval(seconds);
+      console.log(countDown);
     }
+    countDownSeconds();
+    
 
     answersBox.innerHTML = `
   <div class="answerFormat" id="answer1"></div>
@@ -93,9 +99,7 @@ async function getQuiz(quizCategory, categoryImage) {
     if (counter < quizData.length) {
       questionImages(counter); //skickar med countern till funktionen för att ta ut bild av index
 
-      question1.textContent = `Question ${counter + 1} : ${
-        quizData[counter].question
-      };`;
+      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question}`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },

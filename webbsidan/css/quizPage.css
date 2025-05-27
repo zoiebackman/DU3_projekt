@@ -11,6 +11,11 @@ header {
   background-color: #5bb0ac5c;
   height: 150px;
 }
+#leavePage {
+  position: absolute;
+  right: 25px; top: 25px;
+}
+
 
 #container {
   margin: 30px;

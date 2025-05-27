@@ -175,7 +175,6 @@ async function handler(request) {
       });
     }
   }
-  console.log("Hej");
   if (request.method == "PUT") {
     if (url.pathname == "/updatedScore") {
       const userFile = "user.json";
