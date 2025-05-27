@@ -1,6 +1,7 @@
 const quizContainer = document.getElementById("mainContainer");
 const signOutButton = document.getElementById("signOut");
 const topScore = document.getElementById("topScore");
+const userBox = document.getElementById("userBox");
 const userNameDiv = document.getElementById("myUserName");
 
 const popUpBox = document.getElementById("popUpSignOut");
@@ -17,7 +18,7 @@ async function getLoggedInUser() {
 
   console.log(resource);
 
-  userNameDiv.textContent = resource.user.username;
+  userNameDiv.textContent = resource.user.username
 }
 
 getLoggedInUser();
