@@ -8,11 +8,11 @@ class ShowQuestionImage {
     const imgSrc = this.images.photos[indexOfImage].src.medium;
 
     this.container.innerHTML = `
-      <img src="${imgSrc}" width="500" height="300" style="object-fit:contain;">
+      <img src="${imgSrc}" width="100%" height="100%" style="object-fit:cover;">
     `;
     this.container.style.display = "flex";
     this.container.style.justifyContent = "center";
-    this.container.style.alignItems = "center";
+    // this.container.style.alignItems = "center";
     this.container.style.borderRadius = "5px";
     this.container.style.border = "solid 1px";
   }
@@ -134,9 +134,8 @@ async function getQuiz(quizCategory, categoryImage) {
       const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${
-        quizData[counter].question
-      }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
+        }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
