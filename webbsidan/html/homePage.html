@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/homePage.css" />
-  </head>
 
-  <body>
-    <div id="navbar">
-      <div id="quizLogo">
-        <img src="../../bilder/Pelle3.png" alt="" id="pelleNav" />
-        <p>PelleQuiz</p>
-      </div>
-      <input type="searchQuiz" id="searchForQuiz" placeholder="Search for quiz" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/homePage.css" />
+</head>
+
+<body>
+  <div id="navbar">
+    <div id="quizLogo">
+      <img src="../../bilder/Pelle3.png" alt="" id="pelleNav" />
+      <p>PelleQuiz</p>
+    </div>
+    <input type="searchQuiz" id="searchForQuiz" placeholder="Search for quiz" />
+    <div id="userBox">
+      <p id="userStar">✰</p>
       <div id="myUserName"></div>
     </div>
+  </div>
 
-    <div id="container">
-      <div id="settingsBoxAndPelle">
-        <div id="settingsBox">
-          <button class="buttonSettings">HomePage</button>
-          <div id="popUpSignOut">
-            <p>Are you sure you want to sign out?</p>
-            <button id="yesButton">Yes</button>
-            <button id="noButton">No</button>
-          </div>
-          <button class="buttonSettings" id="signOut">Sign Out</button>
+  <div id="container">
+    <div id="settingsBoxAndPelle">
+      <div id="settingsBox">
+        <button class="buttonSettings"><span id="house">⌂ </span>Homepage</button>
+        <div id="popUpSignOut">
+          <p>Are you sure you want to sign out?</p>
+          <button id="yesButton">Yes</button>
+          <button id="noButton">No</button>
         </div>
-        <img src="../../bilder/Pelle2.png" alt="" id="pelle2" />
+        <button class="buttonSettings" id="signOut"><span id="finger">☜</span>Sign Out</button>
       </div>
+      <img src="../../bilder/Pelle2.png" alt="" id="pelle2" />
+    </div>
 
-      <div id="mainContainer">
-        <h1>QuizBibliotek</h1>
+    <div id="mainContainer">
+      <h1>QUIZ LIBRARY</h1>
 
-        <div id="quizLibrary">
-          <div class="quizButton" id="geographyQuiz">
-            <p class="quizButtonText">Geography</p>
-          </div>
-          <div class="quizButton">
-            <p class="quizButtonText">Music</p>
-          </div>
-          <div class="quizButton">
-            <p class="quizButtonText">History</p>
-          </div>
-          <div class="quizButton">
-            <p class="quizButtonText" >Science</p>
-          </div>
-          <div class="quizButton">
-            <p class="quizButtonText">Food & Drink</p>
-          </div>
-          <div class="quizButton">
-            <p class="quizButtonText">Film & Tv</p>
-          </div>
+      <div id="quizLibrary">
+        <div class="quizButton" id="geographyQuiz">
+          <p class="quizButtonText">Geography</p>
         </div>
-      </div>
-
-      <div id="topScore">
-        <p>Top 5 Players</p>
+        <div class="quizButton">
+          <p class="quizButtonText">Music</p>
+        </div>
+        <div class="quizButton">
+          <p class="quizButtonText">History</p>
+        </div>
+        <div class="quizButton">
+          <p class="quizButtonText">Science</p>
+        </div>
+        <div class="quizButton">
+          <p class="quizButtonText">Food & Drink</p>
+        </div>
+        <div class="quizButton">
+          <p class="quizButtonText">Film & Tv</p>
         </div>
       </div>
     </div>
-    <script src="../javascript/homePage_quiz.js"></script>
-  </body>
+
+    <div id="topScore">
+      <h3 id="scoreH"> <span class="crown">♕</span> TOP 5 PLAYERS <span class="crown">♕</span></h3>
+    </div>
+  </div>
+  </div>
+  <script src="../javascript/homePage_quiz.js"></script>
+</body>
+
 </html>
