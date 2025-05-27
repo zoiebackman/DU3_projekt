@@ -25,7 +25,7 @@ function showFinalScore(imageContainer, question1, scoreCounter) {
   button.textContent = "Back to start";
   question1.textContent = "Quiz is done!";
   const finalText = document.createElement("div");
-  finalText.textContent = `You scored ${scoreCounter} out of 8`;
+  finalText.textContent = `You scored ${scoreCounter} out of 80`;
   finalText.classList.add("finalText");
   imageContainer.style.flexDirection = "column";
   imageContainer.style.display = "flex";
@@ -134,9 +134,8 @@ async function getQuiz(quizCategory, categoryImage) {
       const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${
-        quizData[counter].question
-      }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
+        }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
