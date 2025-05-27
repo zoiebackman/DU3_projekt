@@ -45,15 +45,19 @@ noButton.addEventListener("click", function () {
   window.location.href = "homePage.html";
 });
 
+buttons()
 //Hantering av quiz-knapparna
-const quizButtons = document.querySelectorAll(".quizButton");
-quizButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    quizCategory = button.textContent.trim();
-    quizContainer.innerHTML = "";
-    getImage(quizCategory);
+function buttons() {
+  const quizButtons = document.querySelectorAll(".quizButton");
+  quizButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      quizCategory = button.textContent.trim();
+      quizContainer.innerHTML = "";
+      getImage(quizCategory);
+    });
   });
-});
+
+}
 
 //Fetch till externt API gällande att hämta bilder
 async function getImage(quizCategory) {
@@ -157,6 +161,8 @@ searchForQuizInput.addEventListener("input", function () {
       p.classList.add("quizButtonText");
       div.appendChild(p);
       quizLibary.appendChild(div);
+
+      buttons()
     }
   }
 });
