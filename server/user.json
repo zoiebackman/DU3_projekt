@@ -76,5 +76,23 @@
         "password": "30",
         "score": 40,
         "logedIn": false
+    },
+    {
+        "username": "sara",
+        "password": "hej",
+        "score": 70,
+        "logedIn": false
+    },
+    {
+        "username": "yoman1",
+        "password": "1",
+        "score": 80,
+        "logedIn": false
+    },
+    {
+        "username": "saris",
+        "password": "1",
+        "score": 0,
+        "logedIn": true
     }
 ]
