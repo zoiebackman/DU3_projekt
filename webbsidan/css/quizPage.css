@@ -11,6 +11,11 @@ header {
   background-color: #5bb0ac5c;
   height: 150px;
 }
+#leavePage {
+  position: absolute;
+  right: 25px; top: 25px;
+}
+
 
 #container {
   margin: 30px;
@@ -91,7 +96,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #question {

@@ -1,12 +1,10 @@
 /* NAV */
 
-
 #navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 1px rgb(228, 165, 37);
-
 }
 
 #quizLogo {
@@ -29,7 +27,7 @@ input {
   border: solid 1px black;
   padding: 5px 20px;
   border-radius: 7px;
-  background-color: #F3BD66;
+  background-color: #f3bd66;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
 }
@@ -59,7 +57,6 @@ input {
   align-items: center;
   padding: 20px 0px;
   position: relative;
-
 }
 #popUpSignOut {
   text-align: center;
@@ -67,7 +64,7 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color:beige;
+  background-color: beige;
   height: 200px;
   border: 1px solid black;
   padding: 10px;
@@ -91,6 +88,7 @@ input {
 #pelle2 {
   height: 300px;
   object-fit: contain;
+  margin-top: 20px;
 }
 
 /* SETTINGS OCH PELLE */
@@ -101,26 +99,25 @@ input {
   align-items: center;
   justify-content: center;
   width: 50%;
-  background-color: #F3BD66;
+  background-color: #f3bd66;
   padding: 20px;
   border-radius: 20px;
-
 }
 
 h1 {
   font-size: 30px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 #quizLibrary {
-  background-color: #F3BD66;
+  background-color: #f3bd66;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .quizButton {
-  background-color: #F9E7C8;
+  background-color: #f9e7c8;
   border-radius: 5px;
   text-align: center;
   width: 280px;
@@ -131,7 +128,6 @@ h1 {
 .quizButton p {
   font-size: 40px;
 }
-
 
 #topScore {
   width: 25%;
@@ -147,7 +143,6 @@ h1 {
 
 #topScore p {
   text-align: center;
-
 }
 
 .topPlayers {
@@ -156,33 +151,27 @@ h1 {
   justify-content: center;
   background-color: white;
   border-radius: 5px;
-
 }
 
 .topPlayers p {
   width: 200px;
   text-align: center;
-
 }
 
 .pelleIcon {
   height: 30px;
-
 }
 
 p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #startQuizButton {
   background-color: #f18739;
-  padding:
-    20px 40px;
+  padding: 20px 40px;
   color: white;
-  border-radius:
-    9px;
+  border-radius: 9px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 #startQuizButton:hover {
