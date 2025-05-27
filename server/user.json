@@ -69,6 +69,6 @@
     "username": "kingen",
     "password": "30",
     "score": 60,
-    "logedIn": false
+    "logedIn": true
   }
 ]
