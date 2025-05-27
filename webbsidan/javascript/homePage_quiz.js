@@ -113,4 +113,27 @@ async function getTopUsers() {
   }
 }
 
+const searchForQuizInput = document.getElementById("searchForQuiz");
+const quizLibary = document.getElementById("quizLibrary");
+let quizButtonText = document.querySelectorAll(".quizButtonText");
+
+searchForQuizInput.addEventListener("input", function () {
+  quizLibary.innerHTML = ``;
+  for (let text of quizButtonText) {
+    if (
+      text.textContent
+        .toLowerCase()
+        .includes(searchForQuizInput.value.toLowerCase())
+    ) {
+      const div = document.createElement("div");
+      const p = document.createElement("p");
+
+      div.classList.add("quizButton");
+      p.textContent = text.textContent;
+      div.appendChild(p);
+      quizLibary.appendChild(div);
+    }
+  }
+});
+
 getTopUsers();
