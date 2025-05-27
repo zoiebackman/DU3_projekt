@@ -1,14 +1,6 @@
 import { serveFile, serveDir } from "jsr:@std/http/file-server";
-import { CreateUser } from "./createUser.js";
+import { User } from "./createUser.js";
 
-// class User {
-//   constructor(username, password) {
-//     this.username = username;
-//     this.password = password;
-//     this.score = 0;
-//     this.logedIn = false;
-//   }
-// }
 
 async function handler(request) {
   const url = new URL(request.url);
