@@ -44,7 +44,7 @@ async function handler(request) {
     }
   }
 
-  if (request.method == "POST") {
+ if (request.method == "POST") {
     //logga in
     if (url.pathname == "/login") {
       return await POST.login(request, headersCORS);
@@ -54,7 +54,6 @@ async function handler(request) {
       return await POST.createAccount(request, headersCORS);
     }
   }
-
   if (request.method == "PUT") {
     if (url.pathname == "/updatedScore") {
       return await PUT.updatedScore(request, headersCORS);
