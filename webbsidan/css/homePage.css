@@ -172,8 +172,10 @@ input {
 }
 
 .picture {
-  border: solid px #bf6132;
+  border: solid 5px #937547;
+  box-shadow: 3px 3px 6px #030202;
 }
+
 
 h1 {
   font-size: 40px;
