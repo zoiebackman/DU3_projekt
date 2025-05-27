@@ -1,11 +1,14 @@
-class CreateUser {
-  constructor(username, password) {
-    this.username = username;
-    this.password = password;
-    this.score = 0;
-    this.logedIn = false;
-  }
-}
+import { serveFile, serveDir } from "jsr:@std/http/file-server";
+import { CreateUser } from "./createUser.js";
+
+// class CreateUser {
+//   constructor(username, password) {
+//     this.username = username;
+//     this.password = password;
+//     this.score = 0;
+//     this.logedIn = false;
+//   }
+// }
 
 async function handler(request) {
   const url = new URL(request.url);
@@ -229,7 +232,7 @@ async function handler(request) {
     const userArray = JSON.parse(user);
     for (let user of userArray) {
       if (user.logedIn === true) {
-        return new Response(JSON.stringify({ user}), {
+        return new Response(JSON.stringify({ user }), {
           status: 200,
           headers: headersCORS,
         });
