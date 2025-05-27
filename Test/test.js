@@ -124,7 +124,6 @@ async function driver_10() {
   createDiv(response, testText);
 }
 
-  
 //Driver som returnerar array av alla användare.
 async function driver_Users() {
   const request = new Request("http://localhost:8000/getUsers");
