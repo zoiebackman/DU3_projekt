@@ -18,22 +18,10 @@
     "logedIn": false
   },
   {
-    "username": "sås",
-    "password": "123",
-    "score": 0,
-    "logedIn": false
-  },
-  {
     "username": "pelle_boi",
     "password": "korv",
     "score": 0,
     "logedIn": false
-  },
-  {
-    "username": "kingen",
-    "password": "30",
-    "score": 0,
-    "logedIn": true
   },
   {
     "username": "Hej",
@@ -50,7 +38,31 @@
   {
     "username": "Lea",
     "password": "Häst123",
-    "score": 60,
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "sauce",
+    "password": "100",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "sås",
+    "password": "123",
+    "score": 1,
+    "logedIn": false
+  },
+  {
+    "username": "kingen",
+    "password": "30",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "rebecca",
+    "password": "rebecca",
+    "score": 5,
     "logedIn": false
   }
 ]
