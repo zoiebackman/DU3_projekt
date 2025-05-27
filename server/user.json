@@ -52,5 +52,11 @@
     "password": "Häst123",
     "score": 60,
     "logedIn": false
+  },
+  {
+    "username": "hej",
+    "password": "1",
+    "score": 0,
+    "logedIn": true
   }
 ]
