@@ -49,6 +49,7 @@ async function handler(request) {
     }
 
     if (url.pathname == "/homePage/search") {
+      // tas bort
       const rightQuizArray = [];
       const searchQuiz = url.searchParams.get("quiz");
       const file = "quiz.json";
@@ -74,6 +75,7 @@ async function handler(request) {
     }
 
     if (url.pathname == "/quizPage") {
+      //ta bort???
       const userFile = "quiz.json";
       const quiz = Deno.readTextFileSync(userFile);
       // byt till json-data som hämtas från api
