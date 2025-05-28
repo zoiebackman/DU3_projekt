@@ -76,5 +76,11 @@
     "password": "1",
     "score": 0,
     "logedIn": false
+  },
+  {
+    "username": "sara",
+    "password": "hej",
+    "score": 930,
+    "logedIn": true
   }
 ]
