@@ -35,7 +35,6 @@ async function handler(request) {
     );
   }
 
-  //Hämta array med användare
   if (request.method == "GET") {
     if (url.pathname == "/getUsers") {
       const userFile = "user.json";
@@ -43,45 +42,6 @@ async function handler(request) {
       const userArray = JSON.parse(user);
 
       return new Response(JSON.stringify(userArray), {
-        status: 200,
-        headers: headersCORS,
-      });
-    }
-
-    if (url.pathname == "/homePage/search") {
-      // tas bort
-      const rightQuizArray = [];
-      const searchQuiz = url.searchParams.get("quiz");
-      const file = "quiz.json";
-      const quizdata = Deno.readTextFileSync(file);
-      const quizArray = JSON.parse(quizdata);
-
-      if (!searchQuiz) {
-        return new Response(JSON.stringify({ error: "Empty searchfield!" }), {
-          status: 400,
-          headers: headersCORS,
-        });
-      }
-      for (let quiz of quizArray) {
-        if (quiz.category.includes(searchQuiz)) {
-          rightQuizArray.push(quiz);
-          console.log(rightQuizArray);
-        }
-      }
-      return new Response(JSON.stringify(rightQuizArray), {
-        status: 200,
-        headers: headersCORS,
-      });
-    }
-
-    if (url.pathname == "/quizPage") {
-      //ta bort???
-      const userFile = "quiz.json";
-      const quiz = Deno.readTextFileSync(userFile);
-      // byt till json-data som hämtas från api
-      // bör stå const quiz = await request.json()
-      const quizArray = JSON.parse(quiz);
-      return new Response(JSON.stringify(quizArray), {
         status: 200,
         headers: headersCORS,
       });
@@ -107,9 +67,8 @@ async function handler(request) {
   }
 
   if (request.method == "POST") {
-    //logga in
     if (url.pathname == "/login") {
-      const userFile = "user.json";
+      const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
 
@@ -141,7 +100,7 @@ async function handler(request) {
         );
       }
     }
-    // Skapa Konto
+
     if (url.pathname == "/createAccount") {
       const userFile = "user.json";
       const user = Deno.readTextFileSync(userFile);
@@ -177,7 +136,7 @@ async function handler(request) {
       });
     }
   }
-  console.log("Hej");
+  
   if (request.method == "PUT") {
     if (url.pathname == "/updatedScore") {
       const userFile = "user.json";
