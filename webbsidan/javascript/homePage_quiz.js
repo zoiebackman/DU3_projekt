@@ -1,6 +1,7 @@
 const quizContainer = document.getElementById("mainContainer");
 const signOutButton = document.getElementById("signOut");
 const topScore = document.getElementById("topScore");
+const userBox = document.getElementById("userBox");
 const userNameDiv = document.getElementById("myUserName");
 
 const popUpBox = document.getElementById("popUpSignOut");
@@ -17,7 +18,7 @@ async function getLoggedInUser() {
 
   console.log(resource);
 
-  userNameDiv.textContent = resource.user.username;
+  userNameDiv.textContent = resource.user.username
 }
 
 getLoggedInUser();
@@ -44,15 +45,19 @@ noButton.addEventListener("click", function () {
   window.location.href = "homePage.html";
 });
 
+buttons()
 //Hantering av quiz-knapparna
-const quizButtons = document.querySelectorAll(".quizButton");
-quizButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    quizCategory = button.textContent.trim();
-    quizContainer.innerHTML = "";
-    getImage(quizCategory);
+function buttons() {
+  const quizButtons = document.querySelectorAll(".quizButton");
+  quizButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      quizCategory = button.textContent.trim();
+      quizContainer.innerHTML = "";
+      getImage(quizCategory);
+    });
   });
-});
+
+}
 
 //Fetch till externt API gällande att hämta bilder
 async function getImage(quizCategory) {
@@ -68,12 +73,33 @@ async function getImage(quizCategory) {
   const images = await response.json();
   console.log(images);
 
-  quizContainer.innerHTML = `<img class="picture" src=${images.photos[0].src.medium} width="500" height="300" style="object-fit:cover;">`;
+  quizContainer.innerHTML = ""
+
+  const otherQuizButton = document.createElement("div");
+  otherQuizButton.textContent = `Choose a Different Quiz `;
+  otherQuizButton.id = "otherQuizButton";
+  quizContainer.appendChild(otherQuizButton);
+  console.log("klcik1")
+
+
+  otherQuizButton.addEventListener("click", function () {
+    console.log("klcik2")
+    window.location.href = "homePage.html";
+  })
+
+  const img = document.createElement("img");
+  img.className = "picture";
+  img.src = images.photos[0].src.medium;
+  img.width = 500;
+  img.height = 300;
+  img.style.objectFit = "cover";
+  quizContainer.appendChild(img);
 
   const startQuizButton = document.createElement("div");
-  startQuizButton.textContent = `Start ${quizCategory} Quiz`;
+  startQuizButton.textContent = `Start ${quizCategory} Quiz!`;
   startQuizButton.id = "startQuizButton";
   quizContainer.appendChild(startQuizButton);
+
 
   startQuizButton.addEventListener("click", function () {
     if (quizCategory == "Food & Drink") {
@@ -135,6 +161,8 @@ searchForQuizInput.addEventListener("input", function () {
       p.classList.add("quizButtonText");
       div.appendChild(p);
       quizLibary.appendChild(div);
+
+      buttons()
     }
   }
 });
