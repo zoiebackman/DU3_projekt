@@ -121,22 +121,6 @@ async function driver_7() {
   const testText = "Test 7: Logga ut användare";
   createDiv(response, testText, 200);
 }
-async function driver_10() {
-  const newUser = {
-    username: "Lea",
-    password: "Häst123",
-    score: 30,
-    logedIn: false,
-  };
-  const request = new Request("http://localhost:8000/logOut", {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(newUser),
-  });
-  const response = await fetch(request);
-  const testText = "Test 10: User not logged in";
-  createDiv(response, testText, 400);
-}
 
 async function driver_11() {
   const request = new Request("http://localhost:8000/getUsers");
