@@ -88,21 +88,21 @@ async function driver_4() {
   createDiv(response, testText);
 }
 
-async function driver_6() {
+async function driver_5() {
   const request = new Request("http://localhost:8000/quizPage/result");
   const response = await fetch(request);
-  const testText = "Test 6: Array av highscore";
+  const testText = "Test 5: Array av highscore";
 
   createDiv(response, testText);
 }
 
-async function driver_8() {
+async function driver_6() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
-  const testText = "Test 8: Hämta inloggade användare";
+  const testText = "Test 6: Hämta inloggad användare";
   createDiv(response, testText);
 }
-async function driver_9() {
+async function driver_7() {
   const user = {
     username: "Lea",
     password: "Häst123",
@@ -115,10 +115,10 @@ async function driver_9() {
     body: JSON.stringify(user),
   });
   const response = await fetch(request);
-  const testText = "Test 9: Logga ut användare";
+  const testText = "Test 7: Logga ut användare";
   createDiv(response, testText);
 }
-async function driver_10() {
+async function driver_8() {
   const user = {
     username: "Lea",
     password: "Häst123",
@@ -131,7 +131,7 @@ async function driver_10() {
     body: JSON.stringify(user),
   });
   const response = await fetch(request);
-  const testText = "Test 10: Uppdaterad poäng för användare";
+  const testText = "Test 8: Uppdaterad poäng för användare";
   createDiv(response, testText);
 }
 
@@ -140,44 +140,10 @@ async function driver_Users() {
   const request = new Request("http://localhost:8000/getUsers");
   const response = await fetch(request);
 
-  const testText = "Test 7: Array med alla användare";
+  const testText = "Test 9: Array med alla användare";
   createDiv(response, testText);
 }
-//Funktion som hämtar API gällande bilderna
-/*async function getPicture() {
-  //hämta bild/bilder från API
-  const response = await fetch(
-    "https://api.pexels.com/v1/search?query=Boats&per_page=8",
-    {
-      headers: {
-        Authorization:
-          "V3C5EBsKEQBS1WAmameHcgifua6v5QP6tOmDbzBVmOSPGs0TIgGzENsT",
-      },
-    }
-  );
 
-  const resource = await response.json();
-  console.log(resource);
-
-  let bild = document.getElementById("bild");
-  bild.innerHTML = `
-        <img src=${resource.photos[0].src.medium}></img>`;
-
-  createDiv(response, testText);
-}
-//Funktion som hämtar API gällande frågor
-/*async function getQuizQuestions() {
-  const response = await fetch(
-    //Hämta frågor från API
-    "https://the-trivia-api.com/api/questions?categories=science&limit=9&region=SE&difficulty=easy"
-  );
-  const resource = await response.json();
-  console.log(resource);
-
-} */
-
-// Funktion som hanterar alla async-funktioner och
-//ser till att dessa körs i korrekt ordning.
 async function driverHandler() {
   await driver_1();
   await driver_2();
@@ -185,12 +151,8 @@ async function driverHandler() {
   await driver_4();
   await driver_5();
   await driver_6();
+  await driver_7();
   await driver_8();
-  await driver_9();
-  await driver_10();
   await driver_Users();
-
-  //await getPicture();
-  // await getQuizQuestions();
 }
 driverHandler();
