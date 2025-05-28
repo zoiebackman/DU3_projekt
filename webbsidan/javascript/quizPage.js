@@ -209,7 +209,7 @@ async function getQuiz(quizCategory, categoryImage) {
       if (scoreCounter == 30 || scoreCounter == 40 || scoreCounter == 50) {
         currentScore.innerHTML = `
             
-            <img id="pellePicture" src="../../bilder/PelleSad.png" alt="">`;
+            <img id="pellePicture" src="../../bilder/Pelleneutral.png" alt="">`;
       }
       if (scoreCounter == 60 || scoreCounter == 70 || scoreCounter == 80) {
         currentScore.innerHTML = `
