@@ -162,7 +162,8 @@ async function getQuiz(quizCategory, categoryImage) {
         button.addEventListener("click", function () {
           counter++;
           if (newArray[i].isCorrect === true) {
-            button.style.backgroundColor = "green";
+            button.style.backgroundColor = "#92D596";
+            button.style.color = "white";
             scoreCounter += 10;
             scoreDiv.textContent = `Score:${scoreCounter}`;
             button.disabled = true;
@@ -171,10 +172,12 @@ async function getQuiz(quizCategory, categoryImage) {
             }, 1000);
           }
           if (newArray[i].isCorrect === false) {
-            button.style.backgroundColor = "red";
+            button.style.color = "white";
+            button.style.backgroundColor = "#D55658";
             answers.forEach((button, index) => {
               if (newArray[index].isCorrect) {
-                button.style.backgroundColor = "green";
+                button.style.backgroundColor = "#92D596";
+                button.style.color = "white";
               }
             });
 
