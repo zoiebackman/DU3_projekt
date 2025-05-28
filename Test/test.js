@@ -91,6 +91,7 @@ async function driver_4() {
   createDiv(response, testText, 400);
 }
 
+
 async function driver_5() {
   const request = new Request("http://localhost:8000/quizPage/result");
   const response = await fetch(request);
@@ -137,6 +138,39 @@ async function driver_8() {
   const testText = "Test 8: Uppdaterad poäng för användare";
   createDiv(response, testText, 200);
 }
+async function driver_9() {
+  const newUser = {
+    username: "Lea",
+    password: "Häst323",
+    score: 30,
+    logedIn: false,
+  };
+  const request = new Request("http://localhost:8000/createAccount", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newUser),
+  });
+  const response = await fetch(request);
+
+  const testText = "Test 9: Try to create user with already existing username";
+  createDiv(response, testText, 400);
+}
+async function driver_10() {
+  const newUser = {
+    username: "Lea",
+    password: "Häst123",
+    score: 30,
+    logedIn: false,
+  };
+  const request = new Request("http://localhost:8000/logOut", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
+  });
+  const response = await fetch(request);
+  const testText = "Test 10: User not logged in";
+  createDiv(response, testText, 400);
+}
 
 //Driver som returnerar array av alla användare.
 async function driver_Users() {
@@ -156,6 +190,7 @@ async function driverHandler() {
   await driver_6();
   await driver_7();
   await driver_8();
+  await driver_9();
   await driver_Users();
 }
 driverHandler();
