@@ -129,9 +129,13 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: beige;
+  background: linear-gradient(180deg,
+      rgba(245, 206, 152, 1) 28%,
+      rgba(255, 193, 87, 1) 55%,
+      rgba(217, 154, 46, 1) 97%);
+    ;
+  box-shadow: 1px 3px 3px #705744;
   height: 219px;
-  border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
   display: none;
