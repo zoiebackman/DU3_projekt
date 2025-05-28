@@ -13,6 +13,7 @@ function createDiv(response, textContent, expectedStatus) {
       response.status == 409
     ) {
       return "red";
+      // background-color: #ff5656;
     }
   }
   const div = document.createElement("div");
