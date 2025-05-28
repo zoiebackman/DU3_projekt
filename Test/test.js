@@ -122,6 +122,37 @@ async function driver_7() {
   const testText = "Test 7: Logga ut användare";
   createDiv(response, testText, 200);
 }
+async function driver_10() {
+  const newUser = {
+    username: "Lea",
+    password: "Häst123",
+    score: 30,
+    logedIn: false,
+  };
+  const request = new Request("http://localhost:8000/logOut", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newUser),
+  });
+  const response = await fetch(request);
+  const testText = "Test 10: User not logged in";
+  createDiv(response, testText, 400);
+}
+
+async function  driver_11() {
+  const request = new Request("http://localhost:8000/getUsers");
+  const response = await fetch(request);
+  const testText = "Test 9: Ny array med alla användare";
+  createDiv(response, testText, 200);
+
+}
+async function driver_12() {
+  const request = new Request("http://localhost:8000/currentUser");
+  const response = await fetch(request);
+  const testText = "Test 10: No user logged in";
+  createDiv(response, testText, 200);
+
+}
 async function driver_8() {
   const user = {
     username: "Lea",
@@ -155,22 +186,6 @@ async function driver_9() {
   const testText = "Test 9: Try to create user with already existing username";
   createDiv(response, testText, 400);
 }
-async function driver_10() {
-  const newUser = {
-    username: "Lea",
-    password: "Häst123",
-    score: 30,
-    logedIn: false,
-  };
-  const request = new Request("http://localhost:8000/logOut", {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(user),
-  });
-  const response = await fetch(request);
-  const testText = "Test 10: User not logged in";
-  createDiv(response, testText, 400);
-}
 
 //Driver som returnerar array av alla användare.
 async function driver_Users() {
@@ -182,6 +197,7 @@ async function driver_Users() {
 }
 
 async function driverHandler() {
+  await driver_Users();
   await driver_1();
   await driver_2();
   await driver_3();
@@ -191,6 +207,9 @@ async function driverHandler() {
   await driver_7();
   await driver_8();
   await driver_9();
-  await driver_Users();
+  await driver_10();
+  await driver_11();
+  await driver_12();
+  
 }
 driverHandler();
