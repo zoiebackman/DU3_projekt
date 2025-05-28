@@ -37,12 +37,12 @@ async function driver_Users() {
   const request = new Request("http://localhost:8000/getUsers");
   const response = await fetch(request);
 
-  const testText = "Test 9: Array med alla användare";
+  const testText = "Test 1: Array of Users";
   createDiv(response, testText, 200);
 }
 
 //Driver som testar att logga in med icke-existerande användare.
-async function driver_1() {
+async function driver_2() {
   const newUser = { username: "Yoman", password: "Liseberg123" };
   const request = new Request("http://localhost:8000/login", {
     method: "POST",
@@ -50,12 +50,12 @@ async function driver_1() {
     body: JSON.stringify(newUser),
   });
   const response = await fetch(request);
-  const testText = "Test 1: icke-existerande användare:";
+  const testText = "Test 2: Non-Existing User:";
   createDiv(response, testText, 400);
 }
 
 //Driver som testar att logga in existerande användare.
-async function driver_2() {
+async function driver_3() {
   const newUser = { username: "pelle_boi", password: "fotboll123" };
 
   const request = new Request("http://localhost:8000/login", {
@@ -65,11 +65,11 @@ async function driver_2() {
   });
   const response = await fetch(request);
 
-  const testText = "Test 2: logga in med existerande användare:";
+  const testText = "Test 3: Login With Non-Existning User:";
   createDiv(response, testText, 200);
 }
 //Driver som testar att skapa en ny användare.
-async function driver_3() {
+async function driver_4() {
   const newUser = {
     username: "Lea",
     password: "Häst123",
@@ -83,10 +83,10 @@ async function driver_3() {
   });
   const response = await fetch(request);
 
-  const testText = "Test 3: Skapa ny användare";
+  const testText = "Test 4: Create New User";
   createDiv(response, testText, 200);
 }
-async function driver_4() {
+async function driver_5() {
   // Testar att skapa user med tomt inmatningsfält
   const newUser = { username: "", password: "fotboll" };
   const request = new Request("http://localhost:8000/createAccount", {
@@ -96,25 +96,25 @@ async function driver_4() {
   });
 
   const response = await fetch(request);
-  const testText = "Test 4: Saknas text i inmatningsfält";
+  const testText = "Test 5: Text Missing In Input-Field";
   createDiv(response, testText, 400);
 }
 
-async function driver_5() {
+async function driver_6() {
   const request = new Request("http://localhost:8000/quizPage/result");
   const response = await fetch(request);
-  const testText = "Test 5: Array av highscore";
+  const testText = "Test 6: Array With Highscore";
 
   createDiv(response, testText, 200);
 }
 
-async function driver_6() {
+async function driver_7() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
-  const testText = "Test 6: Hämta inloggad användare";
+  const testText = "Test 7: Get LoggedIn User";
   createDiv(response, testText, 200);
 }
-async function driver_7() {
+async function driver_8() {
   const user = {
     username: "Lea",
     password: "Häst123",
@@ -127,23 +127,23 @@ async function driver_7() {
     body: JSON.stringify(user),
   });
   const response = await fetch(request);
-  const testText = "Test 7: Logga ut användare";
+  const testText = "Test 8: User Logout";
   createDiv(response, testText, 200);
 }
 
-async function driver_11() {
+async function driver_9() {
   const request = new Request("http://localhost:8000/getUsers");
   const response = await fetch(request);
-  const testText = "Test 9: Ny array med alla användare";
+  const testText = "Test 9: New Array With Users";
   createDiv(response, testText, 200);
 }
-async function driver_12() {
+async function driver_10() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
-  const testText = "Test 10: No user logged in";
+  const testText = "Test 10: No User Logged In";
   createDiv(response, testText, 200);
 }
-async function driver_8() {
+async function driver_11() {
   const user = {
     username: "Lea",
     password: "Häst123",
@@ -156,10 +156,10 @@ async function driver_8() {
     body: JSON.stringify(user),
   });
   const response = await fetch(request);
-  const testText = "Test 8: Uppdaterad poäng för användare";
+  const testText = "Test 11: Updated User Score";
   createDiv(response, testText, 200);
 }
-async function driver_9() {
+async function driver_12() {
   const newUser = {
     username: "Lea",
     password: "Häst323",
@@ -173,13 +173,13 @@ async function driver_9() {
   });
   const response = await fetch(request);
 
-  const testText = "Test 9: Try to create user with already existing username";
+  const testText = "Test 12: Create User With Already Existing Username";
   createDiv(response, testText, 409);
 }
 
 async function driverHandler() {
   await driver_Users();
-  await driver_1();
+  // await driver_1();
   await driver_2();
   await driver_3();
   await driver_4();
