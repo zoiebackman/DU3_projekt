@@ -29,6 +29,7 @@ function showFinalScore(imageContainer, question1, scoreCounter) {
   finalText.classList.add("finalText");
   imageContainer.style.flexDirection = "column";
   imageContainer.style.display = "flex";
+  imageContainer.style.border = "none";
   imageContainer.style.justifyContent = "center";
   imageContainer.style.alignItems = "center";
   imageContainer.appendChild(finalText);

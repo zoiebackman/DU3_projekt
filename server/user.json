@@ -68,7 +68,7 @@
   {
     "username": "Moa",
     "password": "1",
-    "score": 80,
-    "logedIn": true
+    "score": 120,
+    "logedIn": false
   }
 ]
