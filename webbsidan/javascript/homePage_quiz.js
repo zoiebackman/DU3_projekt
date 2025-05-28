@@ -7,6 +7,7 @@ const userNameDiv = document.getElementById("myUserName");
 const popUpBox = document.getElementById("popUpSignOut");
 const yesButton = document.getElementById("yesButton");
 const noButton = document.getElementById("noButton");
+const homePageButton = document.getElementById("homePageButton");
 
 let quizCategory;
 
@@ -18,10 +19,14 @@ async function getLoggedInUser() {
 
   console.log(resource);
 
-  userNameDiv.textContent = resource.user.username
+  userNameDiv.textContent = `${resource.user.username}: ${resource.user.score}`;
 }
 
 getLoggedInUser();
+
+homePageButton.addEventListener("click", function () {
+  window.location.href = "homePage.html";
+});
 
 signOutButton.addEventListener("click", function () {
   popUpBox.style.display = "block";
@@ -45,7 +50,7 @@ noButton.addEventListener("click", function () {
   window.location.href = "homePage.html";
 });
 
-buttons()
+buttons();
 //Hantering av quiz-knapparna
 function buttons() {
   const quizButtons = document.querySelectorAll(".quizButton");
@@ -56,7 +61,6 @@ function buttons() {
       getImage(quizCategory);
     });
   });
-
 }
 
 //Fetch till externt API gällande att hämta bilder
@@ -73,19 +77,18 @@ async function getImage(quizCategory) {
   const images = await response.json();
   console.log(images);
 
-  quizContainer.innerHTML = ""
+  quizContainer.innerHTML = "";
 
   const otherQuizButton = document.createElement("div");
   otherQuizButton.textContent = `Choose a Different Quiz `;
   otherQuizButton.id = "otherQuizButton";
   quizContainer.appendChild(otherQuizButton);
-  console.log("klcik1")
-
+  console.log("klcik1");
 
   otherQuizButton.addEventListener("click", function () {
-    console.log("klcik2")
+    console.log("klcik2");
     window.location.href = "homePage.html";
-  })
+  });
 
   const img = document.createElement("img");
   img.className = "picture";
@@ -99,7 +102,6 @@ async function getImage(quizCategory) {
   startQuizButton.textContent = `Start ${quizCategory} Quiz!`;
   startQuizButton.id = "startQuizButton";
   quizContainer.appendChild(startQuizButton);
-
 
   startQuizButton.addEventListener("click", function () {
     if (quizCategory == "Food & Drink") {
@@ -162,7 +164,7 @@ searchForQuizInput.addEventListener("input", function () {
       div.appendChild(p);
       quizLibary.appendChild(div);
 
-      buttons()
+      buttons();
     }
   }
 });

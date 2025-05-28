@@ -47,6 +47,7 @@ input {
   border-radius: 7px;
   padding: 5px 20px;
   background-color: #5bb0ac84;
+  margin-right: 80px;
 }
 
 /* #myUserName {
@@ -72,12 +73,21 @@ input {
   height: 20px;
   color: white;
   font-size: 23px;
-  background: #F3BD66;
+  background: #f3bd66;
   /* background: linear-gradient(149deg, rgba(243, 189, 102, 1) 12%, rgba(182, 217, 208, 1) 48%, rgba(243, 189, 102, 1) 82%); */
   box-shadow: 1px 2px 2px #8e664a;
   font-weight: bolder;
 
-  background: linear-gradient(288deg, rgba(91, 176, 172, 1) 6%, rgba(240, 179, 93, 1) 20%, rgba(230, 176, 149, 1) 36%, rgba(255, 235, 204, 1) 51%, rgba(230, 176, 149, 1) 68%, rgba(240, 179, 93, 1) 80%, rgba(91, 176, 172, 1) 95%);
+  background: linear-gradient(
+    288deg,
+    rgba(91, 176, 172, 1) 6%,
+    rgba(240, 179, 93, 1) 20%,
+    rgba(230, 176, 149, 1) 36%,
+    rgba(255, 235, 204, 1) 51%,
+    rgba(230, 176, 149, 1) 68%,
+    rgba(240, 179, 93, 1) 80%,
+    rgba(91, 176, 172, 1) 95%
+  );
 }
 
 #userStar {
@@ -141,7 +151,6 @@ input {
   color: #754a13;
   box-shadow: 1px 3px 3px #bb8965;
   padding: 15px;
-
 }
 
 #settingsBox button:hover {
@@ -167,7 +176,12 @@ input {
 
   padding: 20px;
   border-radius: 20px;
-  background: linear-gradient(180deg, rgba(245, 206, 152, 1) 28%, rgba(255, 193, 87, 1) 55%, rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   box-shadow: 1px 3px 3px #705744;
 }
 
@@ -176,21 +190,25 @@ input {
   box-shadow: 3px 3px 6px #030202;
 }
 
-
 h1 {
   font-size: 40px;
   font-weight: inherit;
   font-style: normal;
   color: #e7af2b;
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #quizLibrary {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(180deg, rgba(245, 206, 152, 1) 28%, rgba(255, 193, 87, 1) 55%, rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   border-top: solid 2px #b27640;
   padding-top: 20px;
 
@@ -209,7 +227,6 @@ h1 {
 
 .quizButton:hover {
   background-color: #ead5b1;
-
 }
 
 .quizButton p {
@@ -252,7 +269,8 @@ h1 {
   padding-bottom: 40px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #e7af2b;
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #topScore {

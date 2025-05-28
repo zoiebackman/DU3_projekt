@@ -69,6 +69,12 @@
     "username": "Moa",
     "password": "1",
     "score": 80,
+    "logedIn": false
+  },
+  {
+    "username": "saucen",
+    "password": "1",
+    "score": 0,
     "logedIn": true
   }
 ]
