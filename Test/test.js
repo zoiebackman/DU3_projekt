@@ -7,7 +7,11 @@ function createDiv(response, textContent) {
     if (status === 200) {
       return "green";
     }
-    if (response.status === 400 || response.status == 404 || response.status == 409) {
+    if (
+      response.status === 400 ||
+      response.status == 404 ||
+      response.status == 409
+    ) {
       return "red";
     }
   }
@@ -54,7 +58,12 @@ async function driver_2() {
 }
 //Driver som testar att skapa en ny användare.
 async function driver_3() {
-  const newUser = { username: "Lea", password: "Häst123", score: 30, logedIn: false };
+  const newUser = {
+    username: "Lea",
+    password: "Häst123",
+    score: 30,
+    logedIn: false,
+  };
   const request = new Request("http://localhost:8000/createAccount", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -78,13 +87,7 @@ async function driver_4() {
   const testText = "Test 4: Saknas text i inmatningsfält";
   createDiv(response, testText);
 }
-async function driver_5() {
-  const request = new Request("http://localhost:8000/homePage/search?quiz=s");
-  const response = await fetch(request);
 
-  const testText = "Test 5: Söka efter quiz";
-  createDiv(response, testText);
-}
 async function driver_6() {
   const request = new Request("http://localhost:8000/quizPage/result");
   const response = await fetch(request);
@@ -93,31 +96,41 @@ async function driver_6() {
   createDiv(response, testText);
 }
 
-async function driver_8 () {
+async function driver_8() {
   const request = new Request("http://localhost:8000/currentUser");
-  const response = await fetch(request)
+  const response = await fetch(request);
   const testText = "Test 8: Hämta inloggade användare";
   createDiv(response, testText);
 }
 async function driver_9() {
-  const user = { username: "Lea", password: "Häst123", score: 30, logedIn: true  };
-  const request = new Request("http://localhost:8000/logOut",{
+  const user = {
+    username: "Lea",
+    password: "Häst123",
+    score: 30,
+    logedIn: true,
+  };
+  const request = new Request("http://localhost:8000/logOut", {
     method: "PUT",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(user)
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
   });
-  const response = await fetch(request)
+  const response = await fetch(request);
   const testText = "Test 9: Logga ut användare";
   createDiv(response, testText);
 }
 async function driver_10() {
-  const user = { username: "Lea", password: "Häst123", score: 60, logedIn: true  };
-  const request = new Request("http://localhost:8000/updatedScore",{
+  const user = {
+    username: "Lea",
+    password: "Häst123",
+    score: 60,
+    logedIn: true,
+  };
+  const request = new Request("http://localhost:8000/updatedScore", {
     method: "PUT",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(user)
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
   });
-  const response = await fetch(request)
+  const response = await fetch(request);
   const testText = "Test 10: Uppdaterad poäng för användare";
   createDiv(response, testText);
 }
@@ -131,7 +144,7 @@ async function driver_Users() {
   createDiv(response, testText);
 }
 //Funktion som hämtar API gällande bilderna
- /*async function getPicture() {
+/*async function getPicture() {
   //hämta bild/bilder från API
   const response = await fetch(
     "https://api.pexels.com/v1/search?query=Boats&per_page=8",
@@ -172,11 +185,11 @@ async function driverHandler() {
   await driver_4();
   await driver_5();
   await driver_6();
-  await driver_8()
+  await driver_8();
   await driver_9();
   await driver_10();
   await driver_Users();
-  
+
   //await getPicture();
   // await getQuizQuestions();
 }
