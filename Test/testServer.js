@@ -38,7 +38,7 @@ async function handler(request) {
   //Hämta array med användare
   if (request.method == "GET") {
     if (url.pathname == "/getUsers") {
-      const userFile = "user.json";
+      const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
 
@@ -89,7 +89,7 @@ async function handler(request) {
 
     if (url.pathname == "/quizPage/result") {
       console.log("inne");
-      const userFile = "user.json";
+      const userFile = "testUser.json";
       const users = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(users);
 
@@ -109,7 +109,7 @@ async function handler(request) {
   if (request.method == "POST") {
     //logga in
     if (url.pathname == "/login") {
-      const userFile = "user.json";
+      const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
 
@@ -143,7 +143,7 @@ async function handler(request) {
     }
     // Skapa Konto
     if (url.pathname == "/createAccount") {
-      const userFile = "user.json";
+      const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
 
@@ -180,7 +180,7 @@ async function handler(request) {
   console.log("Hej");
   if (request.method == "PUT") {
     if (url.pathname == "/updatedScore") {
-      const userFile = "user.json";
+      const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
       const activeUser = await request.json();
@@ -200,7 +200,7 @@ async function handler(request) {
     }
 
     if (url.pathname == "/logOut") {
-      const userFile = "user.json";
+      const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(user);
       const logoutUser = await request.json();
@@ -226,7 +226,7 @@ async function handler(request) {
   }
 
   if (request.method == "GET" && url.pathname == "/currentUser") {
-    const userFile = "user.json";
+    const userFile = "testUser.json";
     const user = Deno.readTextFileSync(userFile);
     const userArray = JSON.parse(user);
     for (let user of userArray) {
