@@ -1,7 +1,7 @@
 const p = document.createElement("p");
 const testDiv = document.getElementById("testBox");
 
-function createDiv(response, textContent) {
+function createDiv(response, textContent, expectedStatus) {
   function setColor(status) {
     console.log(response);
     if (status === 200) {
@@ -18,14 +18,17 @@ function createDiv(response, textContent) {
   const div = document.createElement("div");
   const p1 = document.createElement("p");
   const p2 = document.createElement("p");
+  const p3 = document.createElement("p");
 
   p1.textContent = textContent;
   p2.textContent = `Status: ${response.status}`;
+  p3.textContent = `(Expected status: ${expectedStatus})`;
   div.style.backgroundColor = setColor(response.status);
 
   div.classList.add("testDiv");
   div.appendChild(p1);
   div.appendChild(p2);
+  div.appendChild(p3);
   testDiv.appendChild(div);
 }
 
@@ -39,7 +42,7 @@ async function driver_1() {
   });
   const response = await fetch(request);
   const testText = "Test 1: icke-existerande användare:";
-  createDiv(response, testText);
+  createDiv(response, testText, 400);
 }
 
 //Driver som testar att logga in existerande användare.
@@ -54,7 +57,7 @@ async function driver_2() {
   const response = await fetch(request);
 
   const testText = "Test 2: logga in med existerande användare:";
-  createDiv(response, testText);
+  createDiv(response, testText, 200);
 }
 //Driver som testar att skapa en ny användare.
 async function driver_3() {
@@ -72,7 +75,7 @@ async function driver_3() {
   const response = await fetch(request);
 
   const testText = "Test 3: Skapa ny användare";
-  createDiv(response, testText);
+  createDiv(response, testText, 200);
 }
 async function driver_4() {
   // Testar att skapa user med tomt inmatningsfält
@@ -85,7 +88,7 @@ async function driver_4() {
 
   const response = await fetch(request);
   const testText = "Test 4: Saknas text i inmatningsfält";
-  createDiv(response, testText);
+  createDiv(response, testText, 400);
 }
 
 async function driver_5() {
@@ -93,14 +96,14 @@ async function driver_5() {
   const response = await fetch(request);
   const testText = "Test 5: Array av highscore";
 
-  createDiv(response, testText);
+  createDiv(response, testText, 200);
 }
 
 async function driver_6() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
   const testText = "Test 6: Hämta inloggad användare";
-  createDiv(response, testText);
+  createDiv(response, testText, 200);
 }
 async function driver_7() {
   const user = {
@@ -116,7 +119,7 @@ async function driver_7() {
   });
   const response = await fetch(request);
   const testText = "Test 7: Logga ut användare";
-  createDiv(response, testText);
+  createDiv(response, testText, 200);
 }
 async function driver_8() {
   const user = {
@@ -132,7 +135,7 @@ async function driver_8() {
   });
   const response = await fetch(request);
   const testText = "Test 8: Uppdaterad poäng för användare";
-  createDiv(response, testText);
+  createDiv(response, testText, 200);
 }
 
 //Driver som returnerar array av alla användare.
@@ -141,7 +144,7 @@ async function driver_Users() {
   const response = await fetch(request);
 
   const testText = "Test 9: Array med alla användare";
-  createDiv(response, testText);
+  createDiv(response, testText, 200);
 }
 
 async function driverHandler() {
