@@ -17,14 +17,40 @@
     "score": 100,
     "logedIn": false
   },
-  { "username": "sås", "password": "123", "score": 0, "logedIn": false },
+  {
+    "username": "sås",
+    "password": "123",
+    "score": 0,
+    "logedIn": false
+  },
   {
     "username": "pelle_boi",
     "password": "fotboll123",
     "score": 0,
+    "logedIn": true
+  },
+  {
+    "username": "kingen",
+    "password": "30",
+    "score": 0,
     "logedIn": false
   },
-  { "username": "kingen", "password": "30", "score": 0, "logedIn": false },
-  { "username": "Hej", "password": "123", "score": 0, "logedIn": false },
-  { "username": "rat", "password": "rat", "score": 0, "logedIn": false }
+  {
+    "username": "Hej",
+    "password": "123",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "rat",
+    "password": "rat",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "Lea",
+    "password": "Häst123",
+    "score": 0,
+    "logedIn": false
+  }
 ]

@@ -136,7 +136,7 @@ async function handler(request) {
       });
     }
   }
-  
+
   if (request.method == "PUT") {
     if (url.pathname == "/updatedScore") {
       const userFile = "testUser.json";
@@ -177,10 +177,6 @@ async function handler(request) {
           );
         }
       }
-      return new Response(JSON.stringify({ error: "User not logged in" }), {
-        status: 400,
-        headers: headersCORS,
-      });
     }
   }
 

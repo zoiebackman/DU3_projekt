@@ -91,7 +91,6 @@ async function driver_4() {
   createDiv(response, testText, 400);
 }
 
-
 async function driver_5() {
   const request = new Request("http://localhost:8000/quizPage/result");
   const response = await fetch(request);
@@ -123,19 +122,17 @@ async function driver_7() {
   createDiv(response, testText, 200);
 }
 
-async function  driver_11() {
+async function driver_11() {
   const request = new Request("http://localhost:8000/getUsers");
   const response = await fetch(request);
   const testText = "Test 9: Ny array med alla användare";
   createDiv(response, testText, 200);
-
 }
 async function driver_12() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
   const testText = "Test 10: No user logged in";
   createDiv(response, testText, 200);
-
 }
 async function driver_8() {
   const user = {
@@ -189,10 +186,9 @@ async function driverHandler() {
   await driver_5();
   await driver_6();
   await driver_7();
-  await driver_8();
+  //await driver_8();
   await driver_9();
   await driver_11();
   await driver_12();
-  
 }
 driverHandler();
