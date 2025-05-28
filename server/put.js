@@ -5,8 +5,7 @@ export async function updatedScore(request, header) {
   const activeUser = await request.json();
   for (let i = 0; i < userArray.length; i++) {
     if (userArray[i].username == activeUser.username) {
-      userArray.splice([i], 1);
-      userArray.push(activeUser);
+      userArray[i].score += activeUser.score;
     }
   }
   await Deno.writeTextFile(userFile, JSON.stringify(userArray));
