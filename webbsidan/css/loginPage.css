@@ -66,6 +66,7 @@ p {
   width: 500px;
   text-align: center;
   margin-right: 360px;
+  box-shadow: 0px 1px 10px #8e664a;
 
   display: flex;
   justify-content: center;
