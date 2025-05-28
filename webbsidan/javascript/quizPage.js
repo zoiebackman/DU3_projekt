@@ -226,6 +226,7 @@ async function getQuiz(quizCategory, categoryImage) {
 
       answers.forEach((button) => {
         button.textContent = "";
+        button.style.boxShadow = "none";
         button.style.backgroundColor = "#5bb0ac00";
       });
     }
