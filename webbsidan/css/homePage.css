@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #8b451312;
+  border-bottom: 1px solid #b27640;
   padding: 0px 40px;
 }
 
@@ -85,7 +85,14 @@ input {
   box-shadow: 1px 2px 2px #8e664a;
   font-weight: bolder;
 
-  background: linear-gradient(180deg, rgba(245, 206, 152, 1) 28%, rgba(255, 193, 87, 1) 55%, rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(288deg,
+      rgba(91, 176, 172, 1) 6%,
+      rgba(240, 179, 93, 1) 20%,
+      rgba(230, 176, 149, 1) 36%,
+      rgba(255, 235, 204, 1) 51%,
+      rgba(230, 176, 149, 1) 68%,
+      rgba(240, 179, 93, 1) 80%,
+      rgba(91, 176, 172, 1) 95%);
 }
 
 #userStar {
@@ -134,7 +141,6 @@ input {
       rgba(245, 206, 152, 1) 28%,
       rgba(255, 193, 87, 1) 55%,
       rgba(217, 154, 46, 1) 97%);
-  ;
   box-shadow: 1px 3px 3px #705744;
   height: 250px;
   padding: 10px;
@@ -361,4 +367,32 @@ p {
 body {
   background-color: beige;
   margin: 0px;
+}
+
+footer {
+  height: 80px;
+  border-top: 1px solid #b27640;
+  margin-top: 100px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#footerPic {
+  margin-right: 20px;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5bb0ac84;
+  color: white;
+  gap: 20px;
+  border-radius: 10px;
+  padding-top: 5px;
+}
+
+#pexelPic {
+  width: 100px;
+  height: 40px;
 }

@@ -74,13 +74,7 @@
   {
     "username": "saucen",
     "password": "1",
-    "score": 0,
+    "score": 130,
     "logedIn": false
-  },
-  {
-    "username": "sara",
-    "password": "hej",
-    "score": 930,
-    "logedIn": true
   }
 ]
