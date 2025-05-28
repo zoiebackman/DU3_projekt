@@ -139,8 +139,9 @@ async function getQuiz(quizCategory, categoryImage) {
       const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
-        }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${
+        quizData[counter].question
+      }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
@@ -196,6 +197,24 @@ async function getQuiz(quizCategory, categoryImage) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(resource1.user),
         });
+      }
+
+      const currentScore = document.getElementById("currentScore");
+      if (scoreCounter == 0 || scoreCounter == 10 || scoreCounter == 20) {
+        currentScore.innerHTML = `
+            
+            <img id="pellePicture" src="../../bilder/PelleSad.png" alt="">`;
+      }
+
+      if (scoreCounter == 30 || scoreCounter == 40 || scoreCounter == 50) {
+        currentScore.innerHTML = `
+            
+            <img id="pellePicture" src="../../bilder/PelleSad.png" alt="">`;
+      }
+      if (scoreCounter == 60 || scoreCounter == 70 || scoreCounter == 80) {
+        currentScore.innerHTML = `
+            
+            <img id="pellePicture" src="../../bilder/PelleHappy.png" alt="">`;
       }
 
       pointToUser();
