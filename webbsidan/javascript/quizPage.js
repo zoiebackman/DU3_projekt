@@ -104,6 +104,10 @@ async function getQuiz(quizCategory, categoryImage) {
       if (countDown.textContent == seconds) {
         seconds--;
         countDown.textContent = String(seconds);
+        countDown.classList.add("animate");
+        countDown.classList.remove("animate");
+        void countDown.offsetWidth; // tvinga ommålning
+        countDown.classList.add("animate");
         setTimeout(() => {
           countDownSeconds();
         }, 1000);

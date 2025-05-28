@@ -32,6 +32,25 @@ header {
 .reloadColor {
   background-color: beige;
 }
+.animate {
+  animation: pulse 0.3s ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
 
 #countDown {
   box-shadow: 7px 8px 48px 0px rgba(0, 0, 0, 0.63);
@@ -39,11 +58,11 @@ header {
   height: 120px;
   width: 120px;
   border-radius: 50%;
-  background-color: #e1e0f0;
+ background-color: rgb(244, 80, 51);
   justify-content: center;
   align-items: center;
   font-family: arial;
-  color: black;
+  color: white;
   font-size: 20px;
 }
 
