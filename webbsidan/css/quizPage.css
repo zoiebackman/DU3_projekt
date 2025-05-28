@@ -121,6 +121,7 @@ footer {
   height: 80px;
   width: 400px;
   background-color: #f9e7c8;
+  color: #754a13;
   box-shadow: 4px 5px 2px #bb8965;
   border-radius: 5px;
   display: flex;
@@ -133,7 +134,6 @@ footer {
 #question {
   font-size: 20px;
   font-family: arial;
-  color: black;
   text-align: center;
 }
 
