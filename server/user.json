@@ -68,7 +68,7 @@
   {
     "username": "Moa",
     "password": "1",
-    "score": 230,
+    "score": 190,
     "logedIn": false
   },
   {
@@ -76,11 +76,5 @@
     "password": "1",
     "score": 0,
     "logedIn": false
-  },
-  {
-    "username": "sarre",
-    "password": "hej",
-    "score": 0,
-    "logedIn": true
   }
 ]
