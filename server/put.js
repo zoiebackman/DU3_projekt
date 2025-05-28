@@ -9,12 +9,10 @@ export async function updatedScore(request, header) {
     }
   }
   await Deno.writeTextFile(userFile, JSON.stringify(userArray));
-  return new Response(
-    JSON.stringify(
-      { message: "Score updated" },
-      { status: 200, headers: header }
-    )
-  );
+  return new Response(JSON.stringify({ message: "Score updated" }), {
+    status: 200,
+    headers: header,
+  });
 }
 
 export async function logOut(request, header) {
@@ -36,5 +34,5 @@ export async function logOut(request, header) {
   return new Response(JSON.stringify({ error: "User not logged in" }), {
     status: 400,
     headers: header,
-  })
+  });
 }
