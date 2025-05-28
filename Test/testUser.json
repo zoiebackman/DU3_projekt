@@ -27,7 +27,7 @@
     "username": "pelle_boi",
     "password": "fotboll123",
     "score": 0,
-    "logedIn": true
+    "logedIn": false
   },
   {
     "username": "kingen",
@@ -44,12 +44,6 @@
   {
     "username": "rat",
     "password": "rat",
-    "score": 0,
-    "logedIn": false
-  },
-  {
-    "username": "Lea",
-    "password": "Häst123",
     "score": 0,
     "logedIn": false
   }

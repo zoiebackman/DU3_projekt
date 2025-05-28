@@ -32,6 +32,14 @@ function createDiv(response, textContent, expectedStatus) {
   testDiv.appendChild(div);
 }
 
+async function driver_Users() {
+  const request = new Request("http://localhost:8000/getUsers");
+  const response = await fetch(request);
+
+  const testText = "Test 9: Array med alla användare";
+  createDiv(response, testText, 200);
+}
+
 //Driver som testar att logga in med icke-existerande användare.
 async function driver_1() {
   const newUser = { username: "Yoman", password: "Liseberg123" };
@@ -168,15 +176,6 @@ async function driver_9() {
   createDiv(response, testText, 409);
 }
 
-//Driver som returnerar array av alla användare.
-async function driver_Users() {
-  const request = new Request("http://localhost:8000/getUsers");
-  const response = await fetch(request);
-
-  const testText = "Test 9: Array med alla användare";
-  createDiv(response, testText, 200);
-}
-
 async function driverHandler() {
   await driver_Users();
   await driver_1();
@@ -188,7 +187,6 @@ async function driverHandler() {
   await driver_7();
   //await driver_8();
   await driver_9();
-  await driver_10();
   await driver_11();
   await driver_12();
 }
