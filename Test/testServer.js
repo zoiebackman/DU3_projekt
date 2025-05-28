@@ -150,12 +150,10 @@ async function handler(request) {
         }
       }
       Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
-      return new Response(
-        JSON.stringify(
-          { message: "Score updated" },
-          { status: 200, headers: headersCORS }
-        )
-      );
+      return new Response(JSON.stringify({ message: "Score updated" }), {
+        status: 200,
+        headers: headersCORS,
+      });
     }
 
     if (url.pathname == "/logOut") {
