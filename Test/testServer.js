@@ -136,7 +136,7 @@ async function handler(request) {
       });
     }
   }
-  
+
   if (request.method == "PUT") {
     if (url.pathname == "/updatedScore") {
       const userFile = "testUser.json";
@@ -176,7 +176,6 @@ async function handler(request) {
             }
           );
         }
-      }
       }
     }
   }
