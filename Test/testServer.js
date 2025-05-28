@@ -48,47 +48,8 @@ async function handler(request) {
       });
     }
 
-    if (url.pathname == "/homePage/search") {
-      // tas bort
-      const rightQuizArray = [];
-      const searchQuiz = url.searchParams.get("quiz");
-      const file = "quiz.json";
-      const quizdata = Deno.readTextFileSync(file);
-      const quizArray = JSON.parse(quizdata);
-
-      if (!searchQuiz) {
-        return new Response(JSON.stringify({ error: "Empty searchfield!" }), {
-          status: 400,
-          headers: headersCORS,
-        });
-      }
-      for (let quiz of quizArray) {
-        if (quiz.category.includes(searchQuiz)) {
-          rightQuizArray.push(quiz);
-          console.log(rightQuizArray);
-        }
-      }
-      return new Response(JSON.stringify(rightQuizArray), {
-        status: 200,
-        headers: headersCORS,
-      });
-    }
-
-    if (url.pathname == "/quizPage") {
-      //ta bort???
-      const userFile = "quiz.json";
-      const quiz = Deno.readTextFileSync(userFile);
-      // byt till json-data som hämtas från api
-      // bör stå const quiz = await request.json()
-      const quizArray = JSON.parse(quiz);
-      return new Response(JSON.stringify(quizArray), {
-        status: 200,
-        headers: headersCORS,
-      });
-    }
-
     if (url.pathname == "/quizPage/result") {
-      console.log("inne");
+      console.log("result");
       const userFile = "testUser.json";
       const users = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(users);
