@@ -191,7 +191,6 @@ async function driverHandler() {
   await driver_7();
   await driver_8();
   await driver_9();
-  await driver_10();
   await driver_11();
   await driver_12();
   
