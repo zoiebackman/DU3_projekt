@@ -25,7 +25,7 @@ function showFinalScore(imageContainer, question1, scoreCounter) {
   button.textContent = "Back to start";
   question1.textContent = "Quiz is done!";
   const finalText = document.createElement("div");
-  finalText.textContent = `You scored ${scoreCounter} out of 80`;
+  finalText.textContent = `You scored ${scoreCounter} out of 80 points!`;
   finalText.classList.add("finalText");
   imageContainer.style.flexDirection = "column";
   imageContainer.style.display = "flex";
@@ -139,9 +139,8 @@ async function getQuiz(quizCategory, categoryImage) {
       const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${
-        quizData[counter].question
-      }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
+        }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
@@ -162,7 +161,8 @@ async function getQuiz(quizCategory, categoryImage) {
         button.addEventListener("click", function () {
           counter++;
           if (newArray[i].isCorrect === true) {
-            button.style.backgroundColor = "green";
+            button.style.backgroundColor = "#92D596";
+            button.style.color = "white";
             scoreCounter += 10;
             scoreDiv.textContent = `Score:${scoreCounter}`;
             button.disabled = true;
@@ -171,10 +171,12 @@ async function getQuiz(quizCategory, categoryImage) {
             }, 1000);
           }
           if (newArray[i].isCorrect === false) {
-            button.style.backgroundColor = "red";
+            button.style.color = "white";
+            button.style.backgroundColor = "#D55658";
             answers.forEach((button, index) => {
               if (newArray[index].isCorrect) {
-                button.style.backgroundColor = "green";
+                button.style.backgroundColor = "#92D596";
+                button.style.color = "white";
               }
             });
 
@@ -203,13 +205,13 @@ async function getQuiz(quizCategory, categoryImage) {
       if (scoreCounter == 0 || scoreCounter == 10 || scoreCounter == 20) {
         currentScore.innerHTML = `
             
-            <img id="pellePicture" src="../../bilder/PelleSad.png" alt="">`;
+            <img id="pellePicture" src="../../bilder/sadPelle.png" alt="">`;
       }
 
       if (scoreCounter == 30 || scoreCounter == 40 || scoreCounter == 50) {
         currentScore.innerHTML = `
             
-            <img id="pellePicture" src="../../bilder/PelleSad.png" alt="">`;
+            <img id="pellePicture" src="../../bilder/Pelleneutral.png" alt="">`;
       }
       if (scoreCounter == 60 || scoreCounter == 70 || scoreCounter == 80) {
         currentScore.innerHTML = `
@@ -226,6 +228,7 @@ async function getQuiz(quizCategory, categoryImage) {
 
       answers.forEach((button) => {
         button.textContent = "";
+        button.style.boxShadow = "none";
         button.style.backgroundColor = "#5bb0ac00";
       });
     }

@@ -1,5 +1,15 @@
 /* NAV */
 
+@font-face {
+  font-family: "pelleFont";
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+}
+
+@font-face {
+  font-family: "pelleFontP";
+  src: url(../../fonts/PatrickHand-Regular.ttf);
+}
+
 #navbar {
   /* display: flex;
   justify-content: space-between;
@@ -10,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #8b451312;
+  border-bottom: 1px solid #b27640;
   padding: 0px 40px;
 }
 
@@ -23,6 +33,7 @@
   display: flex;
   align-items: center;
   height: 70px;
+  font-family: pelleFont;
 }
 
 #pelleNav {
@@ -36,11 +47,11 @@
 #quizLogo p {
   font-weight: bold;
   margin-right: 30px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #524122;
   color: #e6ac41;
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 38px;
+  font-family: pelleFont;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 input {
@@ -48,15 +59,17 @@ input {
   padding: 5px 20px;
   background-color: #5bb0ac84;
   margin-right: 80px;
+  color: white;
 }
 
-/* #myUserName {
-  /* border: solid 1px black;
-  padding: 5px 20px;
-  border-radius: 7px;
-  background-color: #f3bd66;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 12px; */
+#myUserName {
+  font-family: pelleFontP;
+  font-size: 12px;
+  color: saddlebrown;
+  font-size: 32px;
+  font-weight: bold;
+}
+
 #userBox {
   display: flex;
   flex-direction: row;
@@ -66,13 +79,7 @@ input {
   padding: 8px 25px;
   border-radius: 7px;
   background-color: #f3bd66;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #7d5f39;
-  font-size: 12px;
   height: 20px;
-  color: white;
-  font-size: 23px;
   background: #f3bd66;
   /* background: linear-gradient(149deg, rgba(243, 189, 102, 1) 12%, rgba(182, 217, 208, 1) 48%, rgba(243, 189, 102, 1) 82%); */
   box-shadow: 1px 2px 2px #8e664a;
@@ -121,6 +128,7 @@ input {
   padding: 20px 0px;
   position: relative;
   box-shadow: 1px 3px 3px #bb8965;
+  font-family: pelleFontP
 }
 
 #popUpSignOut {
@@ -129,27 +137,32 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: beige;
-  height: 219px;
-  border: 1px solid black;
+  background: linear-gradient(180deg,
+      rgba(245, 206, 152, 1) 28%,
+      rgba(255, 193, 87, 1) 55%,
+      rgba(217, 154, 46, 1) 97%);
+  box-shadow: 1px 3px 3px #705744;
+  height: 250px;
   padding: 10px;
   border-radius: 5px;
   display: none;
   position: absolute;
-  width: 200px;
+  width: 210px;
 }
 
 #settingsBox button {
   /* border: solid 1dvi white; */
-  background-color: white;
+  /* background-color: white; */
   text-align: center;
   margin: 8px;
   border-radius: 5px;
   width: 87%;
-  font-size: 20px;
+  font-size: 30px;
   color: #754a13;
   box-shadow: 1px 3px 3px #bb8965;
   padding: 15px;
+  background-color: #fbedd4;
+  font-family: pelleFontP
 }
 
 #settingsBox button:hover {
@@ -188,13 +201,20 @@ input {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 45px;
+  font-weight: bold;
+  color: #e7af2b;
+  font-family: pelleFont;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+}
+
+/* 
+  font-size: 45px;
   font-weight: inherit;
   font-style: normal;
   color: #e7af2b;
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000, 1px 1px 0 #000;
-}
+  text-shadow: 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-family: pelleFont; */
 
 #quizLibrary {
   display: flex;
@@ -218,6 +238,9 @@ h1 {
   height: 150px;
   margin: 7px;
   box-shadow: 4px 5px 2px #bb8965;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quizButton:hover {
@@ -225,8 +248,10 @@ h1 {
 }
 
 .quizButton p {
-  font-size: 40px;
+  font-size: 50px;
   color: #59310e;
+  font-family: pelleFontP;
+  margin: 0px;
 }
 
 #homePage {
@@ -234,38 +259,31 @@ h1 {
 }
 
 #finger {
-  font-size: 32px;
+  font-size: 40px;
   color: #826d6d;
 }
 
 #house {
-  font-size: 23px;
+  font-size: 40px;
   color: #826d6d;
 }
 
 .crown {
   color: gold;
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #8a6013; */
   font-size: 43px;
 }
 
-/* .crown {
-  color: gold;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #8a6013;
-  font-size: 43px;
-} */
-
 #scoreH {
-  font-size: 20px;
+  font-size: 25px;
+  margin: 10px;
   text-align: center;
   border-bottom: solid 2px #b79663;
-  padding-bottom: 40px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-bottom: 25px;
+  font-family: pelleFont;
   color: #e7af2b;
-  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+
+
 }
 
 #topScore {
@@ -281,22 +299,34 @@ h1 {
   box-shadow: 1px 3px 3px #bb8965;
 }
 
-#topScore p {
-  text-align: center;
+#topScoreName {
+  text-align: start;
+}
+
+#topScorePoints {
+  text-align: end;
 }
 
 .topPlayers {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: #fbedd4;
   border-radius: 5px;
   box-shadow: 1px 3px 3px #bb8965;
+  padding: 0px 15px;
+  font-size: 23px;
+}
+
+#scoreStar {
+  color: gold;
 }
 
 .topPlayers p {
   width: 200px;
   text-align: center;
+  color: #754a13;
+  margin: 10px;
 }
 
 .pelleIcon {
@@ -304,7 +334,7 @@ h1 {
 }
 
 p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: pelleFontP;
 }
 
 #startQuizButton {
@@ -337,4 +367,32 @@ p {
 body {
   background-color: beige;
   margin: 0px;
+}
+
+footer {
+  height: 80px;
+  border-top: 1px solid #b27640;
+  margin-top: 100px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#footerPic {
+  margin-right: 20px;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5bb0ac84;
+  color: white;
+  gap: 20px;
+  border-radius: 10px;
+  padding-top: 5px;
+}
+
+#pexelPic {
+  width: 100px;
+  height: 40px;
 }

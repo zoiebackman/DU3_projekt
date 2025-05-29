@@ -8,7 +8,7 @@ Välkommen till backend-API:et för **QuizApp** – en plats där användare log
 
 Endpoints:
 
-### 🔐 `/getUsers` KLAR
+### 🔐 `/getUsers`
 
 #### ➕ `GET`
 
@@ -18,7 +18,7 @@ Returnerar array med alla användare.
 
 ---
 
-### 🔐 `/login` KLAR
+### 🔐 `/login`
 
 #### 🔑 `POST`
 
@@ -36,11 +36,11 @@ Json:
 - `200 OK` – Inloggning lyckades! Användaren finns och lösenordet stämmer.
 - `400 Bad Request` – Användarnamn/lösenord matchar inte.
 
-### 🔐 `/createAccount`KLAR
+### 🔐 `/createAccount
 
 ---
 
-#### ✨ `POST` –
+#### ✨ `POST`
 
 Skapa ny användare.
 **Body:**
@@ -55,7 +55,7 @@ Json:
 - `200 OK` – Användaren skapades!
 - `400 Bad Request` – Något saknas i inmatningens
 
-### 🏠 `/homePage` KLAR
+### 🏠 `/homePage`
 
 #### 🧾 `GET`
 
@@ -65,7 +65,7 @@ Hämta alla användares poäng – sorterade i fallande ordning.
 
 ---
 
-### ❓ `/homePage/Search?quiz=X` KLAR
+### ❓ `/homePage/Search?quiz=X` 
 
 Returnerar de quiz som innehåller de bokstäverna som anges i input.
 
@@ -103,8 +103,3 @@ Hämta scoreboarden med användarnas resultat.
 
 ---
 
-### `/quizPage/music`` gör på extern server
-
-### `GET`
-
-### `POST`

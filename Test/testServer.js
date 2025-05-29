@@ -35,7 +35,6 @@ async function handler(request) {
     );
   }
 
-  //Hämta array med användare
   if (request.method == "GET") {
     if (url.pathname == "/getUsers") {
       const userFile = "testUser.json";
@@ -68,7 +67,6 @@ async function handler(request) {
   }
 
   if (request.method == "POST") {
-    //logga in
     if (url.pathname == "/login") {
       const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
@@ -102,7 +100,7 @@ async function handler(request) {
         );
       }
     }
-    // Skapa Konto
+
     if (url.pathname == "/createAccount") {
       const userFile = "testUser.json";
       const user = Deno.readTextFileSync(userFile);
@@ -138,7 +136,7 @@ async function handler(request) {
       });
     }
   }
-  console.log("Hej");
+
   if (request.method == "PUT") {
     if (url.pathname == "/updatedScore") {
       const userFile = "testUser.json";
@@ -152,12 +150,10 @@ async function handler(request) {
         }
       }
       Deno.writeTextFileSync(userFile, JSON.stringify(userArray));
-      return new Response(
-        JSON.stringify(
-          { message: "Score updated" },
-          { status: 200, headers: headersCORS }
-        )
-      );
+      return new Response(JSON.stringify({ message: "Score updated" }), {
+        status: 200,
+        headers: headersCORS,
+      });
     }
 
     if (url.pathname == "/logOut") {
@@ -179,10 +175,6 @@ async function handler(request) {
           );
         }
       }
-      return new Response(JSON.stringify({ error: "User not logged in" }), {
-        status: 400,
-        headers: headersCORS,
-      });
     }
   }
 

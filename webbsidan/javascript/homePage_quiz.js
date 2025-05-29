@@ -19,7 +19,7 @@ async function getLoggedInUser() {
 
   console.log(resource);
 
-  userNameDiv.textContent = `${resource.user.username}: ${resource.user.score}`;
+  userNameDiv.textContent = `${resource.user.username} : ${resource.user.score}p`;
 }
 
 getLoggedInUser();
@@ -131,10 +131,12 @@ async function getTopUsers() {
     const div = document.createElement("div");
     const p1 = document.createElement("p");
     const p2 = document.createElement("p");
-    p1.textContent = user.username;
-    p2.textContent = user.score;
+    p1.textContent = `✰ ${user.username}`
+    p2.textContent = `${user.score} poäng`
 
     div.classList.add("topPlayers");
+    p1.id = ("topScoreName")
+    p2.id = ("topScorePoints")
     div.appendChild(p1);
     div.appendChild(p2);
     topScore.appendChild(div);
