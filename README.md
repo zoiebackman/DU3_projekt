@@ -18,6 +18,34 @@ Returnerar array med alla användare.
 
 ---
 
+### 🏆 `/quizPage/result`
+
+#### 📊 `GET`
+
+Hämta scoreboarden med användarnas resultat.
+
+- **Svar:** `200 OK`
+
+---
+
+### 🏠 `/homePage`
+
+#### 🧾 `GET`
+
+Hämta alla användares poäng – sorterade i fallande ordning.
+
+- **Svar:** `200 OK`
+
+---
+
+### 🙎‍♂️ `/currentUser`
+
+#### ➕ `GET`
+Returnerar den användare som är inloggad (där loggedIn === true).
+
+- **Svar:** `200 OK` - Inloggad användare hittades.
+**Svar:** `409 Not Found `- Ingen användare är inloggad.
+
 ### 🔐 `/login`
 
 #### 🔑 `POST`
@@ -25,6 +53,7 @@ Returnerar array med alla användare.
 Logga in en användare.
 
 **Body:**
+
 Json:
 {
 "username": "ditt_namn",
@@ -35,6 +64,7 @@ Json:
 
 - `200 OK` – Inloggning lyckades! Användaren finns och lösenordet stämmer.
 - `400 Bad Request` – Användarnamn/lösenord matchar inte.
+---
 
 ### 🔐 `/createAccount
 
@@ -55,21 +85,12 @@ Json:
 - `400 Bad Request` – Något saknas i inmatningens
 - `409 Bad Request` – Något saknas i inmatningens
 
-### 🏠 `/homePage`
-
-#### 🧾 `GET`
-
-Hämta alla användares poäng – sorterade i fallande ordning.
-
-- **Svar:** `200 OK`
-
----
 
 ### ❓ `/homePage/Search?quiz=X` 
 
-Returnerar de quiz som innehåller de bokstäverna som anges i input.
-
 #### 🧠 `GET`
+
+Returnerar de quiz som innehåller de bokstäverna som anges i input.
 
 - **Svar:**
   - `200 OK` – Matchande quiz returneras.
@@ -77,29 +98,30 @@ Returnerar de quiz som innehåller de bokstäverna som anges i input.
   - `409 Conflict` – Tomt sökfält.
 
 ---
+### ❓ `/updatedScore`
 
-### 📄 `/quizPage`
+#### ✨ `PUT`
+**Body:**
+{
+"username": "ditt_namn",
+"score": 10
+}
 
-#### 🔄 `GET`
-
-Hämta bilder som omslag på divarna
-Detta gör med extern server
-
-- **Svar:** `200 OK`
-
-#### 📝 `POST`
-
-Spara användarens svar i en ny array.
+**Svar:**
+  - `200 OK` – Poäng uppdaterades.
 
 ---
+### ❓ `/logOut`
 
-### 🏆 `/quizPage/result`
+#### ✨ `PUT`
+**Body:**
+{
+"username": "ditt_namn"
+}
 
-#### 📊 `GET`
+**Svar:**
+  - `200 OK` – Poäng uppdaterades.
+   - `400 Bad Request` – Användare inte inloggad.
 
-Hämta scoreboarden med användarnas resultat.
 
-- **Svar:** `200 OK`
-
----
 
