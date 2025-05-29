@@ -38,11 +38,10 @@ Json:
 
 ### 🔐 `/createAccount
 
----
-
 #### ✨ `POST`
 
 Skapa ny användare.
+
 **Body:**
 Json:
 {
@@ -54,6 +53,7 @@ Json:
 
 - `200 OK` – Användaren skapades!
 - `400 Bad Request` – Något saknas i inmatningens
+- `409 Bad Request` – Något saknas i inmatningens
 
 ### 🏠 `/homePage`
 
