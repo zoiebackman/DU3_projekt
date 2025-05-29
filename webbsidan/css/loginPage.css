@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "pelleFont";
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+}
+
+@font-face {
+  font-family: "pelleFontP";
+  src: url(../../fonts/PatrickHand-Regular.ttf);
+}
+
 body {
   margin: 0 auto;
   overflow: hidden;
@@ -5,7 +15,6 @@ body {
 }
 
 p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
 }
 
@@ -32,12 +41,14 @@ p {
 }
 
 .slogan {
-  font-family: arial;
+
+  font-family: pelleFontP;
   margin-right: 30px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ad7716;
   color: #e6ac41;
-  font-size: 25px;
+  font-size: 34px;
+  font-weight: bold;
 }
 
 #main {
@@ -62,8 +73,8 @@ p {
 #circle {
   border-radius: 50%;
   background-color: #5bb0ac5c;
-  height: 500px;
-  width: 500px;
+  height: 522px;
+  width: 522px;
   text-align: center;
   margin-right: 360px;
   box-shadow: 0px 1px 10px #8e664a;
@@ -74,22 +85,42 @@ p {
 }
 
 #loginBox {
-  height: 320px;
+  /* height: 320px;
   width: 300px;
   background-color: #f3bd66;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center; */
+
+  height: 50%;
+  width: 57%;
+  background-color: #f3bd66;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  padding: 20px 8px;
 }
 
 #loginBoxSecondBackground {
-  height: 130px;
+  /* height: 130px;
   width: 260px;
   background-color: #f9e7c8;
   margin-top: 20px;
   border-radius: 10px;
-  padding-top: 25px;
+  padding-top: 25px; */
+
+  width: 270px;
+  background-color: #f9e7c8;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 0px;
+  margin: 5px 0px;
 }
 
 .loginBoxText {
@@ -101,8 +132,13 @@ p {
 }
 
 .loginBoxText p {
-  margin: 0;
-  margin-top: 5px;
+  /* margin: 0;
+  margin-top: 5px; */
+
+  font-family: pelleFont;
+  font-size: 18px;
+  color: saddlebrown;
+  margin: 6px 0px;
 }
 
 .loginInput {
@@ -113,26 +149,35 @@ p {
 }
 
 .pelle_p {
-  font-size: 22px;
+  /* font-size: 22px;
   font-weight: bold;
   margin-right: 30px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #524122;
   color: #e6ac41;
   font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; */
+
+  font-weight: bold;
+  margin-right: 30px;
+  color: #e6ac41;
+  font-size: 38px;
+  font-family: pelleFont;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 .buttonsLoginPage {
   width: 260px;
   height: 40px;
   border-radius: 10px;
-  margin-top: 20px;
   background-color: #f18739;
   border: 1px solid #f18739;
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
   color: white;
-  font-size: 20px;
+  margin: 10px 0px;
+  font-size: 22px;
+  padding: 5px 0px;
+  font-family: pelleFontP;
 }
 
 .buttonsLoginPage:hover {
@@ -143,6 +188,8 @@ p {
 .noAccountText {
   color: white;
   text-shadow: 1px 1px 0px grey;
+  margin: 2px;
+  font-family: pelleFont;
 }
 
 a {
@@ -157,25 +204,29 @@ a {
 /* CSS för createAccount box som ska ploppa upp vid skapande av användare */
 
 #CreateAccountBox {
-  height: 320px;
-  width: 300px;
+  height: 64%;
+  width: 57%;
   background-color: #f3bd66;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 20px 8px;
 }
 
 #createAccountBoxSecondBackground {
-  height: 210px;
-  width: 260px;
+  /* height: 210px; */
+
+  width: 270px;
   background-color: #f9e7c8;
-  margin-top: 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 14px 0px;
+  margin: 5px 0px;
 }
 
 .createBoxText {
@@ -186,9 +237,10 @@ a {
 }
 
 .createBoxText p {
-  margin: 0;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-family: pelleFont;
+  font-size: 18px;
+  color: saddlebrown;
+  margin: 6px 0px;
 }
 
 span {

@@ -13,8 +13,8 @@ class ShowQuestionImage {
     this.container.style.display = "flex";
     this.container.style.justifyContent = "center";
     // this.container.style.alignItems = "center";
-    this.container.style.borderRadius = "5px";
-    this.container.style.border = "solid 1px";
+    this.container.style.borderRadius = "20px";
+    // this.container.style.border = "solid 1px";
   }
 }
 
@@ -25,7 +25,7 @@ function showFinalScore(imageContainer, question1, scoreCounter) {
   button.textContent = "Back to start";
   question1.textContent = "Quiz is done!";
   const finalText = document.createElement("div");
-  finalText.textContent = `You scored ${scoreCounter} out of 80 points!`;
+  finalText.innerHTML = `You Scored: <br> ${scoreCounter} out of 80 points!`;
   finalText.classList.add("finalText");
   imageContainer.style.flexDirection = "column";
   imageContainer.style.display = "flex";
@@ -36,6 +36,25 @@ function showFinalScore(imageContainer, question1, scoreCounter) {
   imageContainer.appendChild(button);
   return button;
 }
+
+// function showFinalScore(imageContainer, question1, scoreCounter) {
+//   imageContainer.innerHTML = ""; //ta bort bilden till sista scoreSidan
+//   const button = document.createElement("button");
+//   button.classList.add("endbutton");
+//   button.textContent = "Back to start";
+//   question1.textContent = "Quiz is done!";
+//   const finalText = document.createElement("div");
+//   finalText.textContent = `You scored ${scoreCounter} out of 80 points!`;
+//   finalText.classList.add("finalText");
+//   imageContainer.style.flexDirection = "column";
+//   imageContainer.style.display = "flex";
+//   imageContainer.style.border = "none";
+//   imageContainer.style.justifyContent = "center";
+//   imageContainer.style.alignItems = "center";
+//   imageContainer.appendChild(finalText);
+//   imageContainer.appendChild(button);
+//   return button;
+// }
 
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
@@ -58,8 +77,8 @@ const answersBox = document.querySelector("#answers");
 const countDown = document.getElementById("countDown");
 const imageContainer = document.getElementById("imageContainer");
 const leavePageButton = document.getElementById("leavePage");
-const scoreDiv = document.getElementById("scoreDiv");
-scoreDiv.textContent = `Score: 0`;
+const scoreDivP = document.getElementById("scoreDivP");
+scoreDivP.textContent = `0`;
 
 leavePageButton.addEventListener("click", function () {
   window.location.href = "./homePage.html";
@@ -161,10 +180,12 @@ async function getQuiz(quizCategory, categoryImage) {
         button.addEventListener("click", function () {
           counter++;
           if (newArray[i].isCorrect === true) {
-            button.style.backgroundColor = "#92D596";
+            // button.style.backgroundColor = "#92D596";
+            button.style.background = "#57C785";
+            button.style.background = "linear-gradient(309deg,rgba(87, 199, 133, 1) 50%, rgba(160, 235, 191, 1) 100%)";
             button.style.color = "white";
             scoreCounter += 10;
-            scoreDiv.textContent = `Score:${scoreCounter}`;
+            scoreDivP.textContent = `${scoreCounter} p`;
             button.disabled = true;
             setTimeout(() => {
               nextQuestion();
@@ -172,10 +193,14 @@ async function getQuiz(quizCategory, categoryImage) {
           }
           if (newArray[i].isCorrect === false) {
             button.style.color = "white";
-            button.style.backgroundColor = "#D55658";
+            // button.style.backgroundColor = "#D55658";
+            button.style.background = "#f58484";
+            button.style.background = "linear-gradient(110deg,rgba(245, 132, 132, 1) 0%, rgba(240, 81, 81, 1) 61%)";
             answers.forEach((button, index) => {
               if (newArray[index].isCorrect) {
-                button.style.backgroundColor = "#92D596";
+                // button.style.backgroundColor = "#92D596";
+                button.style.background = "#57C785";
+                button.style.background = "linear-gradient(309deg,rgba(87, 199, 133, 1) 50%, rgba(160, 235, 191, 1) 100%)";
                 button.style.color = "white";
               }
             });

@@ -48,7 +48,7 @@ async function handler(request) {
     }
 
     if (url.pathname == "/quizPage/result") {
-      console.log("inne");
+      console.log("result");
       const userFile = "testUser.json";
       const users = Deno.readTextFileSync(userFile);
       const userArray = JSON.parse(users);

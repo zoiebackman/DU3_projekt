@@ -1,20 +1,44 @@
+@font-face {
+  font-family: "pelleFont";
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+}
+
+@font-face {
+  font-family: "pelleFontP";
+  src: url(../../fonts/PatrickHand-Regular.ttf);
+}
+
 body {
+  /* margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  overflow: hidden; */
+
   margin: 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
 }
 
 header {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5bb0ac5c;
+  height: 150px; */
+
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #5bb0ac5c;
-  height: 150px;
+  height: 100px;
 }
 
 #leavePage {
-  padding: 5px;
+  /* padding: 5px;
   border-radius: 5px;
   border: 1px solid rgb(249, 59, 59);
   height: 40px;
@@ -24,13 +48,27 @@ header {
   color: white;
   position: absolute;
   right: 25px;
-  top: 25px;
+  top: 25px; */
+
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(249, 59, 59);
+  height: 32px;
+  width: 91px;
+  background-color: rgb(249, 59, 59);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  font-family: pelleFontP;
+  font-size: 16px;
 }
 
 #leavePage:hover {
   background-color: rgb(235, 52, 52);
+  cursor: pointer;
 }
-
 
 #container {
   margin: 30px;
@@ -38,7 +76,15 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  height: 300px;
+  background-color: beige;
+}
+
+#countDownBox {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .reloadColor {
@@ -67,32 +113,38 @@ header {
 }
 
 #countDown {
-  box-shadow: 7px 8px 48px 0px rgba(0, 0, 0, 0.63);
+  box-shadow: 7px 8px 48px 0px rgba(242, 30, 30, 0.63);
   display: flex;
   height: 120px;
   width: 120px;
   border-radius: 50%;
-  background-color: rgb(244, 80, 51);
   justify-content: center;
   align-items: center;
   font-family: arial;
   color: white;
   font-size: 20px;
+  background: #ff2121;
+  background: radial-gradient(circle, rgba(255, 33, 33, 1) 0%, rgba(217, 39, 39, 1) 70%, rgba(171, 50, 50, 1) 100%);
 }
 
 #imageContainer {
+
   height: 300px;
-  width: 600px;
-  border-radius: 5px;
+  width: 33%;
+  border-radius: 20px;
+}
+
+#imageContainer img {
+  border-radius: 10px;
 }
 
 .finalText {
   width: 500px;
-  height: 100px;
   text-align: center;
-  font-size: 30px;
-  margin: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+  font-family: pelleFontP;
+  font-size: 50px;
+  color: saddlebrown;
 
 }
 
@@ -105,7 +157,14 @@ header {
   border: 1px solid #f18739;
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
   color: white;
-  font-size: 20px;
+  font-size: 26px;
+  font-family: pelleFontP;
+  padding: 5px;
+}
+
+.endbutton:hover {
+  background-color: #c26621;
+  cursor: pointer;
 }
 
 footer {
@@ -138,28 +197,50 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-family: pelleFont;
+  text-align: center;
+}
+
+.answerFormat:hover {
+  cursor: pointer;
+}
+
+#headerBox {
+  display: flex;
 }
 
 #question {
-  font-size: 25px;
+  /* font-size: 25px;
   font-family: arial;
   font-weight: bold;
   color: #524122;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
+  text-align: center; */
+
   text-align: center;
+  font-weight: bold;
+  color: #e6ac41;
+  font-size: 33px;
+  font-family: pelleFontP;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #currentScore {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
+  width: 33%;
 }
 
 #scoreDiv {
-  background-color: rgb(255, 191, 0);
+  /* background: linear-gradient(180deg,
+      rgba(245, 206, 152, 1) 28%,
+      rgba(255, 193, 87, 1) 55%,
+      rgba(217, 154, 46, 1) 97%);
+  border-radius: 15px;
   width: 105px;
   position: fixed;
   margin-top: 90px;
@@ -167,13 +248,43 @@ footer {
   margin-left: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 2; */
+
+  background: linear-gradient(180deg, rgba(245, 206, 152, 1) 28%, rgba(255, 193, 87, 1) 55%, rgba(217, 154, 46, 1) 97%);
+  border-radius: 15px;
+  width: 169px;
+  position: fixed;
+  margin-top: 56px;
+  height: 100px;
+  margin-right: 201px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 0;
+  box-shadow: 0px 2px 8px 0px saddlebrown;
 }
 
-#scoreDiv p {
+#scoreP {
+  margin: 0;
+  font-family: pelleFontP;
+  font-size: 25px;
+  color: saddlebrown;
+}
+
+#scoreDivP {
   align-self: center;
+  margin: 0;
+  margin: 0;
+  font-family: pelleFontP;
+  font-size: 40px;
+  color: white;
 }
 
 #currentScore img {
   height: 500px;
+  object-fit: contain;
+  z-index: 1;
 }

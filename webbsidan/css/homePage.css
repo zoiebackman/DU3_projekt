@@ -85,14 +85,10 @@ input {
   box-shadow: 1px 2px 2px #8e664a;
   font-weight: bolder;
 
-  background: linear-gradient(288deg,
-      rgba(91, 176, 172, 1) 6%,
-      rgba(240, 179, 93, 1) 20%,
-      rgba(230, 176, 149, 1) 36%,
-      rgba(255, 235, 204, 1) 51%,
-      rgba(230, 176, 149, 1) 68%,
-      rgba(240, 179, 93, 1) 80%,
-      rgba(91, 176, 172, 1) 95%);
+  background: linear-gradient(180deg,
+      rgba(245, 206, 152, 1) 28%,
+      rgba(255, 193, 87, 1) 55%,
+      rgba(217, 154, 46, 1) 97%);
 }
 
 #userStar {
@@ -132,7 +128,6 @@ input {
 }
 
 #popUpSignOut {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,6 +143,10 @@ input {
   display: none;
   position: absolute;
   width: 210px;
+
+  text-align: center;
+  color: saddlebrown;
+  font-size: 16px;
 }
 
 #settingsBox button {
@@ -166,12 +165,13 @@ input {
 }
 
 #settingsBox button:hover {
-  cursor: grab;
-  background-color: #dfdfd5;
+  cursor: pointer;
+  background-color: #ead5b1;
+  color: white;
 }
 
 #pelle2 {
-  height: 435px;
+  height: 400px;
   object-fit: contain;
   margin-top: 20px;
 }
@@ -185,6 +185,7 @@ input {
   justify-content: center;
   width: 50%;
   gap: 30px;
+  height: 100%;
 
   padding: 20px;
   border-radius: 20px;
@@ -201,6 +202,7 @@ input {
 }
 
 h1 {
+  margin: 0px;
   font-size: 45px;
   font-weight: bold;
   color: #e7af2b;
@@ -245,6 +247,7 @@ h1 {
 
 .quizButton:hover {
   background-color: #ead5b1;
+  cursor: pointer;
 }
 
 .quizButton p {
@@ -338,30 +341,35 @@ p {
 }
 
 #startQuizButton {
-  background-color: #f18739;
-  padding: 20px 40px;
-  color: white;
+  background-color: #f9e7c8;
+  padding: 16px 39px;
+  color: #754a13;
   border-radius: 9px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: pelleFont;
   box-shadow: 2px 3px 2px #8e664a;
+  font-size: 20px;
 }
 
 #startQuizButton:hover {
-  background-color: #d97833;
+  background-color: #ead5b1;
+  color: white;
+  cursor: pointer;
 }
 
 #otherQuizButton {
-  background-color: #f18739;
+  background-color: #f9e7c8;
   padding: 10px 20px;
-  color: white;
+  color: #754a13;
   border-radius: 9px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: pelleFont;
   font-size: 15px;
   box-shadow: 2px 3px 2px #8e664a;
 }
 
 #otherQuizButton:hover {
-  background-color: #d97833;
+  background-color: #ead5b1;
+  color: white;
+  cursor: pointer;
 }
 
 body {
