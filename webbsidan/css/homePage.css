@@ -11,11 +11,6 @@
 }
 
 #navbar {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: solid 1px rgb(228, 165, 37); */
-
   height: 70px;
   display: flex;
   align-items: center;
@@ -25,10 +20,6 @@
 }
 
 #quizLogo {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
   font-size: 32px;
   display: flex;
   align-items: center;
@@ -37,8 +28,6 @@
 }
 
 #pelleNav {
-  /* height: 30px; */
-
   width: 50px;
   height: 50px;
   margin-right: 5px;
@@ -51,7 +40,6 @@
   font-size: 38px;
   font-family: pelleFont;
   text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 input {
@@ -81,7 +69,6 @@ input {
   background-color: #f3bd66;
   height: 20px;
   background: #f3bd66;
-  /* background: linear-gradient(149deg, rgba(243, 189, 102, 1) 12%, rgba(182, 217, 208, 1) 48%, rgba(243, 189, 102, 1) 82%); */
   box-shadow: 1px 2px 2px #8e664a;
   font-weight: bolder;
 
@@ -150,8 +137,6 @@ input {
 }
 
 #settingsBox button {
-  /* border: solid 1dvi white; */
-  /* background-color: white; */
   text-align: center;
   margin: 8px;
   border-radius: 5px;
@@ -210,14 +195,6 @@ h1 {
   text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
-/* 
-  font-size: 45px;
-  font-weight: inherit;
-  font-style: normal;
-  color: #e7af2b;
-  text-shadow: 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  font-family: pelleFont; */
-
 #quizLibrary {
   display: flex;
   flex-wrap: wrap;
@@ -228,8 +205,6 @@ h1 {
       rgba(217, 154, 46, 1) 97%);
   border-top: solid 2px #b27640;
   padding-top: 20px;
-
-  /* background: linear-gradient(180deg,rgb(240, 226, 203) 1%, rgba(84, 200, 189, 0.67) 99%); */
 }
 
 .quizButton {

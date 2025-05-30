@@ -85,14 +85,6 @@ p {
 }
 
 #loginBox {
-  /* height: 320px;
-  width: 300px;
-  background-color: #f3bd66;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; */
-
   height: 50%;
   width: 57%;
   background-color: #f3bd66;
@@ -105,13 +97,6 @@ p {
 }
 
 #loginBoxSecondBackground {
-  /* height: 130px;
-  width: 260px;
-  background-color: #f9e7c8;
-  margin-top: 20px;
-  border-radius: 10px;
-  padding-top: 25px; */
-
   width: 270px;
   background-color: #f9e7c8;
   border-radius: 10px;
@@ -132,9 +117,6 @@ p {
 }
 
 .loginBoxText p {
-  /* margin: 0;
-  margin-top: 5px; */
-
   font-family: pelleFont;
   font-size: 18px;
   color: saddlebrown;
@@ -149,15 +131,6 @@ p {
 }
 
 .pelle_p {
-  /* font-size: 22px;
-  font-weight: bold;
-  margin-right: 30px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #524122;
-  color: #e6ac41;
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; */
-
   font-weight: bold;
   margin-right: 30px;
   color: #e6ac41;
@@ -216,8 +189,6 @@ a {
 }
 
 #createAccountBoxSecondBackground {
-  /* height: 210px; */
-
   width: 270px;
   background-color: #f9e7c8;
   border-radius: 10px;
