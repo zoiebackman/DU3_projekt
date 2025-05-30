@@ -158,8 +158,9 @@ async function getQuiz(quizCategory, categoryImage) {
       const pic = new ShowQuestionImage(imageContainer, images, counter); //anropa class som stylar bild
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
-        }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${
+        quizData[counter].question
+      }`;
       const newArray = [
         //döpa om?
         { text: quizData[counter].correctAnswer, isCorrect: true },
@@ -182,7 +183,8 @@ async function getQuiz(quizCategory, categoryImage) {
           if (newArray[i].isCorrect === true) {
             // button.style.backgroundColor = "#92D596";
             button.style.background = "#57C785";
-            button.style.background = "linear-gradient(309deg,rgba(87, 199, 133, 1) 50%, rgba(160, 235, 191, 1) 100%)";
+            button.style.background =
+              "linear-gradient(309deg,rgba(87, 199, 133, 1) 50%, rgba(160, 235, 191, 1) 100%)";
             button.style.color = "white";
             scoreCounter += 10;
             scoreDivP.textContent = `${scoreCounter} p`;
@@ -195,12 +197,14 @@ async function getQuiz(quizCategory, categoryImage) {
             button.style.color = "white";
             // button.style.backgroundColor = "#D55658";
             button.style.background = "#f58484";
-            button.style.background = "linear-gradient(110deg,rgba(245, 132, 132, 1) 0%, rgba(240, 81, 81, 1) 61%)";
+            button.style.background =
+              "linear-gradient(110deg,rgba(245, 132, 132, 1) 0%, rgba(240, 81, 81, 1) 61%)";
             answers.forEach((button, index) => {
               if (newArray[index].isCorrect) {
                 // button.style.backgroundColor = "#92D596";
                 button.style.background = "#57C785";
-                button.style.background = "linear-gradient(309deg,rgba(87, 199, 133, 1) 50%, rgba(160, 235, 191, 1) 100%)";
+                button.style.background =
+                  "linear-gradient(309deg,rgba(87, 199, 133, 1) 50%, rgba(160, 235, 191, 1) 100%)";
                 button.style.color = "white";
               }
             });
@@ -227,21 +231,25 @@ async function getQuiz(quizCategory, categoryImage) {
       }
 
       const currentScore = document.getElementById("currentScore");
+      const pellePicture = document.getElementById("pellePicture");
       if (scoreCounter == 0 || scoreCounter == 10 || scoreCounter == 20) {
         currentScore.innerHTML = `
             
             <img id="pellePicture" src="../../bilder/sadPelle.png" alt="">`;
+        pellePicture.style.marginRight = "0px";
       }
 
       if (scoreCounter == 30 || scoreCounter == 40 || scoreCounter == 50) {
         currentScore.innerHTML = `
             
             <img id="pellePicture" src="../../bilder/Pelleneutral.png" alt="">`;
+        pellePicture.style.marginRight = "0px";
       }
       if (scoreCounter == 60 || scoreCounter == 70 || scoreCounter == 80) {
         currentScore.innerHTML = `
             
             <img id="pellePicture" src="../../bilder/PelleHappy.png" alt="">`;
+        pellePicture.style.marginRight = "0px";
       }
 
       pointToUser();

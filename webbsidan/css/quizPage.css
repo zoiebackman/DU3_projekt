@@ -1,6 +1,6 @@
 @font-face {
   font-family: "pelleFont";
-  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\INFM\SPAC\wght.ttf);
 }
 
 @font-face {
@@ -124,11 +124,15 @@ header {
   color: white;
   font-size: 20px;
   background: #ff2121;
-  background: radial-gradient(circle, rgba(255, 33, 33, 1) 0%, rgba(217, 39, 39, 1) 70%, rgba(171, 50, 50, 1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 33, 33, 1) 0%,
+    rgba(217, 39, 39, 1) 70%,
+    rgba(171, 50, 50, 1) 100%
+  );
 }
 
 #imageContainer {
-
   height: 300px;
   width: 33%;
   border-radius: 20px;
@@ -145,7 +149,6 @@ header {
   font-family: pelleFontP;
   font-size: 50px;
   color: saddlebrown;
-
 }
 
 .endbutton {
@@ -224,7 +227,8 @@ footer {
   color: #e6ac41;
   font-size: 33px;
   font-family: pelleFontP;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #currentScore {
@@ -252,11 +256,16 @@ footer {
   justify-content: space-evenly;
   z-index: 2; */
 
-  background: linear-gradient(180deg, rgba(245, 206, 152, 1) 28%, rgba(255, 193, 87, 1) 55%, rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   border-radius: 15px;
   width: 169px;
   position: fixed;
-  margin-top: 56px;
+  /*  margin-top: 56px; */
   height: 100px;
   margin-right: 201px;
   display: flex;
@@ -265,6 +274,7 @@ footer {
   justify-content: space-evenly;
   z-index: 0;
   box-shadow: 0px 2px 8px 0px saddlebrown;
+  margin-right: 1px;
 }
 
 #scoreP {
@@ -284,7 +294,9 @@ footer {
 }
 
 #currentScore img {
-  height: 500px;
+  height: 300px;
   object-fit: contain;
   z-index: 1;
+  margin-top: 20px;
+  margin-left: 180px;
 }
