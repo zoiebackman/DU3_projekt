@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "pelleFont";
-  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\INFM\SPAC\wght.ttf);
 }
 
 @font-face {
@@ -85,8 +85,6 @@ input {
   font-size: 30px;
 }
 
-/* NAV */
-
 #container {
   display: flex;
   justify-content: space-around;
@@ -94,7 +92,6 @@ input {
   margin: 20px 40px;
 }
 
-/* SETTINGS OCH PELLE */
 #settingsBoxAndPelle {
   width: 25%;
   display: flex;
@@ -111,7 +108,7 @@ input {
   padding: 20px 0px;
   position: relative;
   box-shadow: 1px 3px 3px #bb8965;
-  font-family: pelleFontP
+  font-family: pelleFontP;
 }
 
 #popUpSignOut {
@@ -146,7 +143,7 @@ input {
   box-shadow: 1px 3px 3px #bb8965;
   padding: 15px;
   background-color: #fbedd4;
-  font-family: pelleFontP
+  font-family: pelleFontP;
 }
 
 #settingsBox button:hover {
@@ -160,8 +157,6 @@ input {
   object-fit: contain;
   margin-top: 20px;
 }
-
-/* SETTINGS OCH PELLE */
 
 #mainContainer {
   display: flex;
@@ -192,7 +187,8 @@ h1 {
   font-weight: bold;
   color: #e7af2b;
   font-family: pelleFont;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #quizLibrary {
@@ -259,9 +255,8 @@ h1 {
   padding-bottom: 25px;
   font-family: pelleFont;
   color: #e7af2b;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
-
-
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #topScore {

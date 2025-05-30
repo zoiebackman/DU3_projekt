@@ -51,7 +51,6 @@ export async function createAccount(request, header) {
   }
 
   if (newUserAccount.username == "" || newUserAccount.password == "") {
-    //Ifall ett av inmatningsfältet är en tom sträng
     return new Response(
       JSON.stringify({ error: "Missing Username or Password" }),
       { status: 400, headers: header }

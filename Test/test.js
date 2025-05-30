@@ -13,7 +13,6 @@ function createDiv(response, textContent, expectedStatus) {
       response.status == 409
     ) {
       return "red";
-      // background-color: #ff5656;
     }
   }
   const div = document.createElement("div");
@@ -41,7 +40,6 @@ async function driver_Users() {
   createDiv(response, testText, 200);
 }
 
-//Driver som testar att logga in med icke-existerande användare.
 async function driver_2() {
   const newUser = { username: "Yoman", password: "Liseberg123" };
   const request = new Request("http://localhost:8000/login", {
@@ -54,7 +52,6 @@ async function driver_2() {
   createDiv(response, testText, 400);
 }
 
-//Driver som testar att logga in existerande användare.
 async function driver_3() {
   const newUser = { username: "pelle_boi", password: "fotboll123" };
 
@@ -68,7 +65,6 @@ async function driver_3() {
   const testText = "Test 3: Login With Non-Existning User:";
   createDiv(response, testText, 200);
 }
-//Driver som testar att skapa en ny användare.
 async function driver_4() {
   const newUser = {
     username: "Lea",
@@ -87,7 +83,6 @@ async function driver_4() {
   createDiv(response, testText, 200);
 }
 async function driver_5() {
-  // Testar att skapa user med tomt inmatningsfält
   const newUser = { username: "", password: "fotboll" };
   const request = new Request("http://localhost:8000/createAccount", {
     method: "POST",
@@ -179,7 +174,6 @@ async function driver_12() {
 
 async function driverHandler() {
   await driver_Users();
-  // await driver_1();
   await driver_2();
   await driver_3();
   await driver_4();

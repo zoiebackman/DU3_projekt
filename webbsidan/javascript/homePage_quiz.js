@@ -11,7 +11,6 @@ const homePageButton = document.getElementById("homePageButton");
 
 let quizCategory;
 
-//Hantering av att logga ut
 async function getLoggedInUser() {
   const request = new Request("http://localhost:8000/currentUser");
   const response = await fetch(request);
@@ -51,7 +50,6 @@ noButton.addEventListener("click", function () {
 });
 
 buttons();
-//Hantering av quiz-knapparna
 function buttons() {
   const quizButtons = document.querySelectorAll(".quizButton");
   quizButtons.forEach((button) => {
@@ -63,7 +61,6 @@ function buttons() {
   });
 }
 
-//Fetch till externt API gällande att hämta bilder
 async function getImage(quizCategory) {
   const request = `https://api.pexels.com/v1/search?query=${encodeURIComponent(
     quizCategory
@@ -131,12 +128,12 @@ async function getTopUsers() {
     const div = document.createElement("div");
     const p1 = document.createElement("p");
     const p2 = document.createElement("p");
-    p1.textContent = `✰ ${user.username}`
-    p2.textContent = `${user.score} poäng`
+    p1.textContent = `✰ ${user.username}`;
+    p2.textContent = `${user.score} poäng`;
 
     div.classList.add("topPlayers");
-    p1.id = ("topScoreName")
-    p2.id = ("topScorePoints")
+    p1.id = "topScoreName";
+    p2.id = "topScorePoints";
     div.appendChild(p1);
     div.appendChild(p2);
     topScore.appendChild(div);
