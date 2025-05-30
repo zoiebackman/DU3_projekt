@@ -5,14 +5,14 @@ function createDiv(response, textContent, expectedStatus) {
   function setColor(status) {
     console.log(response);
     if (status === 200) {
-      return "green";
+      return "(309deg, rgba(87, 199, 133, 1) 50%, rgba(160, 235, 191, 1) 100%)";
     }
     if (
       response.status === 400 ||
       response.status == 404 ||
       response.status == 409
     ) {
-      return "red";
+      return "(110deg, rgba(245, 132, 132, 1) 0%, rgba(240, 81, 81, 1) 61%)";
     }
   }
   const div = document.createElement("div");
@@ -23,7 +23,7 @@ function createDiv(response, textContent, expectedStatus) {
   p1.textContent = textContent;
   p2.textContent = `Status: ${response.status}`;
   p3.textContent = `(Expected status: ${expectedStatus})`;
-  div.style.backgroundColor = setColor(response.status);
+  div.style.backgroundImage = `linear-gradient${setColor(response.status)}`;
 
   div.classList.add("testDiv");
   div.appendChild(p1);
