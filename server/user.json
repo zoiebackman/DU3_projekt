@@ -80,13 +80,25 @@
   {
     "username": "sara",
     "password": "hej",
-    "score": 930,
-    "logedIn": true
+    "score": 1330,
+    "logedIn": false
   },
   {
     "username": "sara",
     "password": "hej",
-    "score": 930,
+    "score": 1330,
+    "logedIn": true
+  },
+  {
+    "username": "dingdong",
+    "password": "123",
+    "score": 0,
+    "logedIn": true
+  },
+  {
+    "username": "sarre",
+    "password": "1",
+    "score": 0,
     "logedIn": true
   }
 ]
