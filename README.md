@@ -6,7 +6,7 @@
 
 Välkommen till backend-API:et för **QuizApp** – en plats där användare loggar in, svarar på quiz och klättrar på poängtavlan! Här nedan hittar du alla tillgängliga endpoints och hur du kommunicerar med dem.
 
-Endpoints:
+`Endpoints`:
 
 ### 🔐 `/getUsers`
 
@@ -28,23 +28,13 @@ Hämta scoreboarden med användarnas resultat.
 
 ---
 
-### 🏠 `/homePage`
-
-#### 🧾 `GET`
-
-Hämta alla användares poäng – sorterade i fallande ordning.
-
-- **Svar:** `200 OK`
-
----
-
 ### 🙎‍♂️ `/currentUser`
 
 #### ➕ `GET`
+
 Returnerar den användare som är inloggad (där loggedIn === true).
 
 - **Svar:** `200 OK` - Inloggad användare hittades.
-**Svar:** `409 Not Found `- Ingen användare är inloggad.
 
 ### 🔐 `/login`
 
@@ -66,7 +56,7 @@ Json:
 - `400 Bad Request` – Användarnamn/lösenord matchar inte.
 ---
 
-### 🔐 `/createAccount
+### 🔐 `/createAccount`
 
 #### ✨ `POST`
 
@@ -84,18 +74,6 @@ Json:
 - `200 OK` – Användaren skapades!
 - `400 Bad Request` – Något saknas i inmatningens
 - `409 Bad Request` – Något saknas i inmatningens
-
-
-### ❓ `/homePage/Search?quiz=X` 
-
-#### 🧠 `GET`
-
-Returnerar de quiz som innehåller de bokstäverna som anges i input.
-
-- **Svar:**
-  - `200 OK` – Matchande quiz returneras.
-  - `400 Bad Request` – Inget quiz matchar sökningen.
-  - `409 Conflict` – Tomt sökfält.
 
 ---
 ### ❓ `/updatedScore`
