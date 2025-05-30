@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "pelleFont";
-  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\INFM\SPAC\wght.ttf);
 }
 
 @font-face {
@@ -11,11 +11,6 @@
 }
 
 #navbar {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: solid 1px rgb(228, 165, 37); */
-
   height: 70px;
   display: flex;
   align-items: center;
@@ -25,10 +20,6 @@
 }
 
 #quizLogo {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
   font-size: 32px;
   display: flex;
   align-items: center;
@@ -37,8 +28,6 @@
 }
 
 #pelleNav {
-  /* height: 30px; */
-
   width: 50px;
   height: 50px;
   margin-right: 5px;
@@ -50,8 +39,8 @@
   color: #e6ac41;
   font-size: 38px;
   font-family: pelleFont;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 input {
@@ -81,14 +70,15 @@ input {
   background-color: #f3bd66;
   height: 20px;
   background: #f3bd66;
-  /* background: linear-gradient(149deg, rgba(243, 189, 102, 1) 12%, rgba(182, 217, 208, 1) 48%, rgba(243, 189, 102, 1) 82%); */
   box-shadow: 1px 2px 2px #8e664a;
   font-weight: bolder;
 
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
 }
 
 #userStar {
@@ -98,8 +88,6 @@ input {
   font-size: 30px;
 }
 
-/* NAV */
-
 #container {
   display: flex;
   justify-content: space-around;
@@ -107,7 +95,6 @@ input {
   margin: 20px 40px;
 }
 
-/* SETTINGS OCH PELLE */
 #settingsBoxAndPelle {
   width: 25%;
   display: flex;
@@ -124,7 +111,7 @@ input {
   padding: 20px 0px;
   position: relative;
   box-shadow: 1px 3px 3px #bb8965;
-  font-family: pelleFontP
+  font-family: pelleFontP;
 }
 
 #popUpSignOut {
@@ -132,10 +119,12 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   box-shadow: 1px 3px 3px #705744;
   height: 250px;
   padding: 10px;
@@ -150,8 +139,6 @@ input {
 }
 
 #settingsBox button {
-  /* border: solid 1dvi white; */
-  /* background-color: white; */
   text-align: center;
   margin: 8px;
   border-radius: 5px;
@@ -161,7 +148,7 @@ input {
   box-shadow: 1px 3px 3px #bb8965;
   padding: 15px;
   background-color: #fbedd4;
-  font-family: pelleFontP
+  font-family: pelleFontP;
 }
 
 #settingsBox button:hover {
@@ -176,8 +163,6 @@ input {
   margin-top: 20px;
 }
 
-/* SETTINGS OCH PELLE */
-
 #mainContainer {
   display: flex;
   flex-direction: column;
@@ -189,10 +174,12 @@ input {
 
   padding: 20px;
   border-radius: 20px;
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   box-shadow: 1px 3px 3px #705744;
 }
 
@@ -207,29 +194,22 @@ h1 {
   font-weight: bold;
   color: #e7af2b;
   font-family: pelleFont;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
-
-/* 
-  font-size: 45px;
-  font-weight: inherit;
-  font-style: normal;
-  color: #e7af2b;
-  text-shadow: 1px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  font-family: pelleFont; */
 
 #quizLibrary {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   border-top: solid 2px #b27640;
   padding-top: 20px;
-
-  /* background: linear-gradient(180deg,rgb(240, 226, 203) 1%, rgba(84, 200, 189, 0.67) 99%); */
 }
 
 .quizButton {
@@ -284,9 +264,8 @@ h1 {
   padding-bottom: 25px;
   font-family: pelleFont;
   color: #e7af2b;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
-
-
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #topScore {
