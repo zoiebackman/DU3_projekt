@@ -1,6 +1,6 @@
 @font-face {
   font-family: "pelleFont";
-  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\INFM\SPAC\wght.ttf);
 }
 
 @font-face {
@@ -122,7 +122,6 @@ header {
   font-family: pelleFontP;
   font-size: 50px;
   color: saddlebrown;
-
 }
 
 .endbutton {
@@ -193,7 +192,8 @@ footer {
   color: #e6ac41;
   font-size: 33px;
   font-family: pelleFontP;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #currentScore {
@@ -218,6 +218,7 @@ footer {
   justify-content: space-evenly;
   z-index: 0;
   box-shadow: 0px 2px 8px 0px saddlebrown;
+  margin-right: 1px;
 }
 
 #scoreP {
@@ -237,7 +238,9 @@ footer {
 }
 
 #currentScore img {
-  height: 500px;
+  height: 300px;
   object-fit: contain;
   z-index: 1;
+  margin-top: 20px;
+  margin-left: 180px;
 }
