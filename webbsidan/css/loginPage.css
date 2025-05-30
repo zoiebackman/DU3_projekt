@@ -1,6 +1,6 @@
 @font-face {
   font-family: "pelleFont";
-  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\INFM\SPAC\wght.ttf);
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
 }
 
 @font-face {
@@ -41,7 +41,7 @@ p {
 }
 
 .slogan {
-  font-family: pelleFontP;
+  font-family: pelleFont;
   margin-right: 30px;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ad7716;
