@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "pelleFont";
+  src: url(../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+}
+
+@font-face {
+  font-family: "pelleFontP";
+  src: url(../fonts/PatrickHand-Regular.ttf);
+}
+
 body {
   margin: auto 0;
   overflow: hidden;
@@ -21,14 +31,13 @@ header {
 }
 
 #pelle_p {
-  font-size: 22px;
+
   font-weight: bold;
   margin-right: 30px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #524122;
   color: #e6ac41;
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 38px;
+  font-family: pelleFont;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #loggoPicture {
@@ -70,12 +79,13 @@ main {
 }
 
 #testrubrik {
-  font-size: 30px;
-  color: orange;
+  font-family: pelleFontP;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ad7716; */
+  color: #e6ac41;
+  font-size: 38px;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #845b30;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 #testrubrik p {
@@ -98,11 +108,12 @@ main {
   align-items: center;
   margin: 10px auto;
   box-shadow: 1px 2px 2px #8e664a;
+
 }
 
 .testDiv p {
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: pelleFontP;
   font-size: 15px;
   margin: 0;
   text-align: center;
