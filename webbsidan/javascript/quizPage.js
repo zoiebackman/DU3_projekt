@@ -90,7 +90,7 @@ async function getQuiz(quizCategory, categoryImage) {
     console.log(images);
   }
   console.log(images);
-  await getImages(categoryImage); 
+  await getImages(categoryImage);
 
   const imageContainer = document.getElementById("imageContainer");
 
@@ -122,7 +122,7 @@ async function getQuiz(quizCategory, categoryImage) {
       console.log(countDown);
       console.log(`COUNTRER: ${counter}`);
     }
-    countDownSeconds();
+    //countDownSeconds();
 
     answersBox.innerHTML = `
   <div class="answerFormat" id="answer1"></div>
@@ -133,7 +133,7 @@ async function getQuiz(quizCategory, categoryImage) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
-      const pic = new ShowQuestionImage(imageContainer, images, counter); 
+      const pic = new ShowQuestionImage(imageContainer, images, counter);
       pic.styleImage(counter);
 
       question1.textContent = `Question ${counter + 1} of 8: ${
@@ -151,7 +151,6 @@ async function getQuiz(quizCategory, categoryImage) {
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
-
 
       answers.forEach((button, i) => {
         button.addEventListener("click", function () {
@@ -226,7 +225,7 @@ async function getQuiz(quizCategory, categoryImage) {
       }
 
       pointToUser();
-      const button = showFinalScore(imageContainer, question1, scoreCounter); 
+      const button = showFinalScore(imageContainer, question1, scoreCounter);
 
       button.addEventListener("click", function () {
         window.location.href = "homePage.html";
