@@ -122,7 +122,7 @@ async function getQuiz(quizCategory, categoryImage) {
       console.log(countDown);
       console.log(`COUNTRER: ${counter}`);
     }
-    //countDownSeconds();
+    countDownSeconds();
 
     answersBox.innerHTML = `
   <div class="answerFormat" id="answer1"></div>
