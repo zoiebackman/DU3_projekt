@@ -46,11 +46,11 @@ async function handler(request) {
   }
 
  if (request.method == "POST") {
-    //logga in
+
     if (url.pathname == "/login") {
       return await POST.login(request, headersCORS);
     }
-    // Skapa Konto
+
     if (url.pathname == "/createAccount") {
       return await POST.createAccount(request, headersCORS);
     }
