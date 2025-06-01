@@ -99,7 +99,7 @@ Json:
 
 **Svar:**
   - `200 OK` – Poäng uppdaterades.
-   - `400 Bad Request` – Användare inte inloggad.
+  - `400 Bad Request` – Användare inte inloggad.
 
 
 
