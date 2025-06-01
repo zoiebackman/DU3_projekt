@@ -29,6 +29,7 @@ async function handler(request) {
       { status: 400, headers: headersCORS }
     );
   }
+  
 
   if (request.method == "GET") {
     if (url.pathname == "/getUsers") {
