@@ -25,7 +25,7 @@
   { "username": "hej", "password": "1", "score": 0, "logedIn": false },
   { "username": "stroganoff", "password": "1", "score": 0, "logedIn": false },
   { "username": "kingen", "password": "30", "score": 40, "logedIn": false },
-  { "username": "Moa", "password": "1", "score": 220, "logedIn": true },
+  { "username": "Moa", "password": "1", "score": 220, "logedIn": false },
   { "username": "saucen", "password": "1", "score": 0, "logedIn": false },
   { "username": "sara", "password": "hej", "score": 1330, "logedIn": false },
   { "username": "dingdong", "password": "123", "score": 0, "logedIn": false },
