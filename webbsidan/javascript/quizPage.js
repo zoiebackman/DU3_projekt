@@ -17,7 +17,7 @@ class ShowQuestionImage {
 }
 
 function showFinalScore(imageContainer, question1, scoreCounter) {
-  imageContainer.innerHTML = ""; //ta bort bilden till sista scoreSidan
+  imageContainer.innerHTML = "";
   const button = document.createElement("button");
   button.classList.add("endbutton");
   button.textContent = "Back to start";
@@ -90,7 +90,7 @@ async function getQuiz(quizCategory, categoryImage) {
     console.log(images);
   }
   console.log(images);
-  await getImages(categoryImage); 
+  await getImages(categoryImage);
 
   const imageContainer = document.getElementById("imageContainer");
 
@@ -133,12 +133,11 @@ async function getQuiz(quizCategory, categoryImage) {
     const answers = document.querySelectorAll(".answerFormat");
 
     if (counter < quizData.length) {
-      const pic = new ShowQuestionImage(imageContainer, images, counter); 
+      const pic = new ShowQuestionImage(imageContainer, images, counter);
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${
-        quizData[counter].question
-      }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
+        }`;
       const newArray = [
         { text: quizData[counter].correctAnswer, isCorrect: true },
         { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
@@ -226,7 +225,7 @@ async function getQuiz(quizCategory, categoryImage) {
       }
 
       pointToUser();
-      const button = showFinalScore(imageContainer, question1, scoreCounter); 
+      const button = showFinalScore(imageContainer, question1, scoreCounter);
 
       button.addEventListener("click", function () {
         window.location.href = "homePage.html";
