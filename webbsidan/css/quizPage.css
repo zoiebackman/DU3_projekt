@@ -1,10 +1,10 @@
 @font-face {
   font-family: "pelleFont";
-  src: url(../../fonts/fonts/ShantellSans-Italic-VariableFont_BNCE\INFM\SPAC\wght.ttf);
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
 }
 
 @font-face {
-  font-family: pelleFont;
+  font-family: pelleFontP;
   src: url(../../fonts/PatrickHand-Regular.ttf);
 }
 
@@ -103,12 +103,10 @@ header {
   color: white;
   font-size: 20px;
   background: #ff2121;
-  background: radial-gradient(
-    circle,
-    rgba(255, 33, 33, 1) 0%,
-    rgba(217, 39, 39, 1) 70%,
-    rgba(171, 50, 50, 1) 100%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 33, 33, 1) 0%,
+      rgba(217, 39, 39, 1) 70%,
+      rgba(171, 50, 50, 1) 100%);
 }
 
 #imageContainer {
@@ -131,12 +129,10 @@ header {
 }
 
 #scoreDiv {
-  background: linear-gradient(
-    180deg,
-    rgba(245, 206, 152, 1) 28%,
-    rgba(255, 193, 87, 1) 55%,
-    rgba(217, 154, 46, 1) 97%
-  );
+  background: linear-gradient(180deg,
+      rgba(245, 206, 152, 1) 28%,
+      rgba(255, 193, 87, 1) 55%,
+      rgba(217, 154, 46, 1) 97%);
   border-radius: 15px;
   width: 100px;
   position: fixed;
