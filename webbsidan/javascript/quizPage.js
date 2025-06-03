@@ -136,8 +136,9 @@ async function getQuiz(quizCategory, categoryImage) {
       const pic = new ShowQuestionImage(imageContainer, images, counter);
       pic.styleImage(counter);
 
-      question1.textContent = `Question ${counter + 1} of 8: ${quizData[counter].question
-        }`;
+      question1.textContent = `Question ${counter + 1} of 8: ${
+        quizData[counter].question
+      }`;
       const newArray = [
         { text: quizData[counter].correctAnswer, isCorrect: true },
         { text: quizData[counter].incorrectAnswers[0], isCorrect: false },
@@ -150,7 +151,6 @@ async function getQuiz(quizCategory, categoryImage) {
       answers.forEach((button, i) => {
         button.textContent = newArray[i].text;
       });
-
 
       answers.forEach((button, i) => {
         button.addEventListener("click", function () {
@@ -165,7 +165,7 @@ async function getQuiz(quizCategory, categoryImage) {
             button.disabled = true;
             setTimeout(() => {
               nextQuestion();
-            }, 1000);
+            }, 2000);
           }
           if (newArray[i].isCorrect === false) {
             button.style.color = "white";
@@ -183,7 +183,7 @@ async function getQuiz(quizCategory, categoryImage) {
 
             setTimeout(() => {
               nextQuestion();
-            }, 1000);
+            }, 2000);
           }
         });
       });
