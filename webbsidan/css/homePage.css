@@ -1,7 +1,7 @@
 /* NAV */
 @font-face {
   font-family: "pelleFont";
-  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\,INFM\,SPAC\,wght.ttf);
+  src: url(../../fonts/fonts/ShantellSans-VariableFont_BNCE\INFM\SPAC\wght.ttf);
 }
 
 @font-face {
@@ -38,7 +38,8 @@
   color: #e6ac41;
   font-size: 38px;
   font-family: pelleFont;
-  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown, 1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
+  text-shadow: 1px 2px 0 saddlebrown, -1px -1px 0 saddlebrown,
+    1px -1px 0 saddlebrown, -1px 1px 0 saddlebrown, 1px 1px 0 saddlebrown;
 }
 
 input {
@@ -71,10 +72,12 @@ input {
   box-shadow: 1px 2px 2px #8e664a;
   font-weight: bolder;
 
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
 }
 
 #userStar {
@@ -88,7 +91,7 @@ input {
   display: flex;
   justify-content: space-around;
   gap: 27px;
-  margin: 20px 40px;
+  margin: 20px 20px;
 }
 
 #settingsBoxAndPelle {
@@ -115,10 +118,12 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   box-shadow: 1px 3px 3px #705744;
   height: 250px;
   padding: 10px;
@@ -168,10 +173,12 @@ input {
 
   padding: 20px;
   border-radius: 20px;
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   box-shadow: 1px 3px 3px #705744;
 }
 
@@ -194,10 +201,12 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: linear-gradient(180deg,
-      rgba(245, 206, 152, 1) 28%,
-      rgba(255, 193, 87, 1) 55%,
-      rgba(217, 154, 46, 1) 97%);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 206, 152, 1) 28%,
+    rgba(255, 193, 87, 1) 55%,
+    rgba(217, 154, 46, 1) 97%
+  );
   border-top: solid 2px #b27640;
   padding-top: 20px;
 }
