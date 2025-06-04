@@ -44,13 +44,13 @@
   {
     "username": "stroganoff",
     "password": "1",
-    "score": 1337,
+    "score": 1330,
     "logedIn": false
   },
   {
     "username": "kingen",
     "password": "30",
-    "score": 140,
+    "score": 190,
     "logedIn": false
   },
   {
@@ -84,12 +84,6 @@
     "logedIn": false
   },
   {
-    "username": "Hejsan",
-    "password": "1",
-    "score": 80,
-    "logedIn": false
-  },
-  {
     "username": "saucen12",
     "password": "1",
     "score": 0,
@@ -98,7 +92,19 @@
   {
     "username": "Hejhej",
     "password": "1",
-    "score": 140,
-    "logedIn": true
+    "score": 100,
+    "logedIn": false
+  },
+  {
+    "username": "Heeej",
+    "password": "1",
+    "score": 0,
+    "logedIn": false
+  },
+  {
+    "username": "Hejhejhej",
+    "password": "1",
+    "score": 0,
+    "logedIn": false
   }
 ]
